@@ -4,4 +4,7 @@
 
     <!-- Strings de la actividad: Menú principal -->
     <string name="txtView_gameName">QuizGame</string>
+    <string name="btt_play">¡Jugar!</string>
+    <string name="btt_profile">Perfil</string>
+    <string name="btt_settings">Ajustes</string>
 </resources>
