@@ -8,4 +8,9 @@
     <string name="btt_profile">Perfil</string>
     <string name="btt_settings">Ajustes</string>
     <string name="btt_exit">Salir</string>
+
+    <!-- Strings de la actividad: Menú ajustes -->
+    <string name="txtView_settings">Ajustes</string>
+    <string name="sw_music">Música</string>
+    <string name="sw_sfx">Efectos</string>
 </resources>
