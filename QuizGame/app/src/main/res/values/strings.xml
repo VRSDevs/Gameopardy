@@ -7,4 +7,5 @@
     <string name="btt_play">¡Jugar!</string>
     <string name="btt_profile">Perfil</string>
     <string name="btt_settings">Ajustes</string>
+    <string name="btt_exit">Salir</string>
 </resources>
