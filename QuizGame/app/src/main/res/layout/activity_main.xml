@@ -51,7 +51,8 @@
         android:onClick="openSettingsMenu"
         android:text="@string/btt_settings"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="UsingOnClickInXml" />
 
     <Button
         android:id="@+id/btt_exit"

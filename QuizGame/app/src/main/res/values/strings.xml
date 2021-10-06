@@ -13,4 +13,5 @@
     <string name="txtView_settings">Ajustes</string>
     <string name="sw_music">Música</string>
     <string name="sw_sfx">Efectos</string>
+    <string name="btt_settBack">Atrás</string>
 </resources>

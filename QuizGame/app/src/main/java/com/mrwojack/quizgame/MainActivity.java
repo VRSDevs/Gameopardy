@@ -8,7 +8,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Eventos de ciclo de la aplicación //
+    // Eventos de ciclo de vida de la aplicación //
     /**
      *
      * @param savedInstanceState
