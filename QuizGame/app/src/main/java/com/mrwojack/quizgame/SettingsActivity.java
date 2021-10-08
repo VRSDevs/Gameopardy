@@ -6,17 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     // Eventos de ciclo de vida de la aplicación //
     /**
-     *
+     * 
      * @param savedInstanceState
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_settings);
     }
 
     // Eventos de cambio de actividad //
@@ -24,19 +24,10 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void openSettingsMenu(View view) {
+    public void openMainMenu(View view) {
         // Creación de objeto intent
-        Intent int_settingsM = new Intent(this, SettingsActivity.class);
+        Intent int_mainM = new Intent(this, MainActivity.class);
 
-        startActivity(int_settingsM);
-        finish();
-    }
-
-    public void startGame(View view) {
-        // Creación de objeto intent
-        Intent int_game = new Intent(this, GameActivity.class);
-
-        startActivity(int_game);
-        finish();
+        startActivity(int_mainM);
     }
 }

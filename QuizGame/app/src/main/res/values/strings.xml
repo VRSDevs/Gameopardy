@@ -8,4 +8,28 @@
     <string name="btt_profile">Perfil</string>
     <string name="btt_settings">Ajustes</string>
     <string name="btt_exit">Salir</string>
+
+    <!-- Strings de la actividad: Menú ajustes -->
+    <string name="txtView_settings">Ajustes</string>
+    <string name="sw_music">Música</string>
+    <string name="sw_sfx">Efectos</string>
+    <string name="btt_settBack">Atrás</string>
+
+    <!-- Strings de la actividad: Juego -->
+    <string name="txtView_gm_desc">
+        Cositas
+    </string>
+    <string name="btt_start">Empezar</string>
+    <string name="gm_q1">Pregunta 1</string>
+    <string name="btt_q1a1">A</string>
+    <string name="btt_q1a2">B</string>
+    <string name="btt_q1a3">C</string>
+    <string name="btt_q1a4">D</string>
+    <string name="gm_q2">Pregunta 2</string>
+    <string name="btt_q2a1">A</string>
+    <string name="btt_q2a2">B</string>
+    <string name="btt_q2a3">C</string>
+    <string name="btt_q2a4">D</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
