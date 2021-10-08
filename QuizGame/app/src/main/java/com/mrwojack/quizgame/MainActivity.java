@@ -29,5 +29,14 @@ public class MainActivity extends AppCompatActivity {
         Intent int_settingsM = new Intent(this, SettingsActivity.class);
 
         startActivity(int_settingsM);
+        finish();
+    }
+
+    public void startGame(View view) {
+        // Creación de objeto intent
+        Intent int_game = new Intent(this, GameActivity.class);
+
+        startActivity(int_game);
+        finish();
     }
 }

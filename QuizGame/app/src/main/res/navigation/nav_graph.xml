@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/initGameFragment">
 
+    <fragment
+        android:id="@+id/initGameFragment"
+        android:name="com.mrwojack.quizgame.fragments.InitGameFragment"
+        android:label="fragment_init_game2"
+        tools:layout="@layout/fragment_init_game" >
+        <action
+            android:id="@+id/action_initGameFragment_to_question1Fragment"
+            app:destination="@id/question1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question1Fragment"
+        android:name="com.mrwojack.quizgame.fragments.Question1Fragment"
+        android:label="fragment_question1"
+        tools:layout="@layout/fragment_question1" >
+        <action
+            android:id="@+id/action_question1Fragment_to_question2Fragment"
+            app:destination="@id/question2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question2Fragment"
+        android:name="com.mrwojack.quizgame.fragments.Question2Fragment"
+        android:label="fragment_question2"
+        tools:layout="@layout/fragment_question2" />
 </navigation>
