@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
+        android:fontFamily="@font/asdonuts_font_family"
         android:text="@string/txtView_gameName"
         android:textColor="#A1887F"
         android:textSize="48sp"
