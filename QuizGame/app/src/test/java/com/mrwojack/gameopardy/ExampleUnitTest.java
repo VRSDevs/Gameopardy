@@ -1,4 +1,4 @@
-package com.mrwojack.quizgame;
+package com.mrwojack.gameopardy;
 
 import org.junit.Test;
 

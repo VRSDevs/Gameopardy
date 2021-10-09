@@ -1,6 +1,6 @@
 <resources>
     <!-- Strings globales de la aplicación -->
-    <string name="app_name">QuizGame</string>
+    <string name="app_name">Gameopardy</string>
 
     <!-- Strings de la actividad: Menú principal -->
     <string name="txtView_gameName">QuizGame</string>
