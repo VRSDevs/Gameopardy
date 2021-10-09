@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.mrwojack.gameopardy.R;
 
@@ -84,9 +85,31 @@ public class Question1Fragment extends Fragment {
         for (Button btn:
             btn_answers) {
             btn.setOnClickListener(new View.OnClickListener() {
+
+                /**
+                 *
+                 * @param view
+                 */
                 @Override
                 public void onClick(View view) {
+                    checkAnswer(view);
                     NAV_CONTROLLER.navigate(R.id.question2Fragment);
+                }
+
+                /**
+                 *
+                 * @param view
+                 */
+                private void checkAnswer(View view) {
+                    String optionText = (String)btn.getText();
+                    String correctAnswer = "A";
+
+                    if(!optionText.equals(correctAnswer)) {
+                        Toast.makeText(view.getContext(), "Inorrecto", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    Toast.makeText(view.getContext(), "Correcto", Toast.LENGTH_SHORT).show();
                 }
             });
         }
