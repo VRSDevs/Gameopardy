@@ -1,4 +1,4 @@
-package com.mrwojack.quizgame.fragments;
+package com.mrwojack.gameopardy.fragments;
 
 import android.os.Bundle;
 
@@ -13,14 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.mrwojack.quizgame.R;
+import com.mrwojack.gameopardy.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link InitGameFragment#newInstance} factory method to
+ * Use the {@link Question1Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class InitGameFragment extends Fragment {
+public class Question1Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +31,7 @@ public class InitGameFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public InitGameFragment() {
+    public Question1Fragment() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class InitGameFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment InitGameFragment.
+     * @return A new instance of fragment question1Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static InitGameFragment newInstance(String param1, String param2) {
-        InitGameFragment fragment = new InitGameFragment();
+    public static Question1Fragment newInstance(String param1, String param2) {
+        Question1Fragment fragment = new Question1Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,7 +66,7 @@ public class InitGameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_init_game, container, false);
+        return inflater.inflate(R.layout.fragment_question1, container, false);
     }
 
     @Override
@@ -75,12 +75,20 @@ public class InitGameFragment extends Fragment {
 
         final NavController NAV_CONTROLLER = Navigation.findNavController(view);
 
-        Button btn = view.findViewById(R.id.btt_start);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NAV_CONTROLLER.navigate(R.id.question1Fragment);
-            }
-        });
+        Button btn_answers[] = new Button[4];
+        btn_answers[0] = view.findViewById(R.id.btt_q1a1);
+        btn_answers[1] = view.findViewById(R.id.btt_q1a2);
+        btn_answers[2] = view.findViewById(R.id.btt_q1a3);
+        btn_answers[3] = view.findViewById(R.id.btt_q1a4);
+
+        for (Button btn:
+            btn_answers) {
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    NAV_CONTROLLER.navigate(R.id.question2Fragment);
+                }
+            });
+        }
     }
 }
