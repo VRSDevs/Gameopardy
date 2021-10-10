@@ -120,6 +120,22 @@
     <string name="q6a4">
         Gunpei Yokoi
     </string>
+    <!-- Pregunta 7 -->
+    <string name="q7">
+        ¿Cuál de estos videojuegos está protagonizado por una mujer?
+    </string>
+    <string name="q7a1">
+        The Legend of Zelda
+    </string>
+    <string name="q7a2">
+        Metroid
+    </string>
+    <string name="q7a3">
+        The Last of Us
+    </string>
+    <string name="q7a4">
+        Heavy Rain
+    </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
