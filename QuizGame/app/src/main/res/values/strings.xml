@@ -87,6 +87,23 @@
     <string name="q4a4">
         Square Enix
     </string>
+    <!-- Pregunta 5 -->
+    <string name="q5">
+        ¿Cual de estos videojuegos se planteó originalmente como un videojuego infantil,
+        pero acabó convertido en un juego de carácter irreverente para el público adulto?
+    </string>
+    <string name="q5a1">
+        Conker's Bad Fur Day
+    </string>
+    <string name="q5a2">
+        Leisure Suit Larry in the Land of the Lounge Lizards
+    </string>
+    <string name="q5a3">
+        Bully
+    </string>
+    <string name="q5a4">
+        Grand Theft Auto
+    </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
