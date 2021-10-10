@@ -71,6 +71,22 @@
     <string name="q3a4">
         No Man's Sky
     </string>
+    <!-- Pregunta 4 -->
+    <string name="q4">
+        ¿A qué empresa pertenece la saga de videojuegos Metal Gear Solid?
+    </string>
+    <string name="q4a1">
+        Bandai Namco
+    </string>
+    <string name="q4a2">
+        Konami
+    </string>
+    <string name="q4a3">
+        Capcom
+    </string>
+    <string name="q4a4">
+        Square Enix
+    </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
