@@ -20,13 +20,24 @@
         Cositas
     </string>
     <string name="btt_start">Empezar</string>
-    <string name="gm_q1">
+    <!-- STRINGS ESPECÍFICOS DE LA ACTIVIDAD: PARTIDA -->
+    <!-- Pregunta 1 -->
+    <string name="q1">
         ¿Cuál fue el primer videojuego de la famosa saga de videojuegos "FIFA"?
     </string>
-    <string name="btt_q1a1">A</string>
-    <string name="btt_q1a2">B</string>
-    <string name="btt_q1a3">C</string>
-    <string name="btt_q1a4">D</string>
+    <string name="q1a1">
+        FIFA 98
+    </string>
+    <string name="q1a2">
+        FIFA INTERNATIONAL SOCCER (FIFA 94)
+    </string>
+    <string name="q1a3">
+        FIFA 95
+    </string>
+    <string name="q1a4">
+        FIFA 2000
+    </string>
+
     <string name="gm_q2">Pregunta 2</string>
     <string name="btt_q2a1">A</string>
     <string name="btt_q2a2">B</string>

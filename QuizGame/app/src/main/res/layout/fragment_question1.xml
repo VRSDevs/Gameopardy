@@ -14,7 +14,7 @@
         android:layout_height="164dp"
         android:layout_marginTop="164dp"
         android:fontFamily="sans-serif"
-        android:text="@string/gm_q1"
+        android:text="@string/q1"
         android:textAlignment="center"
         android:textColor="#6A1B9A"
         android:textSize="32sp"
@@ -37,24 +37,28 @@
             android:id="@+id/btt_q1a1"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:text="@string/btt_q1a1" />
+            android:text="@string/q1a1"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/btt_q1a2"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:text="@string/btt_q1a2" />
+            android:text="@string/q1a2"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btt_q1a3"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:text="@string/btt_q1a3" />
+            android:text="@string/q1a3"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/btt_q1a4"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:text="@string/btt_q1a4" />
+            android:text="@string/q1a4"
+            android:textSize="24sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
