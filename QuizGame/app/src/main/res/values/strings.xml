@@ -55,12 +55,23 @@
     <string name="q2a4">
         Nintendo Wii
     </string>
+    <!-- Pregunta 3 -->
+    <string name="q3">
+        ¿Cuál es el mapa más grande (en kilometros cuadrados) de la historia de los videojuegos?
+    </string>
+    <string name="q3a1">
+        Minecraft
+    </string>
+    <string name="q3a2">
+        Fuel
+    </string>
+    <string name="q3a3">
+        The Elder Scrolls 2: Daggerfall
+    </string>
+    <string name="q3a4">
+        No Man's Sky
+    </string>
 
-    <string name="gm_q2">Pregunta 2</string>
-    <string name="btt_q2a1">A</string>
-    <string name="btt_q2a2">B</string>
-    <string name="btt_q2a3">C</string>
-    <string name="btt_q2a4">D</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
