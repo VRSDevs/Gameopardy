@@ -9,7 +9,7 @@
     tools:context=".fragments.Question1Fragment">
 
     <TextView
-        android:id="@+id/gm_q1"
+        android:id="@+id/txtView_q1"
         android:layout_width="301dp"
         android:layout_height="164dp"
         android:layout_marginTop="164dp"
@@ -23,6 +23,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/txtView_questions"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/questions_number"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="310dp"
         android:layout_height="303dp"
@@ -31,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gm_q1">
+        app:layout_constraintTop_toBottomOf="@+id/txtView_q1">
 
         <Button
             android:id="@+id/btt_q1a1"
@@ -61,4 +75,18 @@
             android:text="@string/q1a4"
             android:textSize="24sp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="119dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/points"
+        android:textAlignment="textEnd"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
