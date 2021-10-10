@@ -2,29 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/ui_questions"
-    tools:context=".fragments.Question1Fragment">
+    tools:context=".fragments.Question3Fragment">
 
     <TextView
-        android:id="@+id/txtView_q1"
+        android:id="@+id/txtView_q"
         android:layout_width="301dp"
         android:layout_height="164dp"
         android:layout_marginTop="164dp"
         android:fontFamily="sans-serif"
-        android:text="@string/q1"
+        android:text="@string/q3"
         android:textAlignment="center"
         android:textColor="#6A1B9A"
-        android:textSize="32sp"
+        android:textSize="31sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtView_questions"
+        android:id="@+id/txtView_questions3"
         android:layout_width="120dp"
         android:layout_height="32dp"
         android:layout_marginStart="24dp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtView_points"
+        android:id="@+id/txtView_points3"
         android:layout_width="119dp"
         android:layout_height="34dp"
         android:layout_marginTop="16dp"
@@ -56,36 +56,36 @@
         android:layout_marginTop="68dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_q1">
+        app:layout_constraintTop_toBottomOf="@+id/txtView_q">
 
         <Button
-            android:id="@+id/btt_q1a1"
+            android:id="@+id/btt_q3a1"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:text="@string/q1a1"
+            android:text="@string/q3a1"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btt_q1a2"
+            android:id="@+id/btt_q3a2"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:text="@string/q1a2"
+            android:text="@string/q3a2"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btt_q3a3"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="@string/q3a3"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btt_q1a3"
+            android:id="@+id/btt_q3a4"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:text="@string/q1a3"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/btt_q1a4"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:text="@string/q1a4"
+            android:text="@string/q3a4"
             android:textSize="24sp" />
     </LinearLayout>
 

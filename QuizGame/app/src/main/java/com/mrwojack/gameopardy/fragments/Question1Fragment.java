@@ -102,10 +102,10 @@ public class Question1Fragment extends Fragment {
                  */
                 private void checkAnswer(View view) {
                     String optionText = (String)btn.getText();
-                    String correctAnswer = "A";
+                    String correctAnswer = "FIFA INTERNATIONAL SOCCER (FIFA 94)";
 
                     if(!optionText.equals(correctAnswer)) {
-                        Toast.makeText(view.getContext(), "Inorrecto", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
                         return;
                     }
 

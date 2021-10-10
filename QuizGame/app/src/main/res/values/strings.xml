@@ -20,16 +20,123 @@
         Cositas
     </string>
     <string name="btt_start">Empezar</string>
-    <string name="gm_q1">Pregunta 1</string>
-    <string name="btt_q1a1">A</string>
-    <string name="btt_q1a2">B</string>
-    <string name="btt_q1a3">C</string>
-    <string name="btt_q1a4">D</string>
-    <string name="gm_q2">Pregunta 2</string>
-    <string name="btt_q2a1">A</string>
-    <string name="btt_q2a2">B</string>
-    <string name="btt_q2a3">C</string>
-    <string name="btt_q2a4">D</string>
+    <!-- STRINGS ESPECÍFICOS DE LA ACTIVIDAD: PARTIDA -->
+    <string name="questions_number">0 / 10</string>
+    <string name="points">0</string>
+    <!-- Pregunta 1 -->
+    <string name="q1">
+        ¿Cuál fue el primer videojuego de la famosa saga de videojuegos "FIFA"?
+    </string>
+    <string name="q1a1">
+        FIFA 98
+    </string>
+    <string name="q1a2">
+        FIFA INTERNATIONAL SOCCER (FIFA 94)
+    </string>
+    <string name="q1a3">
+        FIFA 95
+    </string>
+    <string name="q1a4">
+        FIFA 2000
+    </string>
+    <!-- Pregunta 2 -->
+    <string name="q2">
+        ¿Cuál es la videoconsola con el mayor número de ventas?
+    </string>
+    <string name="q2a1">
+        Nintendo DS
+    </string>
+    <string name="q2a2">
+        PlayStation 1
+    </string>
+    <string name="q2a3">
+        PlayStation 2
+    </string>
+    <string name="q2a4">
+        Nintendo Wii
+    </string>
+    <!-- Pregunta 3 -->
+    <string name="q3">
+        ¿Cuál es el mapa más grande (en kilometros cuadrados) de la historia de los videojuegos?
+    </string>
+    <string name="q3a1">
+        Minecraft
+    </string>
+    <string name="q3a2">
+        Fuel
+    </string>
+    <string name="q3a3">
+        The Elder Scrolls 2: Daggerfall
+    </string>
+    <string name="q3a4">
+        No Man's Sky
+    </string>
+    <!-- Pregunta 4 -->
+    <string name="q4">
+        ¿A qué empresa pertenece la saga de videojuegos Metal Gear Solid?
+    </string>
+    <string name="q4a1">
+        Bandai Namco
+    </string>
+    <string name="q4a2">
+        Konami
+    </string>
+    <string name="q4a3">
+        Capcom
+    </string>
+    <string name="q4a4">
+        Square Enix
+    </string>
+    <!-- Pregunta 5 -->
+    <string name="q5">
+        ¿Cual de estos videojuegos se planteó originalmente como un videojuego infantil,
+        pero acabó convertido en un juego de carácter irreverente para el público adulto?
+    </string>
+    <string name="q5a1">
+        Conker's Bad Fur Day
+    </string>
+    <string name="q5a2">
+        Leisure Suit Larry in the Land of the Lounge Lizards
+    </string>
+    <string name="q5a3">
+        Bully
+    </string>
+    <string name="q5a4">
+        Grand Theft Auto
+    </string>
+    <!-- Pregunta 6 -->
+    <string name="q6">
+        ¿Quién fue el creador de la GameBoy?
+    </string>
+    <string name="q6a1">
+        Shigeru Miyamoto
+    </string>
+    <string name="q6a2">
+        Hiroshi Yamauchi
+    </string>
+    <string name="q6a3">
+        Satoru Iwata
+    </string>
+    <string name="q6a4">
+        Gunpei Yokoi
+    </string>
+    <!-- Pregunta 7 -->
+    <string name="q7">
+        ¿Cuál de estos videojuegos está protagonizado por una mujer?
+    </string>
+    <string name="q7a1">
+        The Legend of Zelda
+    </string>
+    <string name="q7a2">
+        Metroid
+    </string>
+    <string name="q7a3">
+        The Last of Us
+    </string>
+    <string name="q7a4">
+        Heavy Rain
+    </string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
