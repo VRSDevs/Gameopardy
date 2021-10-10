@@ -20,7 +20,9 @@
         Cositas
     </string>
     <string name="btt_start">Empezar</string>
-    <string name="gm_q1">Pregunta 1</string>
+    <string name="gm_q1">
+        ¿Cuál fue el primer videojuego de la famosa saga de videojuegos "FIFA"?
+    </string>
     <string name="btt_q1a1">A</string>
     <string name="btt_q1a2">B</string>
     <string name="btt_q1a3">C</string>

@@ -105,7 +105,7 @@ public class Question1Fragment extends Fragment {
                     String correctAnswer = "A";
 
                     if(!optionText.equals(correctAnswer)) {
-                        Toast.makeText(view.getContext(), "Inorrecto", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
