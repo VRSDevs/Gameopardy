@@ -5,10 +5,11 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/ui_questions"
     tools:context=".fragments.Question2Fragment" >
 
     <TextView
-        android:id="@+id/gm_q2"
+        android:id="@+id/txtView_q2"
         android:layout_width="186dp"
         android:layout_height="50dp"
         android:layout_marginTop="176dp"
@@ -27,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gm_q2">
+        app:layout_constraintTop_toBottomOf="@+id/txtView_q2">
 
         <Button
             android:id="@+id/btt_q1a1"
