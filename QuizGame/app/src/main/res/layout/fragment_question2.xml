@@ -9,21 +9,50 @@
     tools:context=".fragments.Question2Fragment" >
 
     <TextView
-        android:id="@+id/txtView_q2"
-        android:layout_width="186dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="176dp"
-        android:text="@string/gm_q2"
-        android:textAlignment="center"
-        android:textSize="34sp"
+        android:id="@+id/txtView_questions2"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/questions_number"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtView_points2"
+        android:layout_width="119dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/points"
+        android:textAlignment="textEnd"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtView_q2"
+        android:layout_width="306dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="156dp"
+        android:text="@string/q2"
+        android:textAlignment="center"
+        android:textColor="#6A1B9A"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="328dp"
-        android:layout_height="206dp"
+        android:layout_width="310dp"
+        android:layout_height="303dp"
+        android:layout_marginTop="72dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -33,26 +62,30 @@
         <Button
             android:id="@+id/btt_q1a1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btt_q2a1" />
+            android:layout_height="64dp"
+            android:text="@string/q2a1"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/btt_q1a2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btt_q2a2" />
+            android:layout_height="64dp"
+            android:text="@string/q2a2"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btt_q1a3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btt_q2a3" />
+            android:layout_height="64dp"
+            android:text="@string/q2a3"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/btt_q1a4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btt_q2a4" />
+            android:layout_height="64dp"
+            android:text="@string/q2a4"
+            android:textSize="24sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

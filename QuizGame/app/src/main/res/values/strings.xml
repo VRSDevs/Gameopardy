@@ -39,6 +39,22 @@
     <string name="q1a4">
         FIFA 2000
     </string>
+    <!-- Pregunta 2 -->
+    <string name="q2">
+        ¿Cuál es la videoconsola con el mayor número de ventas?
+    </string>
+    <string name="q2a1">
+        Nintendo DS
+    </string>
+    <string name="q2a2">
+        PlayStation 1
+    </string>
+    <string name="q2a3">
+        PlayStation 2
+    </string>
+    <string name="q2a4">
+        Nintendo Wii
+    </string>
 
     <string name="gm_q2">Pregunta 2</string>
     <string name="btt_q2a1">A</string>
