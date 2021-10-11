@@ -98,8 +98,11 @@ public class Question2Fragment extends Fragment {
                 public void onClick(View view) {
                     checkAnswer(view);
 
+                    Activity a = FragmentManager.findFragment(view).getActivity();
+
                     Intent int_results = new Intent(view.getContext(), ResultsActivity.class);
                     startActivity(int_results);
+                    a.finish();
                 }
 
                 /**
