@@ -56,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/puntuation"
+        android:textColor="#6C6C6C"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,13 +95,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/points"
+        android:textColor="#6C6C6C"
         android:textSize="72sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtView_puntuation" />
 
     <TextView
-        android:id="@+id/txtView_finalPoints2"
+        android:id="@+id/txtView_finalCorrectAns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/points"
@@ -112,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_correctAnswers" />
 
     <TextView
-        android:id="@+id/txtView_finalPoints3"
+        android:id="@+id/txtView_finalWrongAns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/points"

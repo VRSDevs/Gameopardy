@@ -60,28 +60,28 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_q2">
 
         <Button
-            android:id="@+id/btt_q1a1"
+            android:id="@+id/btt_q2a1"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="@string/q2a1"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btt_q1a2"
+            android:id="@+id/btt_q2a2"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="@string/q2a2"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btt_q1a3"
+            android:id="@+id/btt_q2a3"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="@string/q2a3"
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btt_q1a4"
+            android:id="@+id/btt_q2a4"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="@string/q2a4"

@@ -77,10 +77,10 @@ public class Question1Fragment extends Fragment {
         final NavController NAV_CONTROLLER = Navigation.findNavController(view);
 
         Button btn_answers[] = new Button[4];
-        btn_answers[0] = view.findViewById(R.id.btt_q1a1);
-        btn_answers[1] = view.findViewById(R.id.btt_q1a2);
-        btn_answers[2] = view.findViewById(R.id.btt_q1a3);
-        btn_answers[3] = view.findViewById(R.id.btt_q1a4);
+        btn_answers[0] = view.findViewById(R.id.btt_q2a1);
+        btn_answers[1] = view.findViewById(R.id.btt_q2a2);
+        btn_answers[2] = view.findViewById(R.id.btt_q2a3);
+        btn_answers[3] = view.findViewById(R.id.btt_q2a4);
 
         for (Button btn:
             btn_answers) {
