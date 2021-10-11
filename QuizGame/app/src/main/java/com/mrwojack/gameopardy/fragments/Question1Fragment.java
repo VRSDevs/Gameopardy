@@ -12,57 +12,41 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mrwojack.gameopardy.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Question1Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Question1Fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    ///////////////////////// VARIABLES /////////////////////////
+    // VARIABLES REFERENCIA A COMPONENTES //
+    TextView txtViewPoints;     // TextView de la puntuación del jugador
+    // OTRAS VARIABLES //
+    int points = 0;     // Puntuación del jugador
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    /**
+     *  Constructor vacío
+     */
     public Question1Fragment() {
-        // Required empty public constructor
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment question1Fragment.
+     * Método ejecutado cuando se crea el fragmento
+     * @param savedInstanceState -> Referencia a objeto bundle que guarda el estado anterior de la actividad
      */
-    // TODO: Rename and change types and number of parameters
-    public static Question1Fragment newInstance(String param1, String param2) {
-        Question1Fragment fragment = new Question1Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
+    /**
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -70,18 +54,27 @@ public class Question1Fragment extends Fragment {
         return inflater.inflate(R.layout.fragment_question1, container, false);
     }
 
+    /**
+     *
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //
         final NavController NAV_CONTROLLER = Navigation.findNavController(view);
 
+        //
+        txtViewPoints = view.findViewById(R.id.txtView_points);
         Button btn_answers[] = new Button[4];
-        btn_answers[0] = view.findViewById(R.id.btt_q2a1);
-        btn_answers[1] = view.findViewById(R.id.btt_q2a2);
-        btn_answers[2] = view.findViewById(R.id.btt_q2a3);
-        btn_answers[3] = view.findViewById(R.id.btt_q2a4);
+        btn_answers[0] = view.findViewById(R.id.btt_q1a1);
+        btn_answers[1] = view.findViewById(R.id.btt_q1a2);
+        btn_answers[2] = view.findViewById(R.id.btt_q1a3);
+        btn_answers[3] = view.findViewById(R.id.btt_q1a4);
 
+        //
         for (Button btn:
             btn_answers) {
             btn.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +85,13 @@ public class Question1Fragment extends Fragment {
                  */
                 @Override
                 public void onClick(View view) {
-                    checkAnswer(view);
+                    updatePoints(
+                            view,
+                            checkAnswer(view)
+                    );
+
+                    createBundle();
+
                     NAV_CONTROLLER.navigate(R.id.question2Fragment);
                 }
 
@@ -100,16 +99,42 @@ public class Question1Fragment extends Fragment {
                  *
                  * @param view
                  */
-                private void checkAnswer(View view) {
-                    String optionText = (String)btn.getText();
+                private boolean checkAnswer(View view) {
+                    String optionText = btn.getText().toString();
                     String correctAnswer = "FIFA INTERNATIONAL SOCCER (FIFA 94)";
 
                     if(!optionText.equals(correctAnswer)) {
                         Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
-                        return;
+                        return false;
                     }
 
                     Toast.makeText(view.getContext(), "Correcto", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+
+                /**
+                 *
+                 * @param view
+                 * @param result
+                 */
+                private void updatePoints(View view, boolean result){
+                    //
+                    points = Integer.parseInt(txtViewPoints.getText().toString());
+                    if(!result) {
+                        points -= 50;
+                    } else {
+                        points += 100;
+                    }
+                }
+
+                /**
+                 *
+                 */
+                private void createBundle(){
+                    //
+                    Bundle bundle = new Bundle();
+                    bundle.putString("points", String.valueOf(points));
+                    getParentFragmentManager().setFragmentResult("data", bundle);
                 }
             });
         }
