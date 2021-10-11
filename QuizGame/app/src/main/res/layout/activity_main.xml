@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btt_play"
+        android:id="@+id/btt_playGame"
         android:layout_width="211dp"
         android:layout_height="90dp"
         android:layout_marginTop="124dp"

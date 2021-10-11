@@ -1,14 +1,24 @@
 package com.mrwojack.gameopardy.fragments;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.mrwojack.gameopardy.R;
+import com.mrwojack.gameopardy.ResultsActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,5 +72,55 @@ public class Question2Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_question2, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        final NavController NAV_CONTROLLER = Navigation.findNavController(view);
+
+        Button btn_answers[] = new Button[4];
+        btn_answers[0] = view.findViewById(R.id.btt_q2a1);
+        btn_answers[1] = view.findViewById(R.id.btt_q2a2);
+        btn_answers[2] = view.findViewById(R.id.btt_q2a3);
+        btn_answers[3] = view.findViewById(R.id.btt_q2a4);
+
+        for (Button btn:
+                btn_answers) {
+            btn.setOnClickListener(new View.OnClickListener() {
+
+                /**
+                 *
+                 * @param view
+                 */
+                @Override
+                public void onClick(View view) {
+                    checkAnswer(view);
+
+                    Activity a = FragmentManager.findFragment(view).getActivity();
+
+                    Intent int_results = new Intent(view.getContext(), ResultsActivity.class);
+                    startActivity(int_results);
+                    a.finish();
+                }
+
+                /**
+                 *
+                 * @param view
+                 */
+                private void checkAnswer(View view) {
+                    String optionText = (String)btn.getText();
+                    String correctAnswer = "PlayStation 2";
+
+                    if(!optionText.equals(correctAnswer)) {
+                        Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    Toast.makeText(view.getContext(), "Correcto", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 }
