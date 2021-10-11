@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/ui_questions"
-    tools:context=".fragments.Question2Fragment" >
+    tools:context=".fragments.questions.Question2Fragment" >
 
     <TextView
         android:id="@+id/txtView_questions2"

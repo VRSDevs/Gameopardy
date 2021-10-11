@@ -1,4 +1,4 @@
-package com.mrwojack.gameopardy.fragments;
+package com.mrwojack.gameopardy.fragments.questions;
 
 import android.os.Bundle;
 
@@ -24,6 +24,8 @@ public class Question1Fragment extends Fragment {
     TextView txtViewPoints;     // TextView de la puntuación del jugador
     // OTRAS VARIABLES //
     int points = 0;     // Puntuación del jugador
+    int hits = 0;
+    int mistakes = 0;
 
     /**
      *  Constructor vacío
@@ -122,8 +124,10 @@ public class Question1Fragment extends Fragment {
                     points = Integer.parseInt(txtViewPoints.getText().toString());
                     if(!result) {
                         points -= 50;
+                        mistakes++;
                     } else {
                         points += 100;
+                        hits++;
                     }
                 }
 
@@ -134,6 +138,8 @@ public class Question1Fragment extends Fragment {
                     //
                     Bundle bundle = new Bundle();
                     bundle.putString("points", String.valueOf(points));
+                    bundle.putString("hits", String.valueOf(hits));
+                    bundle.putString("mistakes", String.valueOf(mistakes));
                     getParentFragmentManager().setFragmentResult("data", bundle);
                 }
             });

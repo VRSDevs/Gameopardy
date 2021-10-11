@@ -137,6 +137,9 @@
         Heavy Rain
     </string>
 
+    <string name="q_true">Verdadero</string>
+    <string name="q_false">Falso</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="endGame">Fin de la partida</string>
@@ -145,4 +148,6 @@
     <string name="desc_bttHome">Botón para volver al menú principal</string>
     <string name="correctAnswers">Respuestas correctas</string>
     <string name="incorrectAnswers">Respuestas incorrectas</string>
+    <string name="q1_TF">¿Es Grand Theft Auto V el juego más vendido de la historia?</string>
+    <string name="answer">Responder</string>
 </resources>
