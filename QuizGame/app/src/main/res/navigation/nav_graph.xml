@@ -63,5 +63,14 @@
         android:id="@+id/question3VFFragment"
         android:name="com.mrwojack.gameopardy.fragments.questions.Question3VFFragment"
         android:label="fragment_question3_v_f"
-        tools:layout="@layout/fragment_question3_v_f" />
+        tools:layout="@layout/fragment_question3_v_f" >
+        <action
+            android:id="@+id/action_question3VFFragment_to_question1MCFragment"
+            app:destination="@id/question1MCFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question1MCFragment"
+        android:name="com.mrwojack.gameopardy.fragments.questions.Question1MCFragment"
+        android:label="fragment_question1_m_c"
+        tools:layout="@layout/fragment_question1_m_c" />
 </navigation>

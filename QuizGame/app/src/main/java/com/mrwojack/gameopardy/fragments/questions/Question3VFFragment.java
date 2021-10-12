@@ -94,15 +94,8 @@ public class Question3VFFragment extends Fragment {
                         checkAnswer(view)
                 );
 
-                Intent int_results = new Intent(view.getContext(), ResultsActivity.class);
-                int_results.putExtra("points", String.valueOf(points));
-                int_results.putExtra("hits", String.valueOf(hits));
-                int_results.putExtra("mistakes", String.valueOf(mistakes));
-
-                startActivity(int_results);
-
-                Activity a = FragmentManager.findFragment(view).getActivity();
-                a.finish();
+                createBundle();
+                NAV_CONTROLLER.navigate(R.id.question1MCFragment);
             }
 
             /**
@@ -147,7 +140,7 @@ public class Question3VFFragment extends Fragment {
                 bundle.putString("mistakes", String.valueOf(mistakes));
                 questionNumber += 1;
                 bundle.putString("questionNumber", String.valueOf(questionNumber));
-                getParentFragmentManager().setFragmentResult("data2_vf", bundle);
+                getParentFragmentManager().setFragmentResult("data3_vf", bundle);
             }
         });
     }
