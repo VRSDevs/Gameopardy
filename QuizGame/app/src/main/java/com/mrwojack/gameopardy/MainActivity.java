@@ -39,4 +39,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(int_game);
         finish();
     }
+
+    public void endGame(View view) {
+        System.exit(0);
+    }
 }
