@@ -82,33 +82,58 @@ public class Question2Fragment extends Fragment {
                  */
                 @Override
                 public void onClick(View view) {
-                    checkAnswer(view);
-
-                    Activity a = FragmentManager.findFragment(view).getActivity();
-
-                    Intent int_results = new Intent(view.getContext(), ResultsActivity.class);
-                    int_results.putExtra("points", txtViewPoints.getText().toString());
-                    int_results.putExtra("hits", String.valueOf(hits));
-                    int_results.putExtra("mistakes", String.valueOf(mistakes));
-
-                    startActivity(int_results);
-                    a.finish();
+                    updatePoints(
+                            view,
+                            checkAnswer(view)
+                    );
+                    createBundle();
+                    NAV_CONTROLLER.navigate(R.id.question3Fragment);
                 }
 
                 /**
                  *
                  * @param view
                  */
-                private void checkAnswer(View view) {
-                    String optionText = (String)btn.getText();
+                private boolean checkAnswer(View view) {
+                    String optionText = btn.getText().toString();
                     String correctAnswer = "PlayStation 2";
 
                     if(!optionText.equals(correctAnswer)) {
                         Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
-                        return;
+                        return false;
                     }
 
                     Toast.makeText(view.getContext(), "Correcto", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+
+                /**
+                 *
+                 * @param view
+                 * @param result
+                 */
+                private void updatePoints(View view, boolean result){
+                    //
+                    points = Integer.parseInt(txtViewPoints.getText().toString());
+                    if(!result) {
+                        points -= 50;
+                        mistakes++;
+                    } else {
+                        points += 100;
+                        hits++;
+                    }
+                }
+
+                /**
+                 *
+                 */
+                private void createBundle(){
+                    //
+                    Bundle bundle = new Bundle();
+                    bundle.putString("points", String.valueOf(points));
+                    bundle.putString("hits", String.valueOf(hits));
+                    bundle.putString("mistakes", String.valueOf(mistakes));
+                    getParentFragmentManager().setFragmentResult("data2", bundle);
                 }
             });
         }

@@ -27,5 +27,41 @@
         android:id="@+id/question2Fragment"
         android:name="com.mrwojack.gameopardy.fragments.questions.Question2Fragment"
         android:label="fragment_question2"
-        tools:layout="@layout/fragment_question2" />
+        tools:layout="@layout/fragment_question2" >
+        <action
+            android:id="@+id/action_question2Fragment_to_question3Fragment"
+            app:destination="@id/question3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question3Fragment"
+        android:name="com.mrwojack.gameopardy.fragments.questions.Question3Fragment"
+        android:label="fragment_question3"
+        tools:layout="@layout/fragment_question3" >
+        <action
+            android:id="@+id/action_question3Fragment_to_question1VFFragment"
+            app:destination="@id/question1VFFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question1VFFragment"
+        android:name="com.mrwojack.gameopardy.fragments.questions.Question1VFFragment"
+        android:label="fragment_question1_v_f"
+        tools:layout="@layout/fragment_question1_v_f" >
+        <action
+            android:id="@+id/action_question1VFFragment_to_question2VFFragment"
+            app:destination="@id/question2VFFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question2VFFragment"
+        android:name="com.mrwojack.gameopardy.fragments.questions.Question2VFFragment"
+        android:label="fragment_question2_v_f"
+        tools:layout="@layout/fragment_question2_v_f" >
+        <action
+            android:id="@+id/action_question2VFFragment_to_question3VFFragment"
+            app:destination="@id/question3VFFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question3VFFragment"
+        android:name="com.mrwojack.gameopardy.fragments.questions.Question3VFFragment"
+        android:label="fragment_question3_v_f"
+        tools:layout="@layout/fragment_question3_v_f" />
 </navigation>

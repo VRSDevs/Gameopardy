@@ -150,4 +150,6 @@
     <string name="incorrectAnswers">Respuestas incorrectas</string>
     <string name="q1_TF">¿Es Grand Theft Auto V el juego más vendido de la historia?</string>
     <string name="answer">Responder</string>
+    <string name="q2_VF">La inteligencia artificial que ayuda a Master Chief en Halo se llama Alexa</string>
+    <string name="q3_VF">El primer Metal Gear salió en el año 1987</string>
 </resources>

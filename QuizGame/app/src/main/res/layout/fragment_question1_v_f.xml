@@ -9,6 +9,33 @@
     tools:context=".fragments.questions.Question1VFFragment">
 
     <TextView
+        android:id="@+id/txtView_questions1_vf"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/questions_number"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtView_points1_vf"
+        android:layout_width="119dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/points"
+        android:textAlignment="textEnd"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/txtView_q1_TF"
         android:layout_width="306dp"
         android:layout_height="172dp"
@@ -33,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_q1_TF">
 
         <ToggleButton
-            android:id="@+id/togBtt"
+            android:id="@+id/togBtt_q1_vf"
             style="@style/Theme.QuizGame"
             android:layout_width="match_parent"
             android:layout_height="64dp"
@@ -46,7 +73,7 @@
             android:textSize="34sp" />
 
         <Button
-            android:id="@+id/btt_q2a"
+            android:id="@+id/btt_q1_vf"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="@string/answer"

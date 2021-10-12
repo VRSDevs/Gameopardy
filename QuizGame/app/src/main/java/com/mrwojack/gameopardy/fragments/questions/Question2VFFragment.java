@@ -23,8 +23,7 @@ import android.widget.ToggleButton;
 import com.mrwojack.gameopardy.R;
 import com.mrwojack.gameopardy.ResultsActivity;
 
-
-public class Question1VFFragment extends Fragment {
+public class Question2VFFragment extends Fragment {
 
     ///////////////////////// VARIABLES /////////////////////////
     // VARIABLES REFERENCIA A COMPONENTES //
@@ -34,7 +33,7 @@ public class Question1VFFragment extends Fragment {
     int hits = 0;
     int mistakes = 0;
 
-    public Question1VFFragment() {
+    public Question2VFFragment() {
         // Required empty public constructor
     }
 
@@ -42,7 +41,7 @@ public class Question1VFFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getParentFragmentManager().setFragmentResultListener("data3", this, new FragmentResultListener() {
+        getParentFragmentManager().setFragmentResultListener("data_vf", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 points = Integer.parseInt(result.getString("points"));
@@ -57,14 +56,9 @@ public class Question1VFFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_question1_v_f, container, false);
+        return inflater.inflate(R.layout.fragment_question2_v_f, container, false);
     }
 
-    /**
-     *
-     * @param view
-     * @param savedInstanceState
-     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -73,11 +67,11 @@ public class Question1VFFragment extends Fragment {
         final NavController NAV_CONTROLLER = Navigation.findNavController(view);
 
         //
-        txtViewPoints = view.findViewById(R.id.txtView_points1_vf);
+        txtViewPoints = view.findViewById(R.id.txtView_points2_vf);
 
         //
-        ToggleButton optionsButton = view.findViewById(R.id.togBtt_q1_vf);
-        Button confirmButton = view.findViewById(R.id.btt_q1_vf);
+        ToggleButton optionsButton = view.findViewById(R.id.togBtt_q2_vf);
+        Button confirmButton = view.findViewById(R.id.btt_q2_vf);
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
 
@@ -93,7 +87,7 @@ public class Question1VFFragment extends Fragment {
                 );
 
                 createBundle();
-                NAV_CONTROLLER.navigate(R.id.question2VFFragment);
+                NAV_CONTROLLER.navigate(R.id.question3VFFragment);
             }
 
             /**
@@ -136,7 +130,7 @@ public class Question1VFFragment extends Fragment {
                 bundle.putString("points", String.valueOf(points));
                 bundle.putString("hits", String.valueOf(hits));
                 bundle.putString("mistakes", String.valueOf(mistakes));
-                getParentFragmentManager().setFragmentResult("data_vf", bundle);
+                getParentFragmentManager().setFragmentResult("data2_vf", bundle);
             }
         });
 
