@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -23,7 +24,7 @@ import android.widget.ToggleButton;
 import com.mrwojack.gameopardy.R;
 import com.mrwojack.gameopardy.ResultsActivity;
 
-public class Question3VFFragment extends Fragment {
+public class Question1MCFragment extends Fragment {
 
     ///////////////////////// VARIABLES /////////////////////////
     // VARIABLES REFERENCIA A COMPONENTES //
@@ -33,9 +34,9 @@ public class Question3VFFragment extends Fragment {
     int points = 0;     // Puntuación del jugador
     int hits = 0;
     int mistakes = 0;
-    int questionNumber;
+    int questionNumber = 1;
 
-    public Question3VFFragment() {
+    public Question1MCFragment() {
         // Required empty public constructor
     }
 
@@ -43,7 +44,7 @@ public class Question3VFFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getParentFragmentManager().setFragmentResultListener("data2_vf", this, new FragmentResultListener() {
+        getParentFragmentManager().setFragmentResultListener("data3_vf", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 points = Integer.parseInt(result.getString("points"));
@@ -54,20 +55,16 @@ public class Question3VFFragment extends Fragment {
                 txtViewQuestions.setText(questionNumber + " / 10");
             }
         });
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_question3_v_f, container, false);
+        return inflater.inflate(R.layout.fragment_question1_m_c, container, false);
     }
 
-    /**
-     *
-     * @param view
-     * @param savedInstanceState
-     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -76,10 +73,16 @@ public class Question3VFFragment extends Fragment {
         final NavController NAV_CONTROLLER = Navigation.findNavController(view);
 
         //
-        txtViewPoints = view.findViewById(R.id.txtView_points3_vf);
-        txtViewQuestions = view.findViewById(R.id.txtView_questions3_vf);
-        ToggleButton optionsButton = view.findViewById(R.id.togBtt_q3_vf);
-        Button confirmButton = view.findViewById(R.id.btt_q3_vf);
+        txtViewPoints = view.findViewById(R.id.txtView_points1_mc);
+        txtViewQuestions = view.findViewById(R.id.txtView_questions1_mc);
+        CheckBox btn_answers[] = new CheckBox[6];
+        btn_answers[0] = view.findViewById(R.id.ckbx_q1a1);
+        btn_answers[1] = view.findViewById(R.id.ckbx_q1a2);
+        btn_answers[2] = view.findViewById(R.id.ckbx_q1a3);
+        btn_answers[3] = view.findViewById(R.id.ckbx_q1a4);
+        btn_answers[4] = view.findViewById(R.id.ckbx_q1a5);
+        btn_answers[5] = view.findViewById(R.id.ckbx_q1a6);
+        Button confirmButton = view.findViewById(R.id.btt_answer_q1_mc);
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
 
@@ -94,8 +97,15 @@ public class Question3VFFragment extends Fragment {
                         checkAnswer(view)
                 );
 
-                createBundle();
-                NAV_CONTROLLER.navigate(R.id.question1MCFragment);
+                Intent int_results = new Intent(view.getContext(), ResultsActivity.class);
+                int_results.putExtra("points", String.valueOf(points));
+                int_results.putExtra("hits", String.valueOf(hits));
+                int_results.putExtra("mistakes", String.valueOf(mistakes));
+
+                startActivity(int_results);
+
+                Activity a = FragmentManager.findFragment(view).getActivity();
+                a.finish();
             }
 
             /**
@@ -103,7 +113,27 @@ public class Question3VFFragment extends Fragment {
              * @param view
              */
             private boolean checkAnswer(View view) {
-                if(!optionsButton.isChecked()) {
+                int correctAnswers = 0;
+                String[] answers = {
+                        "Inazuma Eleven",
+                        "Ni No Kuni",
+                        "Profesor Layton"
+                };
+
+                for (CheckBox ckbox:
+                     btn_answers) {
+                    if(!ckbox.isChecked())
+                        continue;
+
+                    for (String answer:
+                         answers) {
+                        if(answer.equals(ckbox.getText().toString())){
+                            correctAnswers += 1;
+                        }
+                    }
+                }
+
+                if(correctAnswers != answers.length) {
                     Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
                     return false;
                 }
@@ -140,7 +170,7 @@ public class Question3VFFragment extends Fragment {
                 bundle.putString("mistakes", String.valueOf(mistakes));
                 questionNumber += 1;
                 bundle.putString("questionNumber", String.valueOf(questionNumber));
-                getParentFragmentManager().setFragmentResult("data3_vf", bundle);
+                getParentFragmentManager().setFragmentResult("data_mc", bundle);
             }
         });
     }

@@ -152,4 +152,11 @@
     <string name="answer">Responder</string>
     <string name="q2_VF">La inteligencia artificial que ayuda a Master Chief en Halo se llama Alexa</string>
     <string name="q3_VF">El primer Metal Gear salió en el año 1987</string>
+    <string name="q1_mc">¿Cuales de estos juegos pertenecen a la empresa de videojuegos Level-5?</string>
+    <string name="q1a1_mc">Inazuma Eleven</string>
+    <string name="q1a2_mc">Phoenix Wright: Ace Attorney</string>
+    <string name="q1a3_mc">Octopath Traveller</string>
+    <string name="q1a4_mc">Ni No Kuni</string>
+    <string name="q1a5_mc">Profesor Layton</string>
+    <string name="q1a6_mc">Danganronpa: Trigger Happy Havoc</string>
 </resources>
