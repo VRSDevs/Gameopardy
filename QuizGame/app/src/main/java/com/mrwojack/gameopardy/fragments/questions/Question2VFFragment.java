@@ -51,7 +51,7 @@ public class Question2VFFragment extends Fragment {
                 mistakes = Integer.parseInt(result.getString("mistakes"));
                 questionNumber = Integer.parseInt(result.getString("questionNumber"));
                 txtViewPoints.setText(String.valueOf(points));
-                txtViewQuestions.setText(questionNumber + " / 10");
+                txtViewQuestions.setText(questionNumber + " / 9");
             }
         });
     }
