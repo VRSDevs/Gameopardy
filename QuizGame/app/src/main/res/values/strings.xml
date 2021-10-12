@@ -138,8 +138,6 @@
 
     <string name="q_true">Verdadero</string>
     <string name="q_false">Falso</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="endGame">Fin de la partida</string>
     <string name="puntuation">Puntuación</string>
