@@ -165,4 +165,11 @@
     <string name="q2a4_mc"><![CDATA[Mario & Luigi: Superstar Saga]]></string>
     <string name="q2a5_mc">Super Mario World</string>
     <string name="q2a6_mc">Super Mario Bros: The Lost Levels</string>
+    <string name="q3_mc">¿Cuales de estos seres enemigos en la saga Metroid?</string>
+    <string name="q3a1_mc">Metroides</string>
+    <string name="q3a2_mc">Zoomers</string>
+    <string name="q3a3_mc">Sanghelis</string>
+    <string name="q3a4_mc">Wendigos</string>
+    <string name="q3a5_mc">Creepers</string>
+    <string name="q3a6_mc">Zebesianos</string>
 </resources>
