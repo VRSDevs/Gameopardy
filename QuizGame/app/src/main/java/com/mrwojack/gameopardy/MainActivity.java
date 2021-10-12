@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void endGame(View view) {
+
         System.exit(0);
     }
 }
