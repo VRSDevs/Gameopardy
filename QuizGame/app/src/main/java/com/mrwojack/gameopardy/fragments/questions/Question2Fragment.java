@@ -27,34 +27,56 @@ public class Question2Fragment extends Fragment {
     ///////////////////////// VARIABLES /////////////////////////
     // VARIABLES REFERENCIA A COMPONENTES //
     TextView txtViewPoints;     // TextView de la puntuación del jugador
-    TextView txtViewQuestions;
+    TextView txtViewQuestions;  // TextView del número de preguntas
     // OTRAS VARIABLES //
     int points = 0;     // Puntuación del jugador
-    int hits = 0;
-    int mistakes = 0;
-    int questionNumber;
+    int hits = 0;       // Número de aciertos
+    int mistakes = 0;   // Número de errores
+    int questionNumber = 1;     // Número de pregunta actual
 
+    /**
+     *  Constructor vacío
+     */
     public Question2Fragment() {
         // Required empty public constructor
     }
 
+    /**
+     * Método ejecutado cuando se crea el fragmento
+     * @param savedInstanceState -> Referencia a objeto bundle que guarda el estado anterior de la actividad
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Asignación de resultado de fragmento a una clave determinada (la establecida en el fragmento anterior)
         getParentFragmentManager().setFragmentResultListener("data", this, new FragmentResultListener() {
+            /**
+             * Método para administrar los resultados pasados entre fragmentos
+             * @param requestKey -> Clave de petición
+             * @param result -> Bundle resultado de la petición
+             */
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                // Asignación de valores
                 points = Integer.parseInt(result.getString("points"));
                 hits = Integer.parseInt(result.getString("hits"));
                 mistakes = Integer.parseInt(result.getString("mistakes"));
                 questionNumber = Integer.parseInt(result.getString("questionNumber"));
+                // Actualización de la UI dados los valores
                 txtViewPoints.setText(String.valueOf(points));
                 txtViewQuestions.setText(questionNumber + " / 9");
             }
         });
     }
 
+    /**
+     * Método ejecutado y que devuelve la vista creada asignada al fragmento
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,13 +84,19 @@ public class Question2Fragment extends Fragment {
         return inflater.inflate(R.layout.fragment_question2, container, false);
     }
 
+    /**
+     * Método ejecutado instantes posteriores a @onCreateView
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // VARIABLES //
+        // Variable de navegación entre fragmentos
         final NavController NAV_CONTROLLER = Navigation.findNavController(view);
-
-        //
+        // Referencias a componentes de la vista
         txtViewPoints = view.findViewById(R.id.txtView_points2);
         txtViewQuestions = view.findViewById(R.id.txtView_questions2);
         Button btn_answers[] = new Button[4];
@@ -77,13 +105,15 @@ public class Question2Fragment extends Fragment {
         btn_answers[2] = view.findViewById(R.id.btt_q2a3);
         btn_answers[3] = view.findViewById(R.id.btt_q2a4);
 
+        // Por cada botón de respuesta
         for (Button btn:
                 btn_answers) {
+            // Añadir un evento de escucha de clic
             btn.setOnClickListener(new View.OnClickListener() {
 
                 /**
-                 *
-                 * @param view
+                 * Método ejecutado cuando se hace clic en el botón
+                 * @param view -> Referencia a la vista
                  */
                 @Override
                 public void onClick(View view) {
@@ -92,54 +122,70 @@ public class Question2Fragment extends Fragment {
                             checkAnswer(view)
                     );
                     createBundle();
+                    // Navegación al siguiente fragmento
                     NAV_CONTROLLER.navigate(R.id.question3Fragment);
                 }
 
                 /**
-                 *
-                 * @param view
+                 * Método de comprobación de respuesta introducida
+                 * @param view -> Referencia a la vista
                  */
                 private boolean checkAnswer(View view) {
+                    // VARIABLES //
+                    // Respuesta del jugador
                     String optionText = btn.getText().toString();
+                    // Respuesta correcta
                     String correctAnswer = "PlayStation 2";
 
+                    // Si no son iguales
                     if(!optionText.equals(correctAnswer)) {
+                        // Advertencia de respuesta incorrecta
                         Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
                         return false;
                     }
 
+                    // Advertencia de respuesta correcta
                     Toast.makeText(view.getContext(), "Correcto", Toast.LENGTH_SHORT).show();
                     return true;
                 }
 
                 /**
-                 *
-                 * @param view
-                 * @param result
+                 * Método para la actualización de puntos
+                 * @param view -> Referencia a la vista
+                 * @param result -> Resultado de la comprobación de respuesta
                  */
                 private void updatePoints(View view, boolean result){
-                    //
+                    // Obtención de los puntos mostrados en la UI
                     points = Integer.parseInt(txtViewPoints.getText().toString());
+
+                    // Si falló
                     if(!result) {
+                        // Resta de puntos
                         points -= 50;
+                        // Suma de respuestas incorrectas
                         mistakes++;
                     } else {
+                        // Suma de puntos
                         points += 100;
+                        // Suma de respuestas de correctas
                         hits++;
                     }
                 }
 
                 /**
-                 *
+                 * Método para la generación de un bundle
                  */
                 private void createBundle(){
-                    //
+                    // VARIABLES //
+                    // Bundle de comunicación
                     Bundle bundle = new Bundle();
+                    // Inserción de datos en el bundle
                     bundle.putString("points", String.valueOf(points));
                     bundle.putString("hits", String.valueOf(hits));
                     bundle.putString("mistakes", String.valueOf(mistakes));
                     questionNumber += 1;
                     bundle.putString("questionNumber", String.valueOf(questionNumber));
+                    // Envío del bundle al FragmentManager
                     getParentFragmentManager().setFragmentResult("data2", bundle);
                 }
             });
