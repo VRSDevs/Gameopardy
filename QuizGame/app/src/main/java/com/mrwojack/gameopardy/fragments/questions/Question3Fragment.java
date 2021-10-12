@@ -27,10 +27,12 @@ public class Question3Fragment extends Fragment {
     ///////////////////////// VARIABLES /////////////////////////
     // VARIABLES REFERENCIA A COMPONENTES //
     TextView txtViewPoints;     // TextView de la puntuación del jugador
+    TextView txtViewQuestions;
     // OTRAS VARIABLES //
     int points;     // Puntuación del jugador
     int hits = 0;
     int mistakes = 0;
+    int questionNumber;
 
     public Question3Fragment() {
         // Required empty public constructor
@@ -46,7 +48,9 @@ public class Question3Fragment extends Fragment {
                 points = Integer.parseInt(result.getString("points"));
                 hits = Integer.parseInt(result.getString("hits"));
                 mistakes = Integer.parseInt(result.getString("mistakes"));
+                questionNumber = Integer.parseInt(result.getString("questionNumber"));
                 txtViewPoints.setText(String.valueOf(points));
+                txtViewQuestions.setText(questionNumber + " / 10");
             }
         });
     }
@@ -66,6 +70,7 @@ public class Question3Fragment extends Fragment {
 
         //
         txtViewPoints = view.findViewById(R.id.txtView_points3);
+        txtViewQuestions = view.findViewById(R.id.txtView_questions3);
         Button btn_answers[] = new Button[4];
         btn_answers[0] = view.findViewById(R.id.btt_q3a1);
         btn_answers[1] = view.findViewById(R.id.btt_q3a2);
@@ -134,6 +139,8 @@ public class Question3Fragment extends Fragment {
                     bundle.putString("points", String.valueOf(points));
                     bundle.putString("hits", String.valueOf(hits));
                     bundle.putString("mistakes", String.valueOf(mistakes));
+                    questionNumber += 1;
+                    bundle.putString("questionNumber", String.valueOf(questionNumber));
                     getParentFragmentManager().setFragmentResult("data3", bundle);
                 }
             });
