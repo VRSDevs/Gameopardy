@@ -81,7 +81,7 @@ public class Question1Fragment extends Fragment {
         btn_answers[3] = view.findViewById(R.id.btt_q1a4);
 
         //
-        txtViewQuestions.setText(questionNumber + " / 10");
+        txtViewQuestions.setText(questionNumber + " / 9");
 
         //
         for (Button btn:
