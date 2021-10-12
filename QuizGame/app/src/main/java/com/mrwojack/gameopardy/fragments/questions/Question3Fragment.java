@@ -1,4 +1,4 @@
-package com.mrwojack.gameopardy.fragments;
+package com.mrwojack.gameopardy.fragments.questions;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,15 +22,17 @@ import android.widget.Toast;
 import com.mrwojack.gameopardy.R;
 import com.mrwojack.gameopardy.ResultsActivity;
 
-public class Question2Fragment extends Fragment {
+public class Question3Fragment extends Fragment {
 
     ///////////////////////// VARIABLES /////////////////////////
     // VARIABLES REFERENCIA A COMPONENTES //
     TextView txtViewPoints;     // TextView de la puntuación del jugador
     // OTRAS VARIABLES //
-    int points = 0;     // Puntuación del jugador
+    int points;     // Puntuación del jugador
+    int hits = 0;
+    int mistakes = 0;
 
-    public Question2Fragment() {
+    public Question3Fragment() {
         // Required empty public constructor
     }
 
@@ -38,10 +40,12 @@ public class Question2Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getParentFragmentManager().setFragmentResultListener("data", this, new FragmentResultListener() {
+        getParentFragmentManager().setFragmentResultListener("data2", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 points = Integer.parseInt(result.getString("points"));
+                hits = Integer.parseInt(result.getString("hits"));
+                mistakes = Integer.parseInt(result.getString("mistakes"));
                 txtViewPoints.setText(String.valueOf(points));
             }
         });
@@ -51,7 +55,7 @@ public class Question2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_question2, container, false);
+        return inflater.inflate(R.layout.fragment_question3, container, false);
     }
 
     @Override
@@ -61,12 +65,12 @@ public class Question2Fragment extends Fragment {
         final NavController NAV_CONTROLLER = Navigation.findNavController(view);
 
         //
-        txtViewPoints = view.findViewById(R.id.txtView_points2);
+        txtViewPoints = view.findViewById(R.id.txtView_points3);
         Button btn_answers[] = new Button[4];
-        btn_answers[0] = view.findViewById(R.id.btt_q2a1);
-        btn_answers[1] = view.findViewById(R.id.btt_q2a2);
-        btn_answers[2] = view.findViewById(R.id.btt_q2a3);
-        btn_answers[3] = view.findViewById(R.id.btt_q2a4);
+        btn_answers[0] = view.findViewById(R.id.btt_q3a1);
+        btn_answers[1] = view.findViewById(R.id.btt_q3a2);
+        btn_answers[2] = view.findViewById(R.id.btt_q3a3);
+        btn_answers[3] = view.findViewById(R.id.btt_q3a4);
 
         for (Button btn:
                 btn_answers) {
@@ -78,29 +82,59 @@ public class Question2Fragment extends Fragment {
                  */
                 @Override
                 public void onClick(View view) {
-                    checkAnswer(view);
+                    updatePoints(
+                            view,
+                            checkAnswer(view)
+                    );
 
-                    Activity a = FragmentManager.findFragment(view).getActivity();
-
-                    Intent int_results = new Intent(view.getContext(), ResultsActivity.class);
-                    startActivity(int_results);
-                    a.finish();
+                    createBundle();
+                    NAV_CONTROLLER.navigate(R.id.question1VFFragment);
                 }
 
                 /**
                  *
                  * @param view
                  */
-                private void checkAnswer(View view) {
-                    String optionText = (String)btn.getText();
-                    String correctAnswer = "PlayStation 2";
+                private boolean checkAnswer(View view) {
+                    String optionText = btn.getText().toString();
+                    String correctAnswer = "No Mans Sky";
 
                     if(!optionText.equals(correctAnswer)) {
                         Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
-                        return;
+                        return false;
                     }
 
                     Toast.makeText(view.getContext(), "Correcto", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+
+                /**
+                 *
+                 * @param view
+                 * @param result
+                 */
+                private void updatePoints(View view, boolean result){
+                    //
+                    points = Integer.parseInt(txtViewPoints.getText().toString());
+                    if(!result) {
+                        points -= 50;
+                        mistakes++;
+                    } else {
+                        points += 100;
+                        hits++;
+                    }
+                }
+
+                /**
+                 *
+                 */
+                private void createBundle(){
+                    //
+                    Bundle bundle = new Bundle();
+                    bundle.putString("points", String.valueOf(points));
+                    bundle.putString("hits", String.valueOf(hits));
+                    bundle.putString("mistakes", String.valueOf(mistakes));
+                    getParentFragmentManager().setFragmentResult("data3", bundle);
                 }
             });
         }

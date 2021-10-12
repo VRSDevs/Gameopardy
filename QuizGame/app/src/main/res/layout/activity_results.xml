@@ -30,6 +30,7 @@
         android:layout_marginBottom="72dp"
         android:background="@drawable/round_shape"
         android:contentDescription="@string/desc_bttPlayAgain"
+        android:onClick="playAgain"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btt_home"
         app:layout_constraintHorizontal_bias="0.0"
@@ -103,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_puntuation" />
 
     <TextView
-        android:id="@+id/txtView_finalCorrectAns"
+        android:id="@+id/txtView_finalHits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/points"
@@ -115,7 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_correctAnswers" />
 
     <TextView
-        android:id="@+id/txtView_finalWrongAns"
+        android:id="@+id/txtView_finalMistakes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/points"

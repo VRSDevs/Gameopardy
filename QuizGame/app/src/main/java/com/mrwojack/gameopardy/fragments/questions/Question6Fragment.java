@@ -1,4 +1,4 @@
-package com.mrwojack.gameopardy.fragments;
+package com.mrwojack.gameopardy.fragments.questions;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.mrwojack.gameopardy.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Question3Fragment#newInstance} factory method to
+ * Use the {@link Question6Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Question3Fragment extends Fragment {
+public class Question6Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Question3Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Question3Fragment() {
+    public Question6Fragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class Question3Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Question3Fragment.
+     * @return A new instance of fragment Question6Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Question3Fragment newInstance(String param1, String param2) {
-        Question3Fragment fragment = new Question3Fragment();
+    public static Question6Fragment newInstance(String param1, String param2) {
+        Question6Fragment fragment = new Question6Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class Question3Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_question3, container, false);
+        return inflater.inflate(R.layout.fragment_question6, container, false);
     }
 }
