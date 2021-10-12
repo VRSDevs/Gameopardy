@@ -158,4 +158,11 @@
     <string name="q1a4_mc">Ni No Kuni</string>
     <string name="q1a5_mc">Profesor Layton</string>
     <string name="q1a6_mc">Danganronpa: Trigger Happy Havoc</string>
+    <string name="q2_mc">¿Cuales de estos juegos son considerados spin-offs de la saga Mario?</string>
+    <string name="q2a1_mc">Super Mario 64</string>
+    <string name="q2a2_mc">New Super Mario Bros U</string>
+    <string name="q2a3_mc">Paper Mario</string>
+    <string name="q2a4_mc"><![CDATA[Mario & Luigi: Superstar Saga]]></string>
+    <string name="q2a5_mc">Super Mario World</string>
+    <string name="q2a6_mc">Super Mario Bros: The Lost Levels</string>
 </resources>
