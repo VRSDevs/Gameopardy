@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @param view
+     */
+    public void closeGame(View view){
+        close();
+    }
+
     /****************** MÉTODOS DE EVENTO *******************/
     /**
      *
@@ -48,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onKeyDown(keyCode, event);
     }
+
+    /**
+     * 
+     */
+    @Override
+    public void onBackPressed() {}
 
     /****************** OTROS MÉTODOS *******************/
     /**
