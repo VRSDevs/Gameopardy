@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
     /****************** MÉTODOS DE EVENTO *******************/
     /**
-     *
-     * @param keyCode
-     * @param event
+     * Método para sobreescribir el comportamiento de teclas pulsadas
+     * @param keyCode -> Código de la tecla
+     * @param event -> Evento de la tecla pulsada
      * @return
      */
     @Override
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 
+     * Método sobreescrito para el comportamiento del botón de retroceso
      */
     @Override
     public void onBackPressed() {}
