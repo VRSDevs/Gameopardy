@@ -1,7 +1,7 @@
 # Gameopardy
 
 ## Descripción
--
+Gameopardy se trata de una aplicación de móvil para el sistema operativo Android. Este juego consistirá en responder la mayor cantidad de preguntas de manera correcta acerca diversas categorías sobre los videojuegos.
 
 ## Instalación 
 1. Descargar la apk del archivo de la [release v1.0](https://github.com/VRSDevs/Gameopardy/releases/tag/v1.0).
