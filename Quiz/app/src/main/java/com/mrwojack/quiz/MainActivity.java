@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //
                         Intent intClose = new Intent(Intent.ACTION_MAIN);
-                        //
                         intClose.addCategory(Intent.CATEGORY_HOME);
                         intClose.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         //
