@@ -25,7 +25,7 @@ private List<NormalQuestion> questionsList;
         setContentView(R.layout.activity_main);
 
         DbHelper dbHelper = new DbHelper(this);
-        questionsList = dbHelper.getAllQuestions();
+        questionsList = dbHelper.getAllNormalQuestions();
     }
 
     /**
