@@ -66,6 +66,16 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuestionsImagesTable.COLUMN_OPTION4 + " TEXT, " +
                 QuestionsImagesTable.COLUMN_ANSWER + " INTEGER " + ")";
 
+        final String SQL_CREATE_AUDIO_QUESTIONS_TABLE = "CREATE TABLE " +
+                QuizContract.AudioQuestions.TABLE_NAME + " ( " +
+                QuizContract.AudioQuestions._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuizContract.AudioQuestions.COLUMN_QUESTION + " TEXT, " +
+                QuizContract.AudioQuestions.COLUMN_OPTION1 + " TEXT, " +
+                QuizContract.AudioQuestions.COLUMN_OPTION2 + " TEXT, " +
+                QuizContract.AudioQuestions.COLUMN_OPTION3 + " TEXT, " +
+                QuizContract.AudioQuestions.COLUMN_OPTION4 + " TEXT, " +
+                QuizContract.AudioQuestions.COLUMN_ANSWER + " INTEGER " + ")";
+
         final String SQL_CREATE_TRUE_QUESTIONS_TABLE = "CREATE TABLE " +
                 QuizContract.VerdaderoFalsoQuestions.TABLE_NAME + " ( " +
                 QuizContract.VerdaderoFalsoQuestions._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -75,6 +85,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuizContract.VerdaderoFalsoQuestions.COLUMN_ANSWER + " INTEGER " + ")";
 
 
+
+        db.execSQL(SQL_CREATE_TRUE_QUESTIONS_TABLE);
+        db.execSQL(SQL_CREATE_AUDIO_QUESTIONS_TABLE);
         db.execSQL(SQL_CREATE_NORMAL_QUESTIONS_TABLE);
         db.execSQL(SQL_CREATE_MULTIPLE_QUESTIONS_TABLE);
         db.execSQL(SQL_CREATE_IMAGES_QUESTIONS_TABLE);
