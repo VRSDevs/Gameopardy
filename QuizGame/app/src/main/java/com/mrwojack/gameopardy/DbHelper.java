@@ -77,14 +77,12 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuizContract.AudioQuestionsTable.COLUMN_ANSWER + " INTEGER " + ")";
 
         final String SQL_CREATE_TRUE_QUESTIONS_TABLE = "CREATE TABLE " +
-                QuizContract.VerdaderoFalsoQuestions.TABLE_NAME + " ( " +
-                QuizContract.VerdaderoFalsoQuestions._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                QuizContract.VerdaderoFalsoQuestions.COLUMN_QUESTION + " TEXT, " +
-                QuizContract.VerdaderoFalsoQuestions.COLUMN_OPTION1 + " TEXT, " +
-                QuizContract.VerdaderoFalsoQuestions.COLUMN_OPTION2 + " TEXT, " +
-                QuizContract.VerdaderoFalsoQuestions.COLUMN_ANSWER + " INTEGER " + ")";
-
-
+                QuizContract.VerdaderoFalsoQuestionsTable.TABLE_NAME + " ( " +
+                QuizContract.VerdaderoFalsoQuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_QUESTION + " TEXT, " +
+                QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_OPTION1 + " TEXT, " +
+                QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_OPTION2 + " TEXT, " +
+                QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_ANSWER + " INTEGER " + ")";
 
         db.execSQL(SQL_CREATE_TRUE_QUESTIONS_TABLE);
         db.execSQL(SQL_CREATE_AUDIO_QUESTIONS_TABLE);
@@ -93,8 +91,6 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_IMAGES_QUESTIONS_TABLE);
 
         fillQuestionsTable();
-
-
     }
 
    private void fillQuestionsTable(){
@@ -107,13 +103,16 @@ public class DbHelper extends SQLiteOpenHelper {
         addQuestionN(qN3);
 
         ImagesQuestions qI1 = new ImagesQuestions("¿hola?", "A", "B", "C", "D", 1);
-
+        addQuestionI(qI1);
         VerdaderoFalsoQuestions qVF1 = new VerdaderoFalsoQuestions("","","",1);
 
         AudioQuestions qA1 = new AudioQuestions("¿hola?", "A", "B", "C", "D", 1);
-
+        addQuestionA(qA1);
         MultipleChoiceQuestions qM1 = new MultipleChoiceQuestions("a","a","a","a","a","a","a",1);
+        addQuestionM(qM1);
     }
+
+
 
     private void addQuestionN(NormalQuestion normalquestion){
         ContentValues cv = new ContentValues();
@@ -161,9 +160,26 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(AudioQuestionsTable.TABLE_NAME, null, cv);
     }
 
+    private void addQuestionVF(VerdaderoFalsoQuestions VFquestions){
+        ContentValues cv = new ContentValues();
+        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_QUESTION, VFquestions.getQuestion());
+        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_OPTION1, VFquestions.getOption1());
+        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_OPTION2, VFquestions.getOption2());
+        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_ANSWER, VFquestions.getAnswer());
+        db.insert(VerdaderoFalsoQuestionsTable.TABLE_NAME, null, cv);
+    }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME);
+        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS " + QuestionsMultipleTable.TABLE_NAME);
+        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS " + AudioQuestionsTable.TABLE_NAME);
+        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME);
+        onCreate(db);
         db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME);
         onCreate(db);
     }
