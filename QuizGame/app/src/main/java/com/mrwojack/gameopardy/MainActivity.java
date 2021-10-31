@@ -8,13 +8,13 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.mrwojack.gameopardy.fragments.questions.NormalQuestion;
+
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textViewQuestion;
-    private TextView textViewScore;
-    private TextView textViewQuestions;
-    private TextView textViewCountDown;
-    private RadioGroup rb
+private List<NormalQuestion> questionsList;
     /**
      * Método ejecutado cuando se crea la actividad
      * @param savedInstanceState -> Referencia a objeto bundle que guarda el estado anterior de la actividad
@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        DbHelper dbHelper = new DbHelper(this);
+        questionsList = dbHelper.getAllQuestions();
     }
 
     /**
