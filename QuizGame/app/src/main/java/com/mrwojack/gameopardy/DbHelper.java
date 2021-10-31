@@ -29,7 +29,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         this.db = db;
         //Creacion de la tabla de las preguntas normales
-        final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
+        final String SQL_CREATE_NORMAL_QUESTIONS_TABLE = "CREATE TABLE " +
               QuizContract.QuestionsTable.TABLE_NAME + " ( " +
                 QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 QuestionsTable.COLUMN_QUESTION + " TEXT, " +
@@ -40,30 +40,55 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuestionsTable.COLUMN_ANSWER + " INTEGER " + ")";
 
         //Creacion de la tabla de las preguntas de varias opciones
-        final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
-                QuizContract.QuestionsTable.TABLE_NAME + " ( " +
+        final String SQL_CREATE_MULTIPLE_QUESTIONS_TABLE = "CREATE TABLE " +
+                QuizContract.QuestionsMultipleTable.TABLE_NAME + " ( " +
                 QuestionsMultipleTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 QuestionsMultipleTable.COLUMN_QUESTION + " TEXT, " +
                 QuestionsMultipleTable.COLUMN_OPTION1 + " TEXT, " +
                 QuestionsMultipleTable.COLUMN_OPTION2 + " TEXT, " +
                 QuestionsMultipleTable.COLUMN_OPTION3 + " TEXT, " +
                 QuestionsMultipleTable.COLUMN_OPTION4 + " TEXT, " +
+                QuestionsMultipleTable.COLUMN_OPTION5 + " TEXT, " +
+                QuestionsMultipleTable.COLUMN_OPTION6 + " TEXT, " +
                 QuestionsMultipleTable.COLUMN_ANSWER + " INTEGER " + ")";
 
+        final String SQL_CREATE_IMAGES_QUESTIONS_TABLE = "CREATE TABLE " +
+                QuizContract.QuestionsImagesTable.TABLE_NAME + " ( " +
+                QuestionsImagesTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuestionsImagesTable.COLUMN_QUESTION + " TEXT, " +
+                QuestionsImagesTable.COLUMN_OPTION1 + " TEXT, " +
+                QuestionsImagesTable.COLUMN_OPTION2 + " TEXT, " +
+                QuestionsImagesTable.COLUMN_OPTION3 + " TEXT, " +
+                QuestionsImagesTable.COLUMN_OPTION4 + " TEXT, " +
+                QuestionsImagesTable.COLUMN_ANSWER + " INTEGER " + ")";
+
+        final String SQL_CREATE_TRUEFALSE_QUESTIONS_TABLE = "CREATE TABLE " +
+                QuizContract.VerdaderoFalsoQuestions.TABLE_NAME + " ( " +
+                VerdaderoFalsoQuestions._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                VerdaderoFalsoQuestions.COLUMN_QUESTION + " TEXT, " +
+                VerdaderoFalsoQuestions.COLUMN_OPTION1 + " TEXT, " +
+                VerdaderoFalsoQuestions.COLUMN_OPTION2 + " TEXT, " +
+                VerdaderoFalsoQuestions.COLUMN_ANSWER + " INTEGER " + ")";
 
 
-        db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
+        db.execSQL(SQL_CREATE_NORMAL_QUESTIONS_TABLE);
+        db.execSQL(SQL_CREATE_MULTIPLE_QUESTIONS_TABLE);
+        db.execSQL(SQL_CREATE_IMAGES_QUESTIONS_TABLE);
+        db.execSQL(SQL_CREATE_TRUEFALSE_QUESTIONS_TABLE);
+
         fillQuestionsTable();
     }
 
    private void fillQuestionsTable(){
-
+        //Preguntas normales
         NormalQuestion q1 = new NormalQuestion("¿hola?", "A", "B", "C", "D", 1);
         addQuestion(q1);
         NormalQuestion q2 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
         addQuestion(q2);
         NormalQuestion q3 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
         addQuestion(q3);
+
+        
 
     }
 
