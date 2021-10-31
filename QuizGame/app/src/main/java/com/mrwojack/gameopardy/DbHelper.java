@@ -109,17 +109,29 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
     }
 
-    private void addQuestionM(NormalQuestion normalquestion){
+    private void addQuestionM(MultipleChoiceQuestions Multiplequestion){
         ContentValues cv = new ContentValues();
-        cv.put(QuestionsTable.COLUMN_QUESTION, normalquestion.getQuestion());
-        cv.put(QuestionsTable.COLUMN_OPTION1, normalquestion.getOption1());
-        cv.put(QuestionsTable.COLUMN_OPTION2, normalquestion.getOption2());
-        cv.put(QuestionsTable.COLUMN_OPTION3, normalquestion.getOption3());
-        cv.put(QuestionsTable.COLUMN_OPTION4, normalquestion.getOption4());
-        cv.put(QuestionsTable.COLUMN_ANSWER, normalquestion.getAnswer());
-        db.insert(QuestionsTable.TABLE_NAME, null, cv);
+        cv.put(QuestionsMultipleTable.COLUMN_QUESTION, Multiplequestion.getQuestion());
+        cv.put(QuestionsMultipleTable.COLUMN_OPTION1, Multiplequestion.getOption1());
+        cv.put(QuestionsMultipleTable.COLUMN_OPTION2, Multiplequestion.getOption2());
+        cv.put(QuestionsMultipleTable.COLUMN_OPTION3, Multiplequestion.getOption3());
+        cv.put(QuestionsMultipleTable.COLUMN_OPTION4, Multiplequestion.getOption4());
+        cv.put(QuestionsMultipleTable.COLUMN_OPTION5, Multiplequestion.getOption5());
+        cv.put(QuestionsMultipleTable.COLUMN_OPTION6, Multiplequestion.getOption6());
+        cv.put(QuestionsMultipleTable.COLUMN_ANSWER, Multiplequestion.getAnswer());
+        db.insert(QuestionsMultipleTable.TABLE_NAME, null, cv);
     }
 
+    private void addQuestionI(ImagesQuestions imagesQuestions){
+        ContentValues cv = new ContentValues();
+        cv.put(QuestionsImagesTable.COLUMN_QUESTION, imagesQuestions.getQuestion());
+        cv.put(QuestionsImagesTable.COLUMN_OPTION1, imagesQuestions.getOption1());
+        cv.put(QuestionsImagesTable.COLUMN_OPTION2, imagesQuestions.getOption2());
+        cv.put(QuestionsImagesTable.COLUMN_OPTION3, imagesQuestions.getOption3());
+        cv.put(QuestionsImagesTable.COLUMN_OPTION4, imagesQuestions.getOption4());
+        cv.put(QuestionsImagesTable.COLUMN_ANSWER, imagesQuestions.getAnswer());
+        db.insert(QuestionsImagesTable.TABLE_NAME, null, cv);
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
