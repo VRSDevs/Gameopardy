@@ -81,11 +81,11 @@ public class DbHelper extends SQLiteOpenHelper {
     if(c.moveToFirst()){
         do{
             NormalQuestion question = new NormalQuestion();
-            question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)));
-            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
-            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
-            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
-            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)));
+            question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)+1));
+            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)+1));
+            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)+1));
+            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)+1));
+            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)+1));
             questionList.add(question);
         }while(c.moveToNext());
     }

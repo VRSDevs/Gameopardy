@@ -5,9 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView textViewQuestion;
+    private TextView textViewScore;
+    private TextView textViewQuestions;
+    private TextView textViewCountDown;
+    private RadioGroup rb
     /**
      * Método ejecutado cuando se crea la actividad
      * @param savedInstanceState -> Referencia a objeto bundle que guarda el estado anterior de la actividad
