@@ -5,9 +5,11 @@ import android.provider.BaseColumns;
 
 public final class QuizContract{
 
-    private QuizContract(){}
+    private QuizContract(){
 
-    public class QuestionsTable implements BaseColumns {
+    }
+
+    public static class QuestionsTable implements BaseColumns {
         public static final String TABLE_NAME = "quiz_normal_questions";
         public static final String COLUMN_QUESTION = "question";
         public static final String COLUMN_OPTION1 = "option1";

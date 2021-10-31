@@ -2,6 +2,7 @@ package com.mrwojack.gameopardy;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.mrwojack.gameopardy.QuizContract.*;
@@ -9,15 +10,18 @@ import com.mrwojack.gameopardy.fragments.questions.NormalQuestion;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DbHelper extends SQLiteOpenHelper {
-    private static  final String DATABASE_NAME = "Quizz.db";
+    private static  final String DATABASE_NAME = "Quiz.db";
     private static final int DATABASE_VERSION = 1;
 
     private SQLiteDatabase db;
 
 
 
-    public DbHelper(@Nullable Context context) {
+    public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -26,7 +30,7 @@ public class DbHelper extends SQLiteOpenHelper {
         this.db = db;
 
         final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
-              QuizContract.QuestionsTable.TABLE_NAME + " (" +
+              QuizContract.QuestionsTable.TABLE_NAME + " ( " +
                 QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 QuestionsTable.COLUMN_QUESTION + " TEXT, " +
                 QuestionsTable.COLUMN_OPTION1 + " TEXT, " +
@@ -42,9 +46,12 @@ public class DbHelper extends SQLiteOpenHelper {
 
    private void fillQuestionsTable(){
 
-
-        NormalQuestion q1 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
+        NormalQuestion q1 = new NormalQuestion("¿hola?", "A", "B", "C", "D", 1);
         addQuestion(q1);
+        NormalQuestion q2 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
+        addQuestion(q2);
+        NormalQuestion q3 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
+        addQuestion(q3);
 
     }
 
@@ -65,4 +72,26 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME);
         onCreate(db);
     }
+
+    public List<NormalQuestion> getAllQuestions(){
+        List<NormalQuestion> questionList = new ArrayList<>();
+        db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_NAME, null);
+
+    if(c.moveToFirst()){
+        do{
+            NormalQuestion question = new NormalQuestion();
+            question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)));
+            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
+            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
+            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
+            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)));
+            questionList.add(question);
+        }while(c.moveToNext());
+    }
+    c.close();
+    return questionList;
+
+    }
+
 }
