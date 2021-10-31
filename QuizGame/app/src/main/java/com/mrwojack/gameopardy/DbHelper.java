@@ -28,7 +28,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         this.db = db;
-
+        //Creacion de la tabla de las preguntas normales
         final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
               QuizContract.QuestionsTable.TABLE_NAME + " ( " +
                 QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -38,6 +38,18 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuestionsTable.COLUMN_OPTION3 + " TEXT, " +
                 QuestionsTable.COLUMN_OPTION4 + " TEXT, " +
                 QuestionsTable.COLUMN_ANSWER + " INTEGER " + ")";
+
+        //Creacion de la tabla de las preguntas de varias opciones
+        final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
+                QuizContract.QuestionsTable.TABLE_NAME + " ( " +
+                QuestionsMultipleTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuestionsMultipleTable.COLUMN_QUESTION + " TEXT, " +
+                QuestionsMultipleTable.COLUMN_OPTION1 + " TEXT, " +
+                QuestionsMultipleTable.COLUMN_OPTION2 + " TEXT, " +
+                QuestionsMultipleTable.COLUMN_OPTION3 + " TEXT, " +
+                QuestionsMultipleTable.COLUMN_OPTION4 + " TEXT, " +
+                QuestionsMultipleTable.COLUMN_ANSWER + " INTEGER " + ")";
+
 
 
         db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
