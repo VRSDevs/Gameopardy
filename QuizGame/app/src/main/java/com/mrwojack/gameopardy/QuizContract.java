@@ -20,7 +20,7 @@ public final class QuizContract{
 
     }
 
-    public static class AudioQuestions implements BaseColumns {
+    public static class AudioQuestionsTable implements BaseColumns {
         public static final String TABLE_NAME = "quiz_audio_questions";
         public static final String COLUMN_QUESTION = "question";
         public static final String COLUMN_OPTION1 = "option1";

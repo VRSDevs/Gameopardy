@@ -18,6 +18,11 @@ public class AudioQuestions {
         this.answer = answer;
     }
 
+
+    public AudioQuestions(){
+
+    }
+
     public String getQuestion() {
         return question;
     }
