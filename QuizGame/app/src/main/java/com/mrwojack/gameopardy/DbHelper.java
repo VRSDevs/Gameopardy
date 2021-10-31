@@ -188,7 +188,7 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     public List<NormalQuestion> getAllNormalQuestions(){
-        List<NormalQuestion> questionList = new ArrayList<>();
+        List<NormalQuestion> questionList2 = new ArrayList<>();
         db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_NAME, null);
 
@@ -197,20 +197,64 @@ public class DbHelper extends SQLiteOpenHelper {
             NormalQuestion question = new NormalQuestion();
             question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)+1));
             question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)+1));
-            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)+1));
-            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)+1));
-            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)+1));
+            question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)+1));
+            question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)+1));
+            question.setOption4(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)+1));
             question.setAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER)+1));
-            questionList.add(question);
+            questionList2.add(question);
         }while(c.moveToNext());
     }
     c.close();
-    return questionList;
+    return questionList2;
 
     }
 
     public List<VerdaderoFalsoQuestions> getAllVTQuestions(){
-        List<VerdaderoFalsoQuestions> questionList = new ArrayList<>();
+        List<VerdaderoFalsoQuestions> questionList1 = new ArrayList<>();
+        db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + VerdaderoFalsoQuestionsTable.TABLE_NAME, null);
+
+        if(c.moveToFirst()){
+            do{
+                VerdaderoFalsoQuestions VFquestion = new VerdaderoFalsoQuestions();
+                VFquestion.setQuestion(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_QUESTION)+1));
+                VFquestion.setOption1(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_OPTION1)+1));
+                VFquestion.setOption2(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_OPTION2)+1));
+                VFquestion.setAnswer(c.getInt(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_ANSWER)+1));
+
+                questionList1.add(VFquestion);
+            }while(c.moveToNext());
+        }
+        c.close();
+        return questionList1;
+
+    }
+
+    public List<AudioQuestions> getAllAudioQuestions(){
+        List<AudioQuestions> questionList3 = new ArrayList<>();
+        db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + AudioQuestionsTable.TABLE_NAME, null);
+
+        if(c.moveToFirst()){
+            do{
+                AudioQuestions audioquestion = new AudioQuestions();
+                audioquestion.setQuestion(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_QUESTION)+1));
+                audioquestion.setOption1(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION1)+1));
+                audioquestion.setOption2(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION2)+1));
+                audioquestion.setOption3(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION2)+1));
+                audioquestion.setOption4(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION2)+1));
+                audioquestion.setAnswer(c.getInt(c.getColumnIndex(AudioQuestionsTable.COLUMN_ANSWER)+1));
+
+                questionList3.add(audioquestion);
+            }while(c.moveToNext());
+        }
+        c.close();
+        return questionList3;
+
+    }
+
+    public List<VerdaderoFalsoQuestions> getAllVTQuestions(){
+        List<VerdaderoFalsoQuestions> questionList1 = new ArrayList<>();
         db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM " + VerdaderoFalsoQuestionsTable.TABLE_NAME, null);
 
@@ -222,11 +266,32 @@ public class DbHelper extends SQLiteOpenHelper {
                 VFquestion.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)+1));
                 VFquestion.setAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER)+1));
 
-                questionList.add(VFquestion);
+                questionList1.add(VFquestion);
             }while(c.moveToNext());
         }
         c.close();
-        return questionList;
+        return questionList1;
+
+    }
+
+    public List<VerdaderoFalsoQuestions> getAllVTQuestions(){
+        List<VerdaderoFalsoQuestions> questionList3 = new ArrayList<>();
+        db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + VerdaderoFalsoQuestionsTable.TABLE_NAME, null);
+
+        if(c.moveToFirst()){
+            do{
+                VerdaderoFalsoQuestions VFquestion = new VerdaderoFalsoQuestions();
+                VFquestion.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)+1));
+                VFquestion.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)+1));
+                VFquestion.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)+1));
+                VFquestion.setAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER)+1));
+
+                questionList3.add(VFquestion);
+            }while(c.moveToNext());
+        }
+        c.close();
+        return questionList3;
 
     }
 
