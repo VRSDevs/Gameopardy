@@ -6,7 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.mrwojack.gameopardy.QuizContract.*;
+import com.mrwojack.gameopardy.fragments.questions.ImagesQuestions;
 import com.mrwojack.gameopardy.fragments.questions.NormalQuestion;
+import com.mrwojack.gameopardy.fragments.questions.AudioQuestions;
+import com.mrwojack.gameopardy.fragments.questions.VerdaderoFalsoQuestions;
+import com.mrwojack.gameopardy.fragments.questions.MultipleChoiceQuestions;
 
 import androidx.annotation.Nullable;
 
@@ -62,37 +66,39 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuestionsImagesTable.COLUMN_OPTION4 + " TEXT, " +
                 QuestionsImagesTable.COLUMN_ANSWER + " INTEGER " + ")";
 
-        final String SQL_CREATE_TRUEFALSE_QUESTIONS_TABLE = "CREATE TABLE " +
+        final String SQL_CREATE_TRUE_QUESTIONS_TABLE = "CREATE TABLE " +
                 QuizContract.VerdaderoFalsoQuestions.TABLE_NAME + " ( " +
-                VerdaderoFalsoQuestions._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                VerdaderoFalsoQuestions.COLUMN_QUESTION + " TEXT, " +
-                VerdaderoFalsoQuestions.COLUMN_OPTION1 + " TEXT, " +
-                VerdaderoFalsoQuestions.COLUMN_OPTION2 + " TEXT, " +
-                VerdaderoFalsoQuestions.COLUMN_ANSWER + " INTEGER " + ")";
+                QuizContract.VerdaderoFalsoQuestions._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuizContract.VerdaderoFalsoQuestions.COLUMN_QUESTION + " TEXT, " +
+                QuizContract.VerdaderoFalsoQuestions.COLUMN_OPTION1 + " TEXT, " +
+                QuizContract.VerdaderoFalsoQuestions.COLUMN_OPTION2 + " TEXT, " +
+                QuizContract.VerdaderoFalsoQuestions.COLUMN_ANSWER + " INTEGER " + ")";
 
 
         db.execSQL(SQL_CREATE_NORMAL_QUESTIONS_TABLE);
         db.execSQL(SQL_CREATE_MULTIPLE_QUESTIONS_TABLE);
         db.execSQL(SQL_CREATE_IMAGES_QUESTIONS_TABLE);
-        db.execSQL(SQL_CREATE_TRUEFALSE_QUESTIONS_TABLE);
 
         fillQuestionsTable();
     }
 
    private void fillQuestionsTable(){
         //Preguntas normales
-        NormalQuestion q1 = new NormalQuestion("¿hola?", "A", "B", "C", "D", 1);
-        addQuestion(q1);
-        NormalQuestion q2 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
-        addQuestion(q2);
-        NormalQuestion q3 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
-        addQuestion(q3);
+        NormalQuestion qN1 = new NormalQuestion("¿hola?", "A", "B", "C", "D", 1);
+        addQuestionN(qN1);
+        NormalQuestion qN2 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
+        addQuestionN(qN2);
+        NormalQuestion qN3 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
+        addQuestionN(qN3);
 
-        
+        ImagesQuestions qI1 = new ImagesQuestions("¿hola?", "A", "B", "C", "D", 1);
 
+        VerdaderoFalsoQuestions qVF1 = new VerdaderoFalsoQuestions("","","",1);
+
+        MultipleChoiceQuestions qM1 = new MultipleChoiceQuestions("a","a","a","a","a","a","a",1);
     }
 
-    private void addQuestion(NormalQuestion normalquestion){
+    private void addQuestionN(NormalQuestion normalquestion){
         ContentValues cv = new ContentValues();
         cv.put(QuestionsTable.COLUMN_QUESTION, normalquestion.getQuestion());
         cv.put(QuestionsTable.COLUMN_OPTION1, normalquestion.getOption1());
@@ -102,6 +108,18 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_ANSWER, normalquestion.getAnswer());
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
     }
+
+    private void addQuestionM(NormalQuestion normalquestion){
+        ContentValues cv = new ContentValues();
+        cv.put(QuestionsTable.COLUMN_QUESTION, normalquestion.getQuestion());
+        cv.put(QuestionsTable.COLUMN_OPTION1, normalquestion.getOption1());
+        cv.put(QuestionsTable.COLUMN_OPTION2, normalquestion.getOption2());
+        cv.put(QuestionsTable.COLUMN_OPTION3, normalquestion.getOption3());
+        cv.put(QuestionsTable.COLUMN_OPTION4, normalquestion.getOption4());
+        cv.put(QuestionsTable.COLUMN_ANSWER, normalquestion.getAnswer());
+        db.insert(QuestionsTable.TABLE_NAME, null, cv);
+    }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {

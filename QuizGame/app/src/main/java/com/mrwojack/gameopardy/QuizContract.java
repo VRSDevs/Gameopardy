@@ -44,7 +44,7 @@ public final class QuizContract{
     }
 
     public static class VerdaderoFalsoQuestions implements BaseColumns {
-        public static final String TABLE_NAME = "quiz_images_questions";
+        public static final String TABLE_NAME = "quiz_verdadero_falso_questions";
         public static final String COLUMN_QUESTION = "question";
         public static final String COLUMN_OPTION1 = "option1";
         public static final String COLUMN_OPTION2 = "option2";
