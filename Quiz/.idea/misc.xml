@@ -5,12 +5,9 @@
       <map>
         <entry key="..\:/Users/Antho/ProyectosAndroid/ProjectQuiz/Quiz/app/src/main/res/font/asdonauts_font_family.xml" value="0.4" />
         <entry key="..\:/Users/Antho/ProyectosAndroid/ProjectQuiz/Quiz/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
-<<<<<<< Updated upstream
-        <entry key="..\:/Users/Antho/ProyectosAndroid/ProjectQuiz/Quiz/app/src/main/res/layout/activity_settings.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Antho/ProyectosAndroid/ProjectQuiz/Quiz/app/src/main/res/layout/fragment_music_settings.xml" value="0.4946550048590865" />
-=======
-        <entry key="..\:/Users/Antho/ProyectosAndroid/ProjectQuiz/Quiz/app/src/main/res/layout/activity_settings.xml" value="0.13020833333333334" />
->>>>>>> Stashed changes
+        <entry key="..\:/Users/Antho/ProyectosAndroid/ProjectQuiz/Quiz/app/src/main/res/layout/activity_settings.xml" value="0.4" />
+        <entry key="..\:/Users/Antho/ProyectosAndroid/ProjectQuiz/Quiz/app/src/main/res/layout/fragment_empty_settings.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Antho/ProyectosAndroid/ProjectQuiz/Quiz/app/src/main/res/layout/fragment_music_settings.xml" value="0.264" />
       </map>
     </option>
   </component>
