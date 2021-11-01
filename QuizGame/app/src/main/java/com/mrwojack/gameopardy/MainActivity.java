@@ -8,13 +8,22 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.mrwojack.gameopardy.fragments.questions.AudioQuestions;
+import com.mrwojack.gameopardy.fragments.questions.ImagesQuestions;
+import com.mrwojack.gameopardy.fragments.questions.MultipleChoiceQuestions;
 import com.mrwojack.gameopardy.fragments.questions.NormalQuestion;
+import com.mrwojack.gameopardy.fragments.questions.VerdaderoFalsoQuestions;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-private List<NormalQuestion> questionsList;
+    private List<NormalQuestion> questionsList1;
+    private List<ImagesQuestions> questionsList2;
+    private List<MultipleChoiceQuestions> questionsList3;
+    private List<AudioQuestions> questionsList4;
+    private List<VerdaderoFalsoQuestions> questionsList5;
+
     /**
      * Método ejecutado cuando se crea la actividad
      * @param savedInstanceState -> Referencia a objeto bundle que guarda el estado anterior de la actividad
@@ -25,7 +34,12 @@ private List<NormalQuestion> questionsList;
         setContentView(R.layout.activity_main);
 
         DbHelper dbHelper = new DbHelper(this);
-        questionsList = dbHelper.getAllNormalQuestions();
+        questionsList1 = dbHelper.getAllNormalQuestions();
+        questionsList2 = dbHelper.getAllImagesQuestions();
+        questionsList3 = dbHelper.getAllMultipleQuestions();
+        questionsList4 = dbHelper.getAllAudioQuestions();
+        questionsList5 = dbHelper.getAllVTQuestions();
+
     }
 
     /**

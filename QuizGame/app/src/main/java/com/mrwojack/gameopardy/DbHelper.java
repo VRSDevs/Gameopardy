@@ -282,14 +282,13 @@ public class DbHelper extends SQLiteOpenHelper {
 
         if(c.moveToFirst()){
             do{
-                ImagesQuestions imagesquestion = new ImagesQuestions;
-
-                ImagesQuestions.setQuestion(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_QUESTION)+1));
-                ImagesQuestions.setOption1(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION1)+1));
-                ImagesQuestions.setOption2(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
-                ImagesQuestions.setOption3(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
-                ImagesQuestions.setOption4(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
-                ImagesQuestions.setAnswer(c.getInt(c.getColumnIndex(QuestionsImagesTable.COLUMN_ANSWER)+1));
+                ImagesQuestions imagesquestion = new ImagesQuestions();
+                imagesquestion.setQuestion(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_QUESTION)+1));
+                imagesquestion.setOption1(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION1)+1));
+                imagesquestion.setOption2(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
+                imagesquestion.setOption3(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
+                imagesquestion.setOption4(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
+                imagesquestion.setAnswer(c.getInt(c.getColumnIndex(QuestionsImagesTable.COLUMN_ANSWER)+1));
 
                 questionList5.add(imagesquestion);
             }while(c.moveToNext());
