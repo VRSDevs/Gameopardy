@@ -1,5 +1,7 @@
 package com.mrwojack.quiz.fragments.settings;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,12 +21,21 @@ import com.mrwojack.quiz.R;
 
 public class MatchSettingsFragment extends Fragment {
 
+    ///////////////////////// VARIABLES /////////////////////////
+    /**
+     * Referencia a spinner de dificultades
+     */
     Spinner difficultySpinner;
+    /**
+     * Referencia al botón de guardado de configuración de partida
+     */
     Button saveButton;
 
-    public MatchSettingsFragment() {
-        // Required empty public constructor
-    }
+    ///////////////////////// COSNTRUCTORES /////////////////////////
+
+    public MatchSettingsFragment() {}
+
+    ///////////////////////// MÉTODOS DE CICLO DE VIDA /////////////////////////
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,10 +61,12 @@ public class MatchSettingsFragment extends Fragment {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Guardado", Toast.LENGTH_LONG).show();
+                saveMatchPreferences();
             }
         });
     }
+
+    ///////////////////////// OTROS MÉTODOS /////////////////////////
 
     private void setupDifficultySpinner() {
         String[] difficulties = {"Fácil", "Normal", "Difícil"};
@@ -62,5 +75,35 @@ public class MatchSettingsFragment extends Fragment {
                 difficulties);
 
         difficultySpinner.setAdapter(adapter);
+
+        String savedDifficulty = this.getActivity().getSharedPreferences(
+                "preferencias", Context.MODE_PRIVATE).getString("difficulty", "ERROR");
+
+        switch (savedDifficulty){
+            case "Fácil":
+                difficultySpinner.setSelection(0);
+                break;
+            case "Normal":
+                difficultySpinner.setSelection(1);
+                break;
+            case "Difícil":
+                difficultySpinner.setSelection(2);
+                break;
+            default:
+                Toast.makeText(this.getActivity(), "No se encontró dificultad", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    public void saveMatchPreferences() {
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+
+        Toast.makeText(this.getActivity(), "Dificultad: " + difficultySpinner.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putString("difficulty", difficultySpinner.getSelectedItem().toString());
+
+        editor.commit();
     }
 }

@@ -62,7 +62,7 @@ public class MusicSettingsFragment extends Fragment {
         });
     }
 
-    public void saveMusicPreferences() {
+    private void saveMusicPreferences() {
         SharedPreferences preferences = this.getActivity().getSharedPreferences("preferencias", Context.MODE_PRIVATE);
 
         Toast.makeText(this.getActivity(), "Música: " + musicBar.getProgress(), Toast.LENGTH_SHORT).show();
