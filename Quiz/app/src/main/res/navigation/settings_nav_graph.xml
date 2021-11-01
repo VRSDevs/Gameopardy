@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_nav_graph"
+    app:startDestination="@id/musicSettingsFragment">
+
+    <fragment
+        android:id="@+id/musicSettingsFragment"
+        android:name="com.mrwojack.quiz.fragments.settings.MusicSettingsFragment"
+        android:label="fragment_music_settings"
+        tools:layout="@layout/fragment_music_settings" />
+    <fragment android:id="@+id/placeholder" >
+        <action
+            android:id="@+id/action_placeholder_to_musicSettingsFragment"
+            app:destination="@id/musicSettingsFragment" />
+    </fragment>
+</navigation>
