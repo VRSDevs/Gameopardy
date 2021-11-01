@@ -9,4 +9,6 @@
     <string name="match">Partida</string>
     <string name="music">Música</string>
     <string name="effects">Efectos</string>
+    <string name="difficulty">Dificultad</string>
+    <string name="save">Guardar</string>
 </resources>

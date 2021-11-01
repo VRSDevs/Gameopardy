@@ -31,4 +31,8 @@ public class SettingsActivity extends AppCompatActivity {
     public void showMusicSettings(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragCV_Settings, new MusicSettingsFragment()).commit();
     }
+
+    public void showMatchSettings(View view) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragCV_Settings, new MusicSettingsFragment()).commit();
+    }
 }
