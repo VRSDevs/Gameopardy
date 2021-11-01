@@ -63,7 +63,7 @@
             tools:layout_editor_absoluteY="0dp">
 
             <SeekBar
-                android:id="@+id/sb_effects"
+                android:id="@+id/sb_Effects"
                 android:layout_width="237dp"
                 android:layout_height="36dp"
                 android:layout_marginEnd="32dp"
