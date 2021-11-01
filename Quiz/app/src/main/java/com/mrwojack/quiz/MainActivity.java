@@ -3,7 +3,9 @@ package com.mrwojack.quiz;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.KeyEvent;
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        createSharedPreferences();
     }
 
     /****************** MÉTODOS DE NAVEGACIÓN *******************/
@@ -70,6 +74,23 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {}
 
     /****************** OTROS MÉTODOS *******************/
+
+    private void createSharedPreferences() {
+        SharedPreferences preferences = getSharedPreferences("preferenceias", Context.MODE_PRIVATE);
+
+        if(preferences != null) {
+            Toast.makeText(this, "Fichero encontrado", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("musicVol", 100);
+        editor.putInt("sfxVol", 100);
+        editor.putString("difficulty", "Fácil");
+
+        editor.commit();
+    }
+
     /**
      *
      */
