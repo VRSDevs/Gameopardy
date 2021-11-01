@@ -14,7 +14,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    /****************** MÉTODOS DE CICLO DE VIDA *******************/
+    //region Variables
+    //endregion
+
+    //region Métodos - Ciclo de vida
+
     /**
      * Método ejecutado cuando se crea la actividad
      * @param savedInstanceState -> Referencia a objeto bundle que guarda el estado anterior de la actividad
@@ -27,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
         createSharedPreferences();
     }
 
-    /****************** MÉTODOS DE NAVEGACIÓN *******************/
+    //endregion
+
+    //region Métodos - Navegación
+
     /**
      * Método para abrir el menú de ajustes
      * @param view -> Referencia a la vista
@@ -42,14 +49,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Método para cerrar el juego
      * @param view
      */
     public void closeGame(View view){
         close();
     }
 
-    /****************** MÉTODOS DE EVENTO *******************/
+    //endregion
+
+    //region Métodos - Evento
+
     /**
      * Método para sobreescribir el comportamiento de teclas pulsadas
      * @param keyCode -> Código de la tecla
@@ -73,26 +83,34 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {}
 
-    /****************** OTROS MÉTODOS *******************/
+    //endregion
 
+    //region Métodos - Otros
+
+    /**
+     * Método para crear por primera vez el fichero de ajustes
+     */
     private void createSharedPreferences() {
+        // Obtención del fichero
         SharedPreferences preferences = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
 
+        // Si existe, entonces no se sigue la ejecución
         if(preferences != null) {
-            Toast.makeText(this, "Fichero encontrado", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // Obtención del editor
         SharedPreferences.Editor editor = preferences.edit();
+
+        // Asignación de valores
         editor.putInt("musicVol", 100);
         editor.putInt("sfxVol", 100);
         editor.putString("difficulty", "Fácil");
-
         editor.commit();
     }
 
     /**
-     *
+     * Método para lanzar una alerta antes de cerrar el juego
      */
     private void close() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -117,4 +135,6 @@ public class MainActivity extends AppCompatActivity {
                 });
         builder.show();
     }
+
+    //endregion
 }
