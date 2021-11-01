@@ -6,4 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
+    <TextView
+        android:id="@+id/txtVw_Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/asdonauts_font_family"
+        android:text="@string/settings"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <LinearLayout
+        android:id="@+id/LL_Settings"
+        android:layout_width="413dp"
+        android:layout_height="369dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVw_Settings"
+        app:layout_constraintVertical_bias="0.18">
+
+        <LinearLayout
+            android:id="@+id/LL_SettingsCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btt_Music"
+                android:layout_width="wrap_content"
+                android:layout_height="66dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/asdonauts_font_family"
+                android:text="@string/music"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btt_Match"
+                android:layout_width="wrap_content"
+                android:layout_height="66dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/asdonauts_font_family"
+                android:text="@string/match"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/settings_nav_graph" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
