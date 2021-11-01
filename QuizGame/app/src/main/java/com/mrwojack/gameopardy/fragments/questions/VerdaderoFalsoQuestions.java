@@ -5,18 +5,29 @@ public class VerdaderoFalsoQuestions {
     private String option1;
     private String option2;
     private int answer;
+    private String categoria;
+
 
     public VerdaderoFalsoQuestions(){
 
     }
 
-    public VerdaderoFalsoQuestions(String question, String option1, String option2, int answer) {
+    public VerdaderoFalsoQuestions(String question, String option1, String option2, int answer, String categoria) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.answer = answer;
+        this.categoria = categoria;
+
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
     public String getQuestion() {
         return question;

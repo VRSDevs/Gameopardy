@@ -41,7 +41,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuestionsTable.COLUMN_OPTION2 + " TEXT, " +
                 QuestionsTable.COLUMN_OPTION3 + " TEXT, " +
                 QuestionsTable.COLUMN_OPTION4 + " TEXT, " +
-                QuestionsTable.COLUMN_ANSWER + " INTEGER " + ")";
+                QuestionsTable.COLUMN_ANSWER + " INTEGER, " +
+                QuestionsTable.COLUMN_CATEGORY + " TEXT " + ")";
 
         //Creacion de la tabla de las preguntas de varias opciones
         final String SQL_CREATE_MULTIPLE_QUESTIONS_TABLE = "CREATE TABLE " +
@@ -54,7 +55,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuestionsMultipleTable.COLUMN_OPTION4 + " TEXT, " +
                 QuestionsMultipleTable.COLUMN_OPTION5 + " TEXT, " +
                 QuestionsMultipleTable.COLUMN_OPTION6 + " TEXT, " +
-                QuestionsMultipleTable.COLUMN_ANSWER + " INTEGER " + ")";
+                QuestionsMultipleTable.COLUMN_ANSWER + " INTEGER, " +
+                QuestionsMultipleTable.COLUMN_CATEGORY + " TEXT " + ")";
+
 
         final String SQL_CREATE_IMAGES_QUESTIONS_TABLE = "CREATE TABLE " +
                 QuizContract.QuestionsImagesTable.TABLE_NAME + " ( " +
@@ -64,7 +67,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuestionsImagesTable.COLUMN_OPTION2 + " TEXT, " +
                 QuestionsImagesTable.COLUMN_OPTION3 + " TEXT, " +
                 QuestionsImagesTable.COLUMN_OPTION4 + " TEXT, " +
-                QuestionsImagesTable.COLUMN_ANSWER + " INTEGER " + ")";
+                QuestionsImagesTable.COLUMN_ANSWER + " INTEGER, " +
+                QuestionsImagesTable.COLUMN_CATEGORY + " TEXT " + ")";
+
 
         final String SQL_CREATE_AUDIO_QUESTIONS_TABLE = "CREATE TABLE " +
                 QuizContract.AudioQuestionsTable.TABLE_NAME + " ( " +
@@ -74,7 +79,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuizContract.AudioQuestionsTable.COLUMN_OPTION2 + " TEXT, " +
                 QuizContract.AudioQuestionsTable.COLUMN_OPTION3 + " TEXT, " +
                 QuizContract.AudioQuestionsTable.COLUMN_OPTION4 + " TEXT, " +
-                QuizContract.AudioQuestionsTable.COLUMN_ANSWER + " INTEGER " + ")";
+                QuizContract.AudioQuestionsTable.COLUMN_ANSWER + " INTEGER, " +
+                QuizContract.AudioQuestionsTable.COLUMN_CATEGORY + " TEXT " + ")";
+
 
         final String SQL_CREATE_TRUE_QUESTIONS_TABLE = "CREATE TABLE " +
                 QuizContract.VerdaderoFalsoQuestionsTable.TABLE_NAME + " ( " +
@@ -82,7 +89,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_QUESTION + " TEXT, " +
                 QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_OPTION1 + " TEXT, " +
                 QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_OPTION2 + " TEXT, " +
-                QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_ANSWER + " INTEGER " + ")";
+                QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_ANSWER + " INTEGER, " +
+                QuizContract.VerdaderoFalsoQuestionsTable.COLUMN_CATEGORY + " TEXT " + ")";
+
 
         db.execSQL(SQL_CREATE_TRUE_QUESTIONS_TABLE);
         db.execSQL(SQL_CREATE_AUDIO_QUESTIONS_TABLE);
@@ -95,23 +104,23 @@ public class DbHelper extends SQLiteOpenHelper {
 
    private void fillQuestionsTable(){
         //Preguntas normales
-        NormalQuestion qN1 = new NormalQuestion("¿hola?", "A", "B", "C", "D", 1);
+        NormalQuestion qN1 = new NormalQuestion("¿hola?", "A", "B", "C", "D", 1,"e");
         addQuestionN(qN1);
-        NormalQuestion qN2 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
+        NormalQuestion qN2 = new NormalQuestion("¿?", "A", "B", "C", "D", 1,"e");
         addQuestionN(qN2);
-        NormalQuestion qN3 = new NormalQuestion("¿?", "A", "B", "C", "D", 1);
+        NormalQuestion qN3 = new NormalQuestion("¿?", "A", "B", "C", "D", 1,"e");
         addQuestionN(qN3);
 
-        ImagesQuestions qI1 = new ImagesQuestions("¿hola?", "A", "B", "C", "D", 1);
+        ImagesQuestions qI1 = new ImagesQuestions("¿hola?", "A", "B", "C", "D", 1,"e");
         addQuestionI(qI1);
 
-        VerdaderoFalsoQuestions qVF1 = new VerdaderoFalsoQuestions("","","",1);
+        VerdaderoFalsoQuestions qVF1 = new VerdaderoFalsoQuestions("","","",1,"e");
         addQuestionVF(qVF1);
 
-        AudioQuestions qA1 = new AudioQuestions("¿hola?", "A", "B", "C", "D", 1);
+        AudioQuestions qA1 = new AudioQuestions("¿hola?", "A", "B", "C", "D", 1,"e");
         addQuestionA(qA1);
 
-        MultipleChoiceQuestions qM1 = new MultipleChoiceQuestions("a","a","a","a","a","a","a",1);
+        MultipleChoiceQuestions qM1 = new MultipleChoiceQuestions("a","a","a","a","a","a","a",1,"e");
         addQuestionM(qM1);
     }
 
@@ -125,6 +134,7 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_OPTION3, normalquestion.getOption3());
         cv.put(QuestionsTable.COLUMN_OPTION4, normalquestion.getOption4());
         cv.put(QuestionsTable.COLUMN_ANSWER, normalquestion.getAnswer());
+        cv.put(QuestionsTable.COLUMN_CATEGORY, normalquestion.getAnswer());
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
     }
 
@@ -138,6 +148,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsMultipleTable.COLUMN_OPTION5, Multiplequestion.getOption5());
         cv.put(QuestionsMultipleTable.COLUMN_OPTION6, Multiplequestion.getOption6());
         cv.put(QuestionsMultipleTable.COLUMN_ANSWER, Multiplequestion.getAnswer());
+        cv.put(QuestionsMultipleTable.COLUMN_CATEGORY, Multiplequestion.getAnswer());
+
         db.insert(QuestionsMultipleTable.TABLE_NAME, null, cv);
     }
 
@@ -149,6 +161,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsImagesTable.COLUMN_OPTION3, imagesQuestions.getOption3());
         cv.put(QuestionsImagesTable.COLUMN_OPTION4, imagesQuestions.getOption4());
         cv.put(QuestionsImagesTable.COLUMN_ANSWER, imagesQuestions.getAnswer());
+        cv.put(QuestionsImagesTable.COLUMN_CATEGORY, imagesQuestions.getAnswer());
+
         db.insert(QuestionsImagesTable.TABLE_NAME, null, cv);
     }
 
@@ -160,6 +174,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(AudioQuestionsTable.COLUMN_OPTION3, audioQuestions.getOption3());
         cv.put(AudioQuestionsTable.COLUMN_OPTION4, audioQuestions.getOption4());
         cv.put(AudioQuestionsTable.COLUMN_ANSWER, audioQuestions.getAnswer());
+        cv.put(AudioQuestionsTable.COLUMN_CATEGORY, audioQuestions.getAnswer());
+
         db.insert(AudioQuestionsTable.TABLE_NAME, null, cv);
     }
 
@@ -169,6 +185,8 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(VerdaderoFalsoQuestionsTable.COLUMN_OPTION1, VFquestions.getOption1());
         cv.put(VerdaderoFalsoQuestionsTable.COLUMN_OPTION2, VFquestions.getOption2());
         cv.put(VerdaderoFalsoQuestionsTable.COLUMN_ANSWER, VFquestions.getAnswer());
+        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_CATEGORY, VFquestions.getAnswer());
+
         db.insert(VerdaderoFalsoQuestionsTable.TABLE_NAME, null, cv);
     }
 
@@ -201,6 +219,8 @@ public class DbHelper extends SQLiteOpenHelper {
             question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)+1));
             question.setOption4(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)+1));
             question.setAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER)+1));
+            question.setCategoria(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_CATEGORY)+1));
+
             questionList2.add(question);
         }while(c.moveToNext());
     }
@@ -221,6 +241,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 VFquestion.setOption1(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_OPTION1)+1));
                 VFquestion.setOption2(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_OPTION2)+1));
                 VFquestion.setAnswer(c.getInt(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_ANSWER)+1));
+                VFquestion.setCategoria(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_CATEGORY)+1));
 
                 questionList1.add(VFquestion);
             }while(c.moveToNext());
@@ -244,6 +265,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 audioquestion.setOption3(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION2)+1));
                 audioquestion.setOption4(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION2)+1));
                 audioquestion.setAnswer(c.getInt(c.getColumnIndex(AudioQuestionsTable.COLUMN_ANSWER)+1));
+                audioquestion.setCategoria(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_CATEGORY)+1));
 
                 questionList3.add(audioquestion);
             }while(c.moveToNext());
@@ -268,6 +290,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 Multiplequestion.setOption5(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
                 Multiplequestion.setOption6(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
                 Multiplequestion.setAnswer(c.getInt(c.getColumnIndex(QuestionsMultipleTable.COLUMN_ANSWER)+1));
+                Multiplequestion.setCategoria(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_CATEGORY)+1));
 
                 questionList4.add(Multiplequestion);
             }while(c.moveToNext());
@@ -289,6 +312,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 imagesquestion.setOption3(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
                 imagesquestion.setOption4(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
                 imagesquestion.setAnswer(c.getInt(c.getColumnIndex(QuestionsImagesTable.COLUMN_ANSWER)+1));
+                imagesquestion.setCategoria(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_CATEGORY)+1));
 
                 questionList5.add(imagesquestion);
             }while(c.moveToNext());

@@ -7,18 +7,20 @@ public class NormalQuestion {
     private String option3;
     private String option4;
     private int answer;
+    private String categoria;
 
     public NormalQuestion(){
 
     }
 
-    public NormalQuestion(String question, String option1, String option2, String option3, String option4, int answer) {
+    public NormalQuestion(String question, String option1, String option2, String option3, String option4, int answer,String categoria) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
         this.answer = answer;
+        this.categoria = categoria;
     }
 
     public String getQuestion() {
@@ -67,5 +69,13 @@ public class NormalQuestion {
 
     public void setAnswer(int answer) {
         this.answer = answer;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }
