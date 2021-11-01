@@ -12,4 +12,6 @@
     <string name="difficulty">Dificultad</string>
     <string name="save">Guardar</string>
     <string name="back">Atrás</string>
+    <string name="play2">¡Jugar!</string>
+    <string name="playChooseCat">Selecciona una categoría para jugar:</string>
 </resources>
