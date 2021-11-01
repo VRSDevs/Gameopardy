@@ -72,13 +72,13 @@
 
     <Button
         android:id="@+id/btt_Back"
-        android:layout_width="wrap_content"
-        android:layout_height="66dp"
+        android:layout_width="117dp"
+        android:layout_height="65dp"
         android:layout_marginBottom="48dp"
         android:layout_weight="1"
         android:fontFamily="@font/asdonauts_font_family"
         android:onClick="goToMainMenu"
-        android:text="Atrás"
+        android:text="@string/back"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
