@@ -11,6 +11,10 @@ import androidx.navigation.Navigation;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    /****************** VARIABLES *******************/
+
+    /****************** CICLO DE VIDA *******************/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
              */
             @Override
             public void onClick(View view) {
-                // Navegación al siguiente fragmento
+                // Navegación al fragmento
                 NAV_CONTROLLER.navigate(R.id.musicSettingsFragment);
             }
         });
