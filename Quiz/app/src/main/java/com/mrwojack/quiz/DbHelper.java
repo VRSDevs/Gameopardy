@@ -16,9 +16,6 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     private SQLiteDatabase db;
-
-
-
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -26,19 +23,9 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         this.db = db;
-        //Creacion de la tabla de las preguntas normales
-        final String SQL_CREATE_NORMAL_QUESTIONS_TABLE = "CREATE TABLE " +
-                QuestionsTable.TABLE_NAME + " ( " +
-                QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                QuestionsTable.COLUMN_QUESTION + " TEXT, " +
-                QuestionsTable.COLUMN_OPTION1 + " TEXT, " +
-                QuestionsTable.COLUMN_OPTION2 + " TEXT, " +
-                QuestionsTable.COLUMN_OPTION3 + " TEXT, " +
-                QuestionsTable.COLUMN_OPTION4 + " TEXT, " +
-                QuestionsTable.COLUMN_ANSWER + " INTEGER, " +
-                QuestionsTable.COLUMN_CATEGORY + " TEXT " + ")";
 
-        //Creacion de la tabla de las preguntas de varias opciones
+
+        //Creacion de la tabla de las preguntas
         final String SQL_CREATE_MULTIPLE_QUESTIONS_TABLE = "CREATE TABLE " +
                 QuestionsMultipleTable.TABLE_NAME + " ( " +
                 QuestionsMultipleTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -52,84 +39,113 @@ public class DbHelper extends SQLiteOpenHelper {
                 QuestionsMultipleTable.COLUMN_ANSWER + " INTEGER, " +
                 QuestionsMultipleTable.COLUMN_CATEGORY + " TEXT " + ")";
 
-
-        final String SQL_CREATE_IMAGES_QUESTIONS_TABLE = "CREATE TABLE " +
-                QuestionsImagesTable.TABLE_NAME + " ( " +
-                QuestionsImagesTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                QuestionsImagesTable.COLUMN_QUESTION + " TEXT, " +
-                QuestionsImagesTable.COLUMN_OPTION1 + " TEXT, " +
-                QuestionsImagesTable.COLUMN_OPTION2 + " TEXT, " +
-                QuestionsImagesTable.COLUMN_OPTION3 + " TEXT, " +
-                QuestionsImagesTable.COLUMN_OPTION4 + " TEXT, " +
-                QuestionsImagesTable.COLUMN_ANSWER + " INTEGER, " +
-                QuestionsImagesTable.COLUMN_CATEGORY + " TEXT " + ")";
-
-
-        final String SQL_CREATE_AUDIO_QUESTIONS_TABLE = "CREATE TABLE " +
-                AudioQuestionsTable.TABLE_NAME + " ( " +
-                AudioQuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                AudioQuestionsTable.COLUMN_QUESTION + " TEXT, " +
-                AudioQuestionsTable.COLUMN_OPTION1 + " TEXT, " +
-                AudioQuestionsTable.COLUMN_OPTION2 + " TEXT, " +
-                AudioQuestionsTable.COLUMN_OPTION3 + " TEXT, " +
-                AudioQuestionsTable.COLUMN_OPTION4 + " TEXT, " +
-                AudioQuestionsTable.COLUMN_ANSWER + " INTEGER, " +
-                AudioQuestionsTable.COLUMN_CATEGORY + " TEXT " + ")";
-
-
-        final String SQL_CREATE_TRUE_QUESTIONS_TABLE = "CREATE TABLE " +
-                VerdaderoFalsoQuestionsTable.TABLE_NAME + " ( " +
-                VerdaderoFalsoQuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                VerdaderoFalsoQuestionsTable.COLUMN_QUESTION + " TEXT, " +
-                VerdaderoFalsoQuestionsTable.COLUMN_OPTION1 + " TEXT, " +
-                VerdaderoFalsoQuestionsTable.COLUMN_OPTION2 + " TEXT, " +
-                VerdaderoFalsoQuestionsTable.COLUMN_ANSWER + " INTEGER, " +
-                VerdaderoFalsoQuestionsTable.COLUMN_CATEGORY + " TEXT " + ")";
-
-
-        db.execSQL(SQL_CREATE_TRUE_QUESTIONS_TABLE);
-        db.execSQL(SQL_CREATE_AUDIO_QUESTIONS_TABLE);
-        db.execSQL(SQL_CREATE_NORMAL_QUESTIONS_TABLE);
         db.execSQL(SQL_CREATE_MULTIPLE_QUESTIONS_TABLE);
-        db.execSQL(SQL_CREATE_IMAGES_QUESTIONS_TABLE);
 
         fillQuestionsTable();
     }
 
    private void fillQuestionsTable(){
-        //Preguntas normales
-        NormalQuestion qN1 = new NormalQuestion("¿hola?", "A", "B", "C", "D", 1,"e");
-        addQuestionN(qN1);
-        NormalQuestion qN2 = new NormalQuestion("¿?", "A", "B", "C", "D", 1,"e");
-        addQuestionN(qN2);
-        NormalQuestion qN3 = new NormalQuestion("¿?", "A", "B", "C", "D", 1,"e");
-        addQuestionN(qN3);
 
-        ImagesQuestions qI1 = new ImagesQuestions("¿hola?", "A", "B", "C", "D", 1,"e");
-        addQuestionI(qI1);
-
-        VerdaderoFalsoQuestions qVF1 = new VerdaderoFalsoQuestions("","","",1,"e");
-        addQuestionVF(qVF1);
-
-        AudioQuestions qA1 = new AudioQuestions("¿hola?", "A", "B", "C", "D", 1,"e");
-        addQuestionA(qA1);
-
-        MultipleChoiceQuestions qM1 = new MultipleChoiceQuestions("a","a","a","a","a","a","a",1,"e");
-        addQuestionM(qM1);
-    }
-
-
-
-    private void addQuestionN(NormalQuestion normalquestion){
-        ContentValues cv = new ContentValues();
-        cv.put(QuestionsTable.COLUMN_QUESTION, normalquestion.getQuestion());
-        cv.put(QuestionsTable.COLUMN_OPTION1, normalquestion.getOption1());
-        cv.put(QuestionsTable.COLUMN_OPTION2, normalquestion.getOption2());
-        cv.put(QuestionsTable.COLUMN_OPTION3, normalquestion.getOption3());
-        cv.put(QuestionsTable.COLUMN_OPTION4, normalquestion.getOption4());
-        cv.put(QuestionsTable.COLUMN_ANSWER, normalquestion.getAnswer());
-        cv.put(QuestionsTable.COLUMN_CATEGORY, normalquestion.getAnswer());
-        db.insert(QuestionsTable.TABLE_NAME, null, cv);
+        MultipleChoiceQuestions M1 = new MultipleChoiceQuestions("¿Cual es la videoconsola con el mayor número de ventas?","Nintendo DS","PlayStation 1","PlayStation 2","Nintendo Wii","","",3,"historia");
+        addQuestionM(M1);
+        MultipleChoiceQuestions M2 = new MultipleChoiceQuestions("¿Cual es el mapa más grande (en kilometros cuadrados) de la historia de los videojuegos?","","",""," ","","",2,"");
+        addQuestionM(M2);
+        MultipleChoiceQuestions M3 = new MultipleChoiceQuestions("¿Quién fue el creador de la GameBoy?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M3);
+        MultipleChoiceQuestions M4 = new MultipleChoiceQuestions("¿Cuál es considerado el primer videjuego de la historia?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M4);
+        MultipleChoiceQuestions M5 = new MultipleChoiceQuestions("¿Que juego fue el más vendido de la primera PlayStation?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M5);
+        MultipleChoiceQuestions M6 = new MultipleChoiceQuestions("¿Cuál es considerado el primer videjuego de la historia?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M6);
+        MultipleChoiceQuestions M7 = new MultipleChoiceQuestions("¿Que juego fue el más vendido de la primera PlayStation?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M7);
+        MultipleChoiceQuestions M8 = new MultipleChoiceQuestions("¿Es Grand Theft Auto V el juego más vendido de la historia?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M8);
+        MultipleChoiceQuestions M9 = new MultipleChoiceQuestions("PlayStation originalmente iba a ser una expansion de la Super Nintendo, pero fue cancelada por Nintendo.","a","a","a","a","a","a",1,"e");
+        addQuestionM(M9);
+        MultipleChoiceQuestions M10 = new MultipleChoiceQuestions("¿A qué empresa pertenece la saga de videojuegos Metal Gear Solid? ","a","a","a","a","a","a",1,"e");
+        addQuestionM(M10);
+        MultipleChoiceQuestions M11= new MultipleChoiceQuestions("¿Cual fue el primer videojuego exitoso de Activision?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M11);
+        MultipleChoiceQuestions M12 = new MultipleChoiceQuestions("¿Cuales de estos juegos pertenecen a la empresa de videojuegos Level-5?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M12);
+        MultipleChoiceQuestions M13 = new MultipleChoiceQuestions("De todos estos videojuegos de SEGA, ¿cuales salieron en Sega Dreamcast?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M13);
+        MultipleChoiceQuestions M14 = new MultipleChoiceQuestions("De esta lista, ¿que sagas pertenecen a la empresa CAPCOM?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M14);
+        MultipleChoiceQuestions M15 = new MultipleChoiceQuestions("¿A que empresa de videojuegos pertenece este logo?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M15);
+        MultipleChoiceQuestions M16 = new MultipleChoiceQuestions("¿A que empresa de videojuegos pertenece este logo?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M16);
+        MultipleChoiceQuestions M17 = new MultipleChoiceQuestions("¿A que empresa de videojuegos pertenece este logo?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M17);
+        MultipleChoiceQuestions M18 = new MultipleChoiceQuestions("¿A que empresa de videojuegos pertenece este logo?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M18);
+        MultipleChoiceQuestions M19 = new MultipleChoiceQuestions("¿Cual es el famoso eslogan que SEGA utilizó para promocionar su videoconsola SEGA GENESIS?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M19);
+        MultipleChoiceQuestions M20 = new MultipleChoiceQuestions("¿Cual fue el primer videojuego de la famosa saga de videojuegos \"FIFA\"? ","a","a","a","a","a","a",1,"e");
+        addQuestionM(M20);
+        MultipleChoiceQuestions M21 = new MultipleChoiceQuestions("¿De que lugar es originario el personaje Sonic?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M21);
+        MultipleChoiceQuestions M22 = new MultipleChoiceQuestions("¿Cual de estos videojuegos de Dragon Ball NO es de peleas en 2D?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M22);
+        MultipleChoiceQuestions M23 = new MultipleChoiceQuestions("¿Cuantos videojuegos de la saga Mega-Man fueron lanzados en Nintendo NES?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M23);
+        MultipleChoiceQuestions M24 = new MultipleChoiceQuestions("¿Cuales de estos juegos son considerados spin-offs de la saga Mario?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M24);
+        MultipleChoiceQuestions M25 = new MultipleChoiceQuestions("¿Cuales de estos seres enemigos en la saga Metroid?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M25);
+        MultipleChoiceQuestions M26 = new MultipleChoiceQuestions("¿En cuales de estos años ha salido un videojuego de plataformas 2D de Sonic? ","a","a","a","a","a","a",1,"e");
+        addQuestionM(M26);
+        MultipleChoiceQuestions M27 = new MultipleChoiceQuestions("La inteligencia artificial que ayuda a Master Chief en Halo se llama Alexa","a","a","a","a","a","a",1,"e");
+        addQuestionM(M27);
+        MultipleChoiceQuestions M28 = new MultipleChoiceQuestions("El primer Metal Gear salió en el año 1987","a","a","a","a","a","a",1,"e");
+        addQuestionM(M28);
+        MultipleChoiceQuestions M29 = new MultipleChoiceQuestions("El Red Dead Redemption 2 es una precuela de la primera entrega","a","a","a","a","a","a",1,"e");
+        addQuestionM(M29);
+        MultipleChoiceQuestions M30 = new MultipleChoiceQuestions("En la saga de videojuegos Super Smash Bros, Kirby puede copiar al menos una habilidad de todos los personajes","a","a","a","a","a","a",1,"e");
+        addQuestionM(M30);
+        MultipleChoiceQuestions M31 = new MultipleChoiceQuestions("¿Cual es el subtítulo del tercer juego de la saga Metal Gear Solid?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M31);
+        MultipleChoiceQuestions M32 = new MultipleChoiceQuestions("De estos videojuegos, ¿cuales tienen una banda sonora compuesta por Koji Kondo?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M32);
+        MultipleChoiceQuestions M33 = new MultipleChoiceQuestions("¿A que videojuego pertenece esta canción?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M33);
+        MultipleChoiceQuestions M34 = new MultipleChoiceQuestions("¿A que videojuego pertenece esta canción?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M34);
+        MultipleChoiceQuestions M35 = new MultipleChoiceQuestions("¿De que videojuego es este tema musical?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M35);
+        MultipleChoiceQuestions M36 = new MultipleChoiceQuestions("¿De cuales de estas bandas sonoras se ha ocupado el compositor Shoji Meguro?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M36);
+        MultipleChoiceQuestions M37 = new MultipleChoiceQuestions("¿Cual de estos videojuegos se planteó originalmente como un videojuego infantil, pero acabó convertido en un juego de carácter irreverente para el publico adulto?\n","a","a","a","a","a","a",1,"e");
+        addQuestionM(M37);
+        MultipleChoiceQuestions M38 = new MultipleChoiceQuestions("¿Cual de estos videojuegos está protagonizado por una mujer?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M38);
+        MultipleChoiceQuestions M39 = new MultipleChoiceQuestions("¿Cual de estos videojuegos NO está disponible en PlayStation 3?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M39);
+        MultipleChoiceQuestions M40 = new MultipleChoiceQuestions("La última versión oficial de Minecraft es la 1.18","a","a","a","a","a","a",1,"e");
+        addQuestionM(M40);
+        MultipleChoiceQuestions M41 = new MultipleChoiceQuestions("¿Cual es la mítica frase que Toad le dice a Mario cuando supera el primer castillo en Super Mario Bros?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M41);
+        MultipleChoiceQuestions M42 = new MultipleChoiceQuestions("¿Que quick-time event es famoso por el videojuego Call of Duty: Advanced Warfare? ","a","a","a","a","a","a",1,"e");
+        addQuestionM(M42);
+        MultipleChoiceQuestions M43 = new MultipleChoiceQuestions("¿A que videojuego pertenece este logo? ","a","a","a","a","a","a",1,"e");
+        addQuestionM(M43);
+        MultipleChoiceQuestions M44 = new MultipleChoiceQuestions("¿A que videojuego pertenece este zombi? (Imagen Zombi)","a","a","a","a","a","a",1,"e");
+        addQuestionM(M44);
+        MultipleChoiceQuestions M45 = new MultipleChoiceQuestions("¿Que consola tiene el menor número de unidades vendidas?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M45);
+        MultipleChoiceQuestions M46 = new MultipleChoiceQuestions("¿Cuantos bits tiene la arquitectura de la Nintendo GameCube?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M46);
+        MultipleChoiceQuestions M47 = new MultipleChoiceQuestions("¿Que consolas han vendido menos de 15 millones de unidades?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M47);
+        MultipleChoiceQuestions M48 = new MultipleChoiceQuestions("¿Cual es el nombre de la consola que aparece en esta imagen?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M48);
+        MultipleChoiceQuestions M49 = new MultipleChoiceQuestions("¿Cual de las siguientes consolas es la Sega Dreamcast? ","a","a","a","a","a","a",1,"e");
+        addQuestionM(M49);
+        MultipleChoiceQuestions M50 = new MultipleChoiceQuestions("¿Es la GameBoy Advanced una consola de 32 bits?","a","a","a","a","a","a",1,"e");
+        addQuestionM(M50);
     }
 
     private void addQuestionM(MultipleChoiceQuestions Multiplequestion){
@@ -147,127 +163,12 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(QuestionsMultipleTable.TABLE_NAME, null, cv);
     }
 
-    private void addQuestionI(ImagesQuestions imagesQuestions){
-        ContentValues cv = new ContentValues();
-        cv.put(QuestionsImagesTable.COLUMN_QUESTION, imagesQuestions.getQuestion());
-        cv.put(QuestionsImagesTable.COLUMN_OPTION1, imagesQuestions.getOption1());
-        cv.put(QuestionsImagesTable.COLUMN_OPTION2, imagesQuestions.getOption2());
-        cv.put(QuestionsImagesTable.COLUMN_OPTION3, imagesQuestions.getOption3());
-        cv.put(QuestionsImagesTable.COLUMN_OPTION4, imagesQuestions.getOption4());
-        cv.put(QuestionsImagesTable.COLUMN_ANSWER, imagesQuestions.getAnswer());
-        cv.put(QuestionsImagesTable.COLUMN_CATEGORY, imagesQuestions.getAnswer());
-
-        db.insert(QuestionsImagesTable.TABLE_NAME, null, cv);
-    }
-
-    private void addQuestionA(AudioQuestions audioQuestions){
-        ContentValues cv = new ContentValues();
-        cv.put(AudioQuestionsTable.COLUMN_QUESTION, audioQuestions.getQuestion());
-        cv.put(AudioQuestionsTable.COLUMN_OPTION1, audioQuestions.getOption1());
-        cv.put(AudioQuestionsTable.COLUMN_OPTION2, audioQuestions.getOption2());
-        cv.put(AudioQuestionsTable.COLUMN_OPTION3, audioQuestions.getOption3());
-        cv.put(AudioQuestionsTable.COLUMN_OPTION4, audioQuestions.getOption4());
-        cv.put(AudioQuestionsTable.COLUMN_ANSWER, audioQuestions.getAnswer());
-        cv.put(AudioQuestionsTable.COLUMN_CATEGORY, audioQuestions.getAnswer());
-
-        db.insert(AudioQuestionsTable.TABLE_NAME, null, cv);
-    }
-
-    private void addQuestionVF(VerdaderoFalsoQuestions VFquestions){
-        ContentValues cv = new ContentValues();
-        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_QUESTION, VFquestions.getQuestion());
-        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_OPTION1, VFquestions.getOption1());
-        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_OPTION2, VFquestions.getOption2());
-        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_ANSWER, VFquestions.getAnswer());
-        cv.put(VerdaderoFalsoQuestionsTable.COLUMN_CATEGORY, VFquestions.getAnswer());
-
-        db.insert(VerdaderoFalsoQuestionsTable.TABLE_NAME, null, cv);
-    }
-
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME);
-        onCreate(db);
         db.execSQL("DROP TABLE IF EXISTS " + QuestionsMultipleTable.TABLE_NAME);
         onCreate(db);
-        db.execSQL("DROP TABLE IF EXISTS " + AudioQuestionsTable.TABLE_NAME);
-        onCreate(db);
-        db.execSQL("DROP TABLE IF EXISTS " + VerdaderoFalsoQuestionsTable.TABLE_NAME);
-        onCreate(db);
-        db.execSQL("DROP TABLE IF EXISTS " + QuestionsImagesTable.TABLE_NAME);
-        onCreate(db);
     }
 
-    public List<NormalQuestion> getAllNormalQuestions(){
-        List<NormalQuestion> questionList2 = new ArrayList<>();
-        db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_NAME, null);
-
-    if(c.moveToFirst()){
-        do{
-            NormalQuestion question = new NormalQuestion();
-            question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)+1));
-            question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)+1));
-            question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)+1));
-            question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)+1));
-            question.setOption4(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)+1));
-            question.setAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER)+1));
-            question.setCategoria(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_CATEGORY)+1));
-
-            questionList2.add(question);
-        }while(c.moveToNext());
-    }
-    c.close();
-    return questionList2;
-
-    }
-
-    public List<VerdaderoFalsoQuestions> getAllVTQuestions(){
-        List<VerdaderoFalsoQuestions> questionList1 = new ArrayList<>();
-        db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + VerdaderoFalsoQuestionsTable.TABLE_NAME, null);
-
-        if(c.moveToFirst()){
-            do{
-                VerdaderoFalsoQuestions VFquestion = new VerdaderoFalsoQuestions();
-                VFquestion.setQuestion(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_QUESTION)+1));
-                VFquestion.setOption1(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_OPTION1)+1));
-                VFquestion.setOption2(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_OPTION2)+1));
-                VFquestion.setAnswer(c.getInt(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_ANSWER)+1));
-                VFquestion.setCategoria(c.getString(c.getColumnIndex(VerdaderoFalsoQuestionsTable.COLUMN_CATEGORY)+1));
-
-                questionList1.add(VFquestion);
-            }while(c.moveToNext());
-        }
-        c.close();
-        return questionList1;
-
-    }
-
-    public List<AudioQuestions> getAllAudioQuestions(){
-        List<AudioQuestions> questionList3 = new ArrayList<>();
-        db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + AudioQuestionsTable.TABLE_NAME, null);
-
-        if(c.moveToFirst()){
-            do{
-                AudioQuestions audioquestion = new AudioQuestions();
-                audioquestion.setQuestion(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_QUESTION)+1));
-                audioquestion.setOption1(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION1)+1));
-                audioquestion.setOption2(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION2)+1));
-                audioquestion.setOption3(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION2)+1));
-                audioquestion.setOption4(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_OPTION2)+1));
-                audioquestion.setAnswer(c.getInt(c.getColumnIndex(AudioQuestionsTable.COLUMN_ANSWER)+1));
-                audioquestion.setCategoria(c.getString(c.getColumnIndex(AudioQuestionsTable.COLUMN_CATEGORY)+1));
-
-                questionList3.add(audioquestion);
-            }while(c.moveToNext());
-        }
-        c.close();
-        return questionList3;
-
-    }
     public List<MultipleChoiceQuestions> getAllMultipleQuestions(){
         List<MultipleChoiceQuestions> questionList4 = new ArrayList<>();
         db = getReadableDatabase();
@@ -292,28 +193,6 @@ public class DbHelper extends SQLiteOpenHelper {
         c.close();
         return questionList4;
     }
-    public List<ImagesQuestions> getAllImagesQuestions(){
-        List<ImagesQuestions> questionList5 = new ArrayList<>();
-        db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsImagesTable.TABLE_NAME, null);
 
-        if(c.moveToFirst()){
-            do{
-                ImagesQuestions imagesquestion = new ImagesQuestions();
-                imagesquestion.setQuestion(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_QUESTION)+1));
-                imagesquestion.setOption1(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION1)+1));
-                imagesquestion.setOption2(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
-                imagesquestion.setOption3(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
-                imagesquestion.setOption4(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
-                imagesquestion.setAnswer(c.getInt(c.getColumnIndex(QuestionsImagesTable.COLUMN_ANSWER)+1));
-                imagesquestion.setCategoria(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_CATEGORY)+1));
-
-                questionList5.add(imagesquestion);
-            }while(c.moveToNext());
-        }
-        c.close();
-        return questionList5;
-
-    }
 
 }

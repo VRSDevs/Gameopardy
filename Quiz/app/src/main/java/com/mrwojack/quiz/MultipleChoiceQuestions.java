@@ -8,11 +8,11 @@ public class MultipleChoiceQuestions {
     private String option4;
     private String option5;
     private String option6;
-    private int answer;
+    private String answer;
     private String categoria;
 
 
-    public MultipleChoiceQuestions(String question, String option1, String option2, String option3, String option4, String option5, String option6, int answer,String categoria) {
+    public MultipleChoiceQuestions(String question, String option1, String option2, String option3, String option4, String option5, String option6, String answer,String categoria) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
@@ -93,11 +93,11 @@ public class MultipleChoiceQuestions {
         this.option6 = option6;
     }
 
-    public int getAnswer() {
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(int answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 }
