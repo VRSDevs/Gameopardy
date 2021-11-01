@@ -58,7 +58,7 @@ public class MatchSettingsFragment extends Fragment {
     private void setupDifficultySpinner() {
         String[] difficulties = {"Fácil", "Normal", "Difícil"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getContext(),
-                android.R.layout.simple_spinner_item,
+                R.layout.spinner_item_settings,
                 difficulties);
 
         difficultySpinner.setAdapter(adapter);

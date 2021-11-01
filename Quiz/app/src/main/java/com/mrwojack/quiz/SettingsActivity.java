@@ -2,6 +2,7 @@ package com.mrwojack.quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,15 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     /****************** MÉTODOS DE NAVEGACIÓN *******************/
+
+    public void goToMainMenu(View view) {
+        // Obtención de objeto Intent para el cambio de actividad
+        Intent int_MainMenu = new Intent(this, MainActivity.class);
+        // Inicio de la actividad
+        startActivity(int_MainMenu);
+        // Finalización de la actividad
+        finish();
+    }
 
     public void showMusicSettings(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragCV_Settings, new MusicSettingsFragment()).commit();
