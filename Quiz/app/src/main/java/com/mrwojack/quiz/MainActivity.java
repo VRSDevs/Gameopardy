@@ -4,13 +4,21 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.mrwojack.quiz.AudioQuestions;
+import com.mrwojack.quiz.ImagesQuestions;
+import com.mrwojack.quiz.NormalQuestion;
+import com.mrwojack.quiz.MultipleChoiceQuestions;
+import com.mrwojack.quiz.VerdaderoFalsoQuestions;
+
 public class MainActivity extends AppCompatActivity {
+
 
     /****************** MÉTODOS DE CICLO DE VIDA *******************/
     /**
