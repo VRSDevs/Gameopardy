@@ -10,16 +10,18 @@ import android.view.ViewGroup;
 
 import com.mrwojack.quiz.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link EmptySettingsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class EmptySettingsFragment extends Fragment {
+
+    //region Constructores
 
     public EmptySettingsFragment() {
         // Required empty public constructor
     }
+
+    //endregion
+
+    //region Métodos - Ciclo de vida
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,4 +34,6 @@ public class EmptySettingsFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_empty_settings, container, false);
     }
+
+    //endregion
 }
