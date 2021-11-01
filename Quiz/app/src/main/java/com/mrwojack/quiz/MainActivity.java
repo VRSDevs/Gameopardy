@@ -29,7 +29,12 @@ public class MainActivity extends AppCompatActivity {
      * @param view -> Referencia a la vista
      */
     public void openSettings(View view) {
-
+        // Obtención de objeto Intent para el cambio de actividad
+        Intent int_Settings = new Intent(this, SettingsActivity.class);
+        // Inicio de la actividad
+        startActivity(int_Settings);
+        // Finalización de la actividad
+        finish();
     }
 
     /**
@@ -77,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //
                         Intent intClose = new Intent(Intent.ACTION_MAIN);
-                        //
                         intClose.addCategory(Intent.CATEGORY_HOME);
                         intClose.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         //
