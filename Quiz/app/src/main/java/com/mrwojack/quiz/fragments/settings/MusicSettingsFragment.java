@@ -17,9 +17,6 @@ import android.widget.Toast;
 
 import com.mrwojack.quiz.R;
 
-//region a
-//endregion
-
 public class MusicSettingsFragment extends Fragment {
 
     //region Variables
