@@ -47,7 +47,6 @@ public class MatchSettingsFragment extends Fragment {
 
         setupDifficultySpinner();
 
-        // Asignación de evento de escucha al botón de comienzo
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

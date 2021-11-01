@@ -11,7 +11,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import com.mrwojack.quiz.R;
 
@@ -19,6 +21,7 @@ public class MusicSettingsFragment extends Fragment {
 
     SeekBar musicBar;
     SeekBar sfxBar;
+    Button saveButton;
 
     public MusicSettingsFragment() {
         // Required empty public constructor
@@ -42,12 +45,33 @@ public class MusicSettingsFragment extends Fragment {
 
         musicBar = view.findViewById(R.id.sb_Music);
         sfxBar = view.findViewById(R.id.sb_Effects);
+        saveButton = view.findViewById(R.id.btt_SaveMusic);
 
         musicBar.setProgress(
-                getActivity().getSharedPreferences("preferenceias", Context.MODE_PRIVATE).getInt("musicVol", 0)
+                this.getActivity().getSharedPreferences("preferencias", Context.MODE_PRIVATE).getInt("musicVol", 0)
         );
         sfxBar.setProgress(
-                getActivity().getSharedPreferences("preferenceias", Context.MODE_PRIVATE).getInt("sfxVol", 0)
+                this.getActivity().getSharedPreferences("preferencias", Context.MODE_PRIVATE).getInt("sfxVol", 0)
         );
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveMusicPreferences();
+            }
+        });
+    }
+
+    public void saveMusicPreferences() {
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+
+        Toast.makeText(this.getActivity(), "Música: " + musicBar.getProgress(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.getActivity(), "Sonidos: " + sfxBar.getProgress(), Toast.LENGTH_SHORT).show();
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("musicVol", musicBar.getProgress());
+        editor.putInt("sfxVol", sfxBar.getProgress());
+
+        editor.commit();
     }
 }

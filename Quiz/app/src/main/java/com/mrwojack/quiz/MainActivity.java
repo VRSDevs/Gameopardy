@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     /****************** OTROS MÉTODOS *******************/
 
     private void createSharedPreferences() {
-        SharedPreferences preferences = getSharedPreferences("preferenceias", Context.MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
 
         if(preferences != null) {
             Toast.makeText(this, "Fichero encontrado", Toast.LENGTH_SHORT).show();
