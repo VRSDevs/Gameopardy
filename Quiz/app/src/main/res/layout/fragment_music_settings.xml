@@ -6,9 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".fragments.settings.MusicSettingsFragment">
 
+    <Button
+        android:id="@+id/btt_SaveMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:fontFamily="@font/asdonauts_font_family"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +75,7 @@
             tools:layout_editor_absoluteY="0dp">
 
             <SeekBar
-                android:id="@+id/sb_effects"
+                android:id="@+id/sb_Effects"
                 android:layout_width="237dp"
                 android:layout_height="36dp"
                 android:layout_marginEnd="32dp"
