@@ -252,46 +252,50 @@ public class DbHelper extends SQLiteOpenHelper {
         return questionList3;
 
     }
-
-    public List<VerdaderoFalsoQuestions> getAllVTQuestions(){
-        List<VerdaderoFalsoQuestions> questionList1 = new ArrayList<>();
+    public List<MultipleChoiceQuestions> getAllMultipleQuestions(){
+        List<MultipleChoiceQuestions> questionList4 = new ArrayList<>();
         db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + VerdaderoFalsoQuestionsTable.TABLE_NAME, null);
+        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsMultipleTable.TABLE_NAME, null);
 
         if(c.moveToFirst()){
             do{
-                VerdaderoFalsoQuestions VFquestion = new VerdaderoFalsoQuestions();
-                VFquestion.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)+1));
-                VFquestion.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)+1));
-                VFquestion.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)+1));
-                VFquestion.setAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER)+1));
+                MultipleChoiceQuestions Multiplequestion = new MultipleChoiceQuestions();
+                Multiplequestion.setQuestion(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_QUESTION)+1));
+                Multiplequestion.setOption1(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION1)+1));
+                Multiplequestion.setOption2(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
+                Multiplequestion.setOption3(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
+                Multiplequestion.setOption4(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
+                Multiplequestion.setOption5(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
+                Multiplequestion.setOption6(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
+                Multiplequestion.setAnswer(c.getInt(c.getColumnIndex(QuestionsMultipleTable.COLUMN_ANSWER)+1));
 
-                questionList1.add(VFquestion);
+                questionList4.add(Multiplequestion);
             }while(c.moveToNext());
         }
         c.close();
-        return questionList1;
-
+        return questionList4;
     }
-
-    public List<VerdaderoFalsoQuestions> getAllVTQuestions(){
-        List<VerdaderoFalsoQuestions> questionList3 = new ArrayList<>();
+    public List<ImagesQuestions> getAllImagesQuestions(){
+        List<ImagesQuestions> questionList5 = new ArrayList<>();
         db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM " + VerdaderoFalsoQuestionsTable.TABLE_NAME, null);
+        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsImagesTable.TABLE_NAME, null);
 
         if(c.moveToFirst()){
             do{
-                VerdaderoFalsoQuestions VFquestion = new VerdaderoFalsoQuestions();
-                VFquestion.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)+1));
-                VFquestion.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)+1));
-                VFquestion.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)+1));
-                VFquestion.setAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER)+1));
+                ImagesQuestions imagesquestion = new ImagesQuestions;
 
-                questionList3.add(VFquestion);
+                ImagesQuestions.setQuestion(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_QUESTION)+1));
+                ImagesQuestions.setOption1(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION1)+1));
+                ImagesQuestions.setOption2(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
+                ImagesQuestions.setOption3(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
+                ImagesQuestions.setOption4(c.getString(c.getColumnIndex(QuestionsImagesTable.COLUMN_OPTION2)+1));
+                ImagesQuestions.setAnswer(c.getInt(c.getColumnIndex(QuestionsImagesTable.COLUMN_ANSWER)+1));
+
+                questionList5.add(imagesquestion);
             }while(c.moveToNext());
         }
         c.close();
-        return questionList3;
+        return questionList5;
 
     }
 
