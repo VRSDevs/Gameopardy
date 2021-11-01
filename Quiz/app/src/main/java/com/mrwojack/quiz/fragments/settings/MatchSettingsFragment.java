@@ -50,7 +50,7 @@ public class MatchSettingsFragment extends Fragment {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Guardado", Toast.LENGTH_LONG);
+                Toast.makeText(getContext(), "Guardado", Toast.LENGTH_LONG).show();
             }
         });
     }

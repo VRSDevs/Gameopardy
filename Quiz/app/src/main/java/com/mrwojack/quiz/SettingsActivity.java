@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.mrwojack.quiz.fragments.settings.MatchSettingsFragment;
 import com.mrwojack.quiz.fragments.settings.MusicSettingsFragment;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -33,6 +34,6 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void showMatchSettings(View view) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragCV_Settings, new MusicSettingsFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragCV_Settings, new MatchSettingsFragment()).commit();
     }
 }
