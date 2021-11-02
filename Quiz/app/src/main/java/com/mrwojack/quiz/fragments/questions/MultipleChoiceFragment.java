@@ -83,7 +83,7 @@ public class MultipleChoiceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View _view = inflater.inflate(R.layout.fragment_normal_question, container, false);
+        View _view = inflater.inflate(R.layout.fragment_multiple_choice, container, false);
 
         // Obtención de valores del Bundle de la actividad
         question = getArguments().getString("question");
