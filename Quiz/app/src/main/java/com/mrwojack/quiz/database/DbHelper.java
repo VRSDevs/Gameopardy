@@ -16,8 +16,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
     //region Variables
 
-    private static final String DATABASE_NAME = "GameopardyDB.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "GameopardyDB2.db";
+    private static final int DATABASE_VERSION = 2;
     private SQLiteDatabase db;
 
     //endregion
@@ -272,6 +272,7 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_OPTION5, q.getOption5());
         cv.put(QuestionsTable.COLUMN_OPTION6, q.getOption6());
         cv.put(QuestionsTable.COLUMN_ANSWER, q.getAnswer());
+        cv.put(QuestionsTable.COLUMN_TYPE, q.getType());
         cv.put(QuestionsTable.COLUMN_CATEGORY, q.getAnswer());
 
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
