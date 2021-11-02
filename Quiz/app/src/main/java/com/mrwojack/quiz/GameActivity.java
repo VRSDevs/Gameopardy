@@ -209,7 +209,20 @@ public class GameActivity extends AppCompatActivity {
      * Método para finalizar la partida
      */
     private void finishGame() {
-        Toast.makeText(this, "nigga", Toast.LENGTH_SHORT).show();
+
+        // Obtención de objeto Intent para el cambio de actividad
+        Intent int_Results = new Intent(this, GameActivity.class);
+        // Inserción de dato en Intent para el envío a otra actividad
+        int_Results.putExtra("points", points);
+        int_Results.putExtra("hits", hits);
+        int_Results.putExtra("mistakes", mistakes);
+        int_Results.putExtra("category", category);
+        int_Results.putExtra("time", time);
+        int_Results.putExtra("timer", timerText.getText().toString());
+        // Inicio de la actividad
+        startActivity(int_Results);
+        // Finalización de la actividad
+        finish();
     }
 
     //endregion
