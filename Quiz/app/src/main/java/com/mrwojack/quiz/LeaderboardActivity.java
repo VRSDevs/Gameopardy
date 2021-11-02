@@ -109,7 +109,7 @@ public class LeaderboardActivity extends AppCompatActivity {
      */
     private void setupRankingList() {
         // Inicialización y relleno de array
-        String array[] = {"No se encontró registro."};
+        String array[] = {"No se encontró registro.", "", "", "", ""};
         for (int i = 0; i < MAX_USERS_IN_RANK; i++) {
             if(username[i].equals("-"))
                 continue;
