@@ -1,4 +1,4 @@
-package com.mrwojack.gameopardy;
+package com.mrwojack.quiz;
 
 import android.provider.BaseColumns;
 
@@ -9,7 +9,9 @@ public final class QuizContract{
 
     }
 
-    public static class QuestionsTable implements BaseColumns {
+
+
+    public static class QuestionsMultipleTable implements BaseColumns {
         public static final String TABLE_NAME = "quiz_multiple_questions";
         public static final String COLUMN_QUESTION = "question";
         public static final String COLUMN_OPTION1 = "option1";
@@ -21,9 +23,10 @@ public final class QuizContract{
         public static final String COLUMN_ANSWER = "answer";
         public static final String COLUMN_CATEGORY = "category";
 
-
-
-
     }
+
+
+
+
 }
 

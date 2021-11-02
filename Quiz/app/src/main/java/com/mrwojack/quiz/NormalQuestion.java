@@ -1,7 +1,6 @@
-package com.mrwojack.gameopardy.fragments.questions;
+package com.mrwojack.quiz;
 
-public class ImagesQuestions {
-
+public class NormalQuestion {
     private String question;
     private String option1;
     private String option2;
@@ -10,27 +9,17 @@ public class ImagesQuestions {
     private int answer;
     private String categoria;
 
-
-    public ImagesQuestions(){
+    public NormalQuestion(){
 
     }
 
-    public ImagesQuestions(String question, String option1, String option2, String option3, String option4, int answer,String categoria) {
+    public NormalQuestion(String question, String option1, String option2, String option3, String option4, int answer,String categoria) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
         this.answer = answer;
-        this.categoria = categoria;
-
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
@@ -80,5 +69,13 @@ public class ImagesQuestions {
 
     public void setAnswer(int answer) {
         this.answer = answer;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }

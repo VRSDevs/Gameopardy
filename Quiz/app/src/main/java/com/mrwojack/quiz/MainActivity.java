@@ -5,14 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+
 import android.content.SharedPreferences;
+
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.mrwojack.quiz.AudioQuestions;
+import com.mrwojack.quiz.ImagesQuestions;
+import com.mrwojack.quiz.NormalQuestion;
+import com.mrwojack.quiz.MultipleChoiceQuestions;
+import com.mrwojack.quiz.VerdaderoFalsoQuestions;
+
 public class MainActivity extends AppCompatActivity {
+
 
     //region Variables
     //endregion

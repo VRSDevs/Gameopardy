@@ -1,5 +1,6 @@
 package com.mrwojack.quiz;
 
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,9 +13,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Collections;
+import java.util.List;
+  
 
 public class GameActivity extends AppCompatActivity {
 
+
+    private List<NormalQuestion> questionList;
+
+    private List<MultipleChoiceQuestions> questionsList3;
+    
     //region Variables
 
     /**
@@ -92,6 +101,9 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        
+        DbHelper DBhelper3 = new DbHelper( (this));
+        questionsList3 = DBhelper3.getAllMultipleQuestions();
 
         InitGameVars();
 
@@ -237,6 +249,5 @@ public class GameActivity extends AppCompatActivity {
                 });
         builder.show();
     }
-
     //endregion
 }

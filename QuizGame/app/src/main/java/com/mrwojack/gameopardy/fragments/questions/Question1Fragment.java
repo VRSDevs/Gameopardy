@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.mrwojack.gameopardy.R;
 
+import java.util.List;
+
 public class Question1Fragment extends Fragment {
 
     ///////////////////////// VARIABLES /////////////////////////
@@ -29,7 +31,7 @@ public class Question1Fragment extends Fragment {
     int hits = 0;       // Número de aciertos
     int mistakes = 0;   // Número de errores
     int questionNumber = 1;     // Número de pregunta actual
-
+    private List<Questions> questionsList;
     /**
      *  Constructor vacío
      */
@@ -44,6 +46,7 @@ public class Question1Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
 
     /**
      * Método ejecutado y que devuelve la vista creada asignada al fragmento
