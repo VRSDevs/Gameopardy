@@ -46,7 +46,7 @@ public class GameCategoryActivity extends AppCompatActivity {
      * @param view
      */
     public void playGame(View view) {
-
+        
     }
 
     /**
