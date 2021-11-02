@@ -233,27 +233,27 @@ public class DbHelper extends SQLiteOpenHelper {
         addQuestionToTable(M48);
         Question M49 = new Question("¿Cual es la consola de SEGA con mayor número de ventas? ","Sega Master System","Sega Mega Drive/Genesis","Sega Game Gear","Sega Saturn","","","Sega Mega Drive/Genesis","normal","empresa");
         addQuestionToTable(M49);
-        Question M50 = new Question("","","","","","","","","","");
+        Question M50 = new Question("¿Fue Toby Fox, el creador de Undertale, el que compuso también su banda sonora?","","","","","","","Verdadero","binario","curiosidades");
         addQuestionToTable(M50);
-        Question M51 = new Question("","","","","","","","","","");
+        Question M51 = new Question("¿Cuales de estas consolas fueron lanzadas al mercado entre los años 2000 y 2010?","Sega Dreamcast","Nintendo Wii U ","PlayStation 2","PlayStation 3","Xbox","Xbox 360","PlayStation 2, PlayStation 3, Xbox, Xbox 360,","multiple","historia");
         addQuestionToTable(M51);
-        Question M52 = new Question("","","","","","","","","","");
+        Question M52 = new Question("","","","","","","","","","curiosidades");
         addQuestionToTable(M52);
-        Question M53 = new Question("","","","","","","","","","");
+        Question M53 = new Question("","","","","","","","","","curiosidades");
         addQuestionToTable(M53);
-        Question M54 = new Question("","","","","","","","","","");
+        Question M54 = new Question("","","","","","","","","","curiosidades");
         addQuestionToTable(M54);
-        Question M55 = new Question("","","","","","","","","","");
+        Question M55 = new Question("","","","","","","","","","curiosidades");
         addQuestionToTable(M55);
-        Question M56 = new Question("","","","","","","","","","");
+        Question M56 = new Question("","","","","","","","","","historia");
         addQuestionToTable(M56);
-        Question M57 = new Question("","","","","","","","","","");
+        Question M57 = new Question("","","","","","","","","","empresa");
         addQuestionToTable(M57);
-        Question M58 = new Question("","","","","","","","","","");
+        Question M58 = new Question("","","","","","","","","","empresa");
         addQuestionToTable(M58);
-        Question M59 = new Question("","","","","","","","","","");
+        Question M59 = new Question("","","","","","","","","","empresa");
         addQuestionToTable(M59);
-        Question M60 = new Question("","","","","","","","","","");
+        Question M60 = new Question("","","","","","","","","","empresa");
         addQuestionToTable(M60);
 
     }
