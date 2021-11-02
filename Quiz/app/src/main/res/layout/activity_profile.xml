@@ -6,14 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
+    <Button
+        android:id="@+id/btt_Back3"
+        android:layout_width="117dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="48dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/asdonauts_font_family"
+        android:onClick="goToMainMenu"
+        android:text="@string/back"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edtTxt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:fontFamily="@font/asdonauts_font_family"
+        android:hint="Introduce tu nombre"
         android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="222dp" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVw_userProf" />
+
+    <TextView
+        android:id="@+id/txtVw_userProf"
+        android:layout_width="294dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="104dp"
+        android:fontFamily="@font/asdonauts_font_family"
+        android:text="Perfil de usuario"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTxt_name">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/asdonauts_font_family"
+            android:text="@string/save"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/asdonauts_font_family"
+            android:text="@string/delete"
+            android:textSize="20sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
