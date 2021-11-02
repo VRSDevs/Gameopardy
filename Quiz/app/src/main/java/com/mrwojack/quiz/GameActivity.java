@@ -186,7 +186,7 @@ public class GameActivity extends AppCompatActivity {
 
     //endregion
 
-    //region Métodos - Otros
+    //region Métodos - Inicialización
 
     /**
      * Método para inicializar las variables de la partida
@@ -241,6 +241,10 @@ public class GameActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    //endregion
+
+    //region Métodos - Otros
 
     /**
      * Método para lanzar una alerta antes de cerrar la partida
