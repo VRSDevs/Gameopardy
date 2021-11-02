@@ -181,13 +181,6 @@ public class GameActivity extends AppCompatActivity {
 
     //region Métodos - Navegación
 
-    /**
-     * Método para llamar a la advertencia de cierre de partida
-     */
-    public void exitGame() {
-        exit();
-    }
-
     //endregion
 
     //region Métodos - Otros

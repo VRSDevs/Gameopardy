@@ -58,7 +58,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragCV_Settings"
-        android:name="com.mrwojack.quiz.fragments.settings.EmptySettingsFragment"
+        android:name="com.mrwojack.quiz.fragments.EmptyFragment"
         android:layout_width="412dp"
         android:layout_height="243dp"
         android:layout_marginTop="8dp"
@@ -68,7 +68,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LL_SettingsCategory"
         app:layout_constraintVertical_bias="0.069"
-        tools:layout="@layout/fragment_empty_settings" />
+        tools:layout="@layout/fragment_empty" />
 
     <Button
         android:id="@+id/btt_Back"

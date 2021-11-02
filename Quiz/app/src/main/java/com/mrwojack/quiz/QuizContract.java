@@ -9,8 +9,6 @@ public final class QuizContract{
 
     }
 
-
-
     public static class QuestionsMultipleTable implements BaseColumns {
         public static final String TABLE_NAME = "quiz_multiple_questions";
         public static final String COLUMN_QUESTION = "question";
@@ -24,9 +22,5 @@ public final class QuizContract{
         public static final String COLUMN_CATEGORY = "category";
 
     }
-
-
-
-
 }
 

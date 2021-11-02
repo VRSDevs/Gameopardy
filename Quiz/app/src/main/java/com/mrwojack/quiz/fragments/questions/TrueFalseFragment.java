@@ -1,4 +1,4 @@
-package com.mrwojack.quiz.fragments.settings;
+package com.mrwojack.quiz.fragments.questions;
 
 import android.os.Bundle;
 
@@ -10,18 +10,11 @@ import android.view.ViewGroup;
 
 import com.mrwojack.quiz.R;
 
+public class TrueFalseFragment extends Fragment {
 
-public class EmptySettingsFragment extends Fragment {
-
-    //region Constructores
-
-    public EmptySettingsFragment() {
+    public TrueFalseFragment() {
         // Required empty public constructor
     }
-
-    //endregion
-
-    //region Métodos - Ciclo de vida
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,8 +25,6 @@ public class EmptySettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_empty_settings, container, false);
+        return inflater.inflate(R.layout.fragment_true_false, container, false);
     }
-
-    //endregion
 }
