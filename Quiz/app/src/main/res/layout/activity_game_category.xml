@@ -30,6 +30,7 @@
         android:layout_height="68dp"
         android:layout_marginBottom="112dp"
         android:fontFamily="@font/asdonauts_font_family"
+        android:onClick="playGame"
         android:text="@string/play2"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,6 +42,7 @@
         android:layout_width="106dp"
         android:layout_height="59dp"
         android:fontFamily="@font/asdonauts_font_family"
+        android:onClick="goBack"
         android:text="@string/back"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btt_PlayGame" />
 
     <RadioGroup
-        android:layout_width="375dp"
+        android:layout_width="349dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -64,33 +66,45 @@
             android:id="@+id/rb_vidHis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/asdonauts_font_family"
+            android:onClick="enablePlayButton"
             android:text="@string/videogameHistory"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
 
         <RadioButton
             android:id="@+id/rb_vidComp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/asdonauts_font_family"
+            android:onClick="enablePlayButton"
             android:text="@string/videogamesCompany"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
 
         <RadioButton
             android:id="@+id/rb_genCul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/asdonauts_font_family"
+            android:onClick="enablePlayButton"
             android:text="@string/generalCulture"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
 
         <RadioButton
             android:id="@+id/rb_vidSag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/asdonauts_font_family"
+            android:onClick="enablePlayButton"
             android:text="@string/videogamesSaga"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
 
     </RadioGroup>
 

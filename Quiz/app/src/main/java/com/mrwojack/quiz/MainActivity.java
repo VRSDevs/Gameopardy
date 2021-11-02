@@ -36,6 +36,19 @@ public class MainActivity extends AppCompatActivity {
     //region Métodos - Navegación
 
     /**
+     * Método para abrir el menú de la partida
+     * @param view
+     */
+    public void openGameMenu(View view) {
+        // Obtención de objeto Intent para el cambio de actividad
+        Intent int_GameMenu = new Intent(this, GameCategoryActivity.class);
+        // Inicio de la actividad
+        startActivity(int_GameMenu);
+        // Finalización de la actividad
+        finish();
+    }
+
+    /**
      * Método para abrir el menú de ajustes
      * @param view -> Referencia a la vista
      */

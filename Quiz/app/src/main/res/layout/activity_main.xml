@@ -45,6 +45,7 @@
         android:layout_width="273dp"
         android:layout_height="103dp"
         android:fontFamily="@font/asdonauts_font_family"
+        android:onClick="openGameMenu"
         android:text="@string/play"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
