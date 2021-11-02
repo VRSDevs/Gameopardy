@@ -11,6 +11,9 @@ import android.widget.Button;
 public class GameCategoryActivity extends AppCompatActivity {
 
     //region Variables
+    /**
+     * Referencia al botón de jugar
+     */
     Button playButton;
 
     //endregion
@@ -38,10 +41,18 @@ public class GameCategoryActivity extends AppCompatActivity {
 
     //region Métodos - Navegación
 
+    /**
+     * Método para acceder a la partida
+     * @param view
+     */
     public void playGame(View view) {
 
     }
 
+    /**
+     * Método para volver al menú principal
+     * @param view
+     */
     public void goBack(View view) {
         // Obtención de objeto Intent para el cambio de actividad
         Intent int_MainMenu = new Intent(this, MainActivity.class);
