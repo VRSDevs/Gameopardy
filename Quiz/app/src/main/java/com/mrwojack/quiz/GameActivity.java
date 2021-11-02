@@ -201,7 +201,7 @@ public class GameActivity extends AppCompatActivity {
 
         // Obtención de la dificultad guardada
         String selectedDifficulty = getSharedPreferences(
-                "preferencias", Context.MODE_PRIVATE).getString("difficulty", "ERROR");
+                "preferencias", Context.MODE_PRIVATE).getString("difficulty", "Fácil");
 
         // Selección de la dificultad en función del valor almacenado
         switch (selectedDifficulty){

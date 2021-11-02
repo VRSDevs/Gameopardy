@@ -71,7 +71,7 @@ public class DbHelper extends SQLiteOpenHelper {
         // Obtención de tabla y de cursor para operar en la tabla
         db = getReadableDatabase();
         Cursor _cursor = db.rawQuery(
-                "SELECT * FROM " + QuestionsTable.TABLE_NAME + "WHERE category = " + "'" + category + "'",
+                "SELECT * FROM " + QuestionsTable.TABLE_NAME + " WHERE category = " + "'" + category + "'",
                 null);
 
         if(_cursor.moveToFirst()){
