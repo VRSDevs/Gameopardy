@@ -1,6 +1,5 @@
 package com.mrwojack.quiz;
 
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,14 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mrwojack.quiz.classes.questions.Question;
+import com.mrwojack.quiz.database.DbHelper;
 
 import java.util.List;
-  
 
 public class GameActivity extends AppCompatActivity {
-
-    private List<NormalQuestion> questionList;
-    private List<Question> questionsList3;
     
     //region Variables
 
@@ -71,6 +67,10 @@ public class GameActivity extends AppCompatActivity {
      * Número máximo de preguntas
      */
     int maxQuestions;
+    /**
+     * Categoría de la partida
+     */
+    String category;
 
     /**
      * Tiempo total (en segundos) de la partida
@@ -93,6 +93,11 @@ public class GameActivity extends AppCompatActivity {
      */
     Handler timerHand = new Handler();
 
+    /**
+     * Lista de todas las preguntas
+     */
+    private List<Question> questionsList;
+
     //endregion
 
     //region Métodos - Ciclo de vida
@@ -102,10 +107,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        DbHelper DBhelper3 = new DbHelper( (this));
-        questionsList3 = DBhelper3.getAllMultipleQuestions();
-
         InitGameVars();
+        getQuestionsFromDB();
 
         // Referencias a objetos
         questionsText = findViewById(R.id.txtVw_questions);
@@ -193,6 +196,7 @@ public class GameActivity extends AppCompatActivity {
         hits = 0;
         mistakes = 0;
         questionNumber = 1;
+        category = getIntent().getStringExtra("category");
         time = secs = mins = 0;
 
         // Obtención de la dificultad guardada
@@ -212,6 +216,28 @@ public class GameActivity extends AppCompatActivity {
                 break;
             default:
                 Toast.makeText(this, "No se encontró dificultad", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    /**
+     * Método para obtener las preguntas de la base de datos
+     */
+    private void getQuestionsFromDB(){
+        DbHelper _dbHelper = new DbHelper(this);
+
+        switch (category) {
+            case "Historia de los videojuegos":
+                questionsList = _dbHelper.getQuestions("historia");
+                break;
+            case "Empresas de videojuegos":
+                questionsList = _dbHelper.getQuestions("empresa");
+                break;
+            case "Cultura general":
+                questionsList = _dbHelper.getQuestions("curiosidades");
+                break;
+            case "Sagas de videojuegos":
+                questionsList = _dbHelper.getQuestions("sagas");
                 break;
         }
     }
@@ -242,5 +268,6 @@ public class GameActivity extends AppCompatActivity {
                 });
         builder.show();
     }
+
     //endregion
 }

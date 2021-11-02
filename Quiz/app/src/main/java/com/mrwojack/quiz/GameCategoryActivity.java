@@ -7,6 +7,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class GameCategoryActivity extends AppCompatActivity {
 
@@ -15,6 +17,11 @@ public class GameCategoryActivity extends AppCompatActivity {
      * Referencia al botón de jugar
      */
     Button playButton;
+
+    /**
+     * Categoría seleccionada
+     */
+    String category;
 
     //endregion
 
@@ -48,6 +55,8 @@ public class GameCategoryActivity extends AppCompatActivity {
     public void playGame(View view) {
         // Obtención de objeto Intent para el cambio de actividad
         Intent int_Game = new Intent(this, GameActivity.class);
+        // Inserción de dato en Intent para el envío a otra actividad
+        int_Game.putExtra("category", category);
         // Inicio de la actividad
         startActivity(int_Game);
         // Finalización de la actividad
@@ -72,12 +81,17 @@ public class GameCategoryActivity extends AppCompatActivity {
     //region Métodos - Otros
 
     /**
-     * Método para activar el botón de jugar
+     * Método para activar el botón de jugar y asignación de categoría
      * @param view
      */
     public void enablePlayButton(View view){
         playButton.setClickable(true);
         playButton.setBackgroundColor(Color.rgb(98,0,238));
+
+        RadioButton buttonPressed = view.findViewById(view.getId());
+
+        category = buttonPressed.getText().toString();
+        Toast.makeText(this, category, Toast.LENGTH_SHORT).show();
     }
 
     //endregion

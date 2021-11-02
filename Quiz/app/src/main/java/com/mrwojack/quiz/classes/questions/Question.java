@@ -115,6 +115,5 @@ public class Question {
         this.category = category;
     }
 
-
     //endregion
 }
