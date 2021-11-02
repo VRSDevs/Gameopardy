@@ -110,6 +110,8 @@ public class NormalQuestionFragment extends Fragment {
         optionsBtt.add(view.findViewById(R.id.btt_nq_o3));
         optionsBtt.add(view.findViewById(R.id.btt_nq_o4));
 
+        initFragmentUI();
+
         // Por cada botón de respuesta
         for (Button btn:
                 optionsBtt) {
@@ -149,6 +151,28 @@ public class NormalQuestionFragment extends Fragment {
                     return true;
                 }
             });
+        }
+    }
+
+    //endregion
+
+    //region Métodos - Inicialización
+
+    /**
+     * Método para inicializar la interfaz del fragmento
+     */
+    private void initFragmentUI() {
+        // Pregunta
+        questionTxtVw.setText(question);
+
+        // Botones
+        int i = 0;
+
+        for (Button btn:
+                optionsBtt) {
+            btn.setText(options[i]);
+
+            i++;
         }
     }
 

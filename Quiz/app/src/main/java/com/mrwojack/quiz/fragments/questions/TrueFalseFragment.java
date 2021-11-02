@@ -101,6 +101,8 @@ public class TrueFalseFragment extends Fragment {
         optionBtt = view.findViewById(R.id.togBtt_tf);
         confirmButton = view.findViewById(R.id.btt_tf_conf);
 
+        initFragmentUI();
+
         // Asignación de evento de escucha al botón de confirmación
         confirmButton.setOnClickListener(new View.OnClickListener() {
 
@@ -132,6 +134,18 @@ public class TrueFalseFragment extends Fragment {
                 return true;
             }
         });
+    }
+
+    //endregion
+
+    //region Métodos - Inicialización
+
+    /**
+     * Método para inicializar la interfaz del fragmento
+     */
+    private void initFragmentUI() {
+        // Pregunta
+        questionTxtVw.setText(question);
     }
 
     //endregion

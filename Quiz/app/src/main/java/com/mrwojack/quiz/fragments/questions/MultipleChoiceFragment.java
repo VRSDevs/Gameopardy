@@ -120,6 +120,8 @@ public class MultipleChoiceFragment extends Fragment {
         optionsBtt.add(view.findViewById(R.id.chkBox_mc_o6));
         confirmButton = view.findViewById(R.id.btt_mc_conf);
 
+        initFragmentUI();
+
         // Asignación de evento de escucha al botón de confirmación
         confirmButton.setOnClickListener(new View.OnClickListener() {
 
@@ -164,6 +166,28 @@ public class MultipleChoiceFragment extends Fragment {
                 return true;
             }
         });
+    }
+
+    //endregion
+
+    //region Métodos - Inicialización
+
+    /**
+     * Método para inicializar la interfaz del fragmento
+     */
+    private void initFragmentUI() {
+        // Pregunta
+        questionTxtVw.setText(question);
+
+        // Botones
+        int i = 0;
+
+        for (Button btn:
+                optionsBtt) {
+            btn.setText(options[i]);
+
+            i++;
+        }
     }
 
     //endregion
