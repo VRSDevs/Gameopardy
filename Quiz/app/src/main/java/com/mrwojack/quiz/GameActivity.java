@@ -351,8 +351,9 @@ public class GameActivity extends AppCompatActivity {
      */
     public void generateFragment(){
 
-        if(questionNumber == maxQuestions + 1)
+        if(questionNumber == maxQuestions + 1) {
             finishGame();
+        }
 
         // Creación Bundle
         Bundle args = new Bundle();
