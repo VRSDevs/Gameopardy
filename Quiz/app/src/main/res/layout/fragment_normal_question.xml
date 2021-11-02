@@ -11,7 +11,7 @@
         android:id="@+id/txtVw_nq_q"
         android:layout_width="295dp"
         android:layout_height="175dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/asdonauts_font_family"
         android:text="@string/question"
         android:textAlignment="center"
@@ -27,10 +27,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtVw_nq_q"
-        app:layout_constraintVertical_bias="0.168">
+        app:layout_constraintVertical_bias="0.081">
 
         <Button
             android:id="@+id/btt_nq_o1"
@@ -38,7 +38,9 @@
             android:layout_height="72dp"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option1"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="219dp" />
 
         <Button
             android:id="@+id/btt_nq_o2"
@@ -46,7 +48,9 @@
             android:layout_height="72dp"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option2"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="291dp" />
 
         <Button
             android:id="@+id/btt_nq_o3"
@@ -54,7 +58,9 @@
             android:layout_height="72dp"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option3"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="363dp" />
 
         <Button
             android:id="@+id/btt_nq_o4"
@@ -62,6 +68,8 @@
             android:layout_height="72dp"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option4"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="435dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
