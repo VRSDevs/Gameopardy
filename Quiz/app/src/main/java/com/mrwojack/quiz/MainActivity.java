@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createSharedPreferences();
+        createSharedPreferences("preferencias");
+        createSharedPreferences("jugador");
     }
 
     //endregion
@@ -46,6 +47,19 @@ public class MainActivity extends AppCompatActivity {
         Intent int_GameMenu = new Intent(this, GameCategoryActivity.class);
         // Inicio de la actividad
         startActivity(int_GameMenu);
+        // Finalización de la actividad
+        finish();
+    }
+
+    /**
+     * Método para acceder al menú del perfil
+     * @param view
+     */
+    public void openProfileMenu(View view) {
+        // Obtención de objeto Intent para el cambio de actividad
+        Intent int_ProfileMenu = new Intent(this, ProfileActivity.class);
+        // Inicio de la actividad
+        startActivity(int_ProfileMenu);
         // Finalización de la actividad
         finish();
     }
@@ -105,23 +119,47 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Método para crear por primera vez el fichero de ajustes
      */
-    private void createSharedPreferences() {
-        // Obtención del fichero
-        SharedPreferences preferences = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+    private void createSharedPreferences(String file) {
+        switch (file) {
+            case "preferencias":
 
-        // Si existe, entonces no se sigue la ejecución
-        if(preferences != null) {
-            return;
+                // Obtención del fichero
+                SharedPreferences preferences = getSharedPreferences(file, Context.MODE_PRIVATE);
+
+                // Si existe, entonces no se sigue la ejecución
+                if(preferences != null) {
+                    return;
+                }
+
+                // Obtención del editor
+                SharedPreferences.Editor preferencesEditor = preferences.edit();
+
+                // Asignación de valores
+                preferencesEditor.putInt("musicVol", 100);
+                preferencesEditor.putInt("sfxVol", 100);
+                preferencesEditor.putString("difficulty", "Fácil");
+                preferencesEditor.commit();
+
+                break;
+            case "jugador":
+                // Obtención del fichero
+                SharedPreferences player = getSharedPreferences(file, Context.MODE_PRIVATE);
+
+                // Si existe, entonces no se sigue la ejecución
+                if(player != null) {
+                    return;
+                }
+
+                // Obtención del editor
+                SharedPreferences.Editor playerEditor = player.edit();
+
+                // Asignación de valores
+                playerEditor.putString("username", "Anónimo");
+                playerEditor.commit();
+
+                break;
         }
 
-        // Obtención del editor
-        SharedPreferences.Editor editor = preferences.edit();
-
-        // Asignación de valores
-        editor.putInt("musicVol", 100);
-        editor.putInt("sfxVol", 100);
-        editor.putString("difficulty", "Fácil");
-        editor.commit();
     }
 
     /**
