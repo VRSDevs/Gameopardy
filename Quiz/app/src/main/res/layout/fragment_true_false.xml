@@ -11,7 +11,7 @@
         android:id="@+id/txtVw_tf_q"
         android:layout_width="295dp"
         android:layout_height="175dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/asdonauts_font_family"
         android:text="@string/question"
         android:textAlignment="center"
@@ -26,10 +26,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtVw_tf_q"
-        app:layout_constraintVertical_bias="0.168" >
+        app:layout_constraintVertical_bias="0.096">
 
         <ToggleButton
             android:id="@+id/togBtt_tf"
