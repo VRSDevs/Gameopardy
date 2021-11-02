@@ -46,7 +46,12 @@ public class GameCategoryActivity extends AppCompatActivity {
      * @param view
      */
     public void playGame(View view) {
-
+        // Obtención de objeto Intent para el cambio de actividad
+        Intent int_Game = new Intent(this, GameActivity.class);
+        // Inicio de la actividad
+        startActivity(int_Game);
+        // Finalización de la actividad
+        finish();
     }
 
     /**
