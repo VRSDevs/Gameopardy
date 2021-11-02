@@ -31,7 +31,7 @@ public class MultipleChoiceFragment extends Fragment {
     /**
      * Lista de referencias de botones de las opciones
      */
-    List<CheckBox> optionsBtt;
+    List<CheckBox> optionsChk;
     /**
      * Referencia al botón de confirmar
      */
@@ -72,7 +72,7 @@ public class MultipleChoiceFragment extends Fragment {
 
         // Inicialización de variables
         options = new String[6];
-        optionsBtt = new ArrayList<>();
+        optionsChk = new ArrayList<>();
     }
 
     /**
@@ -112,12 +112,12 @@ public class MultipleChoiceFragment extends Fragment {
 
         // Obtención de referencias
         questionTxtVw = view.findViewById(R.id.txtVw_mc_q);
-        optionsBtt.add(view.findViewById(R.id.chkBox_mc_o1));
-        optionsBtt.add(view.findViewById(R.id.chkBox_mc_o2));
-        optionsBtt.add(view.findViewById(R.id.chkBox_mc_o3));
-        optionsBtt.add(view.findViewById(R.id.chkBox_mc_o4));
-        optionsBtt.add(view.findViewById(R.id.chkBox_mc_o5));
-        optionsBtt.add(view.findViewById(R.id.chkBox_mc_o6));
+        optionsChk.add(view.findViewById(R.id.chkBox_mc_o1));
+        optionsChk.add(view.findViewById(R.id.chkBox_mc_o2));
+        optionsChk.add(view.findViewById(R.id.chkBox_mc_o3));
+        optionsChk.add(view.findViewById(R.id.chkBox_mc_o4));
+        optionsChk.add(view.findViewById(R.id.chkBox_mc_o5));
+        optionsChk.add(view.findViewById(R.id.chkBox_mc_o6));
         confirmButton = view.findViewById(R.id.btt_mc_conf);
 
         initFragmentUI();
@@ -145,7 +145,7 @@ public class MultipleChoiceFragment extends Fragment {
                 String userAnswer = "";
 
                 for (CheckBox ckbox:
-                        optionsBtt) {
+                        optionsChk) {
                     // Si no está pulsado
                     if(!ckbox.isChecked())
                         // Siguiente respuesta marcada
@@ -182,10 +182,10 @@ public class MultipleChoiceFragment extends Fragment {
         // Botones
         int i = 0;
 
-        for (Button btn:
-                optionsBtt) {
-            btn.setText(options[i]);
+        for (CheckBox chk:
+                optionsChk) {
 
+            chk.setText(options[i]);
             i++;
         }
     }
