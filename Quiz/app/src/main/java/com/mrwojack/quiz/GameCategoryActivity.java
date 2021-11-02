@@ -13,6 +13,7 @@ import android.widget.Toast;
 public class GameCategoryActivity extends AppCompatActivity {
 
     //region Variables
+
     /**
      * Referencia al botón de jugar
      */

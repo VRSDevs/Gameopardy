@@ -3,6 +3,7 @@ package com.mrwojack.quiz;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,7 +16,10 @@ import android.widget.Toast;
 
 import com.mrwojack.quiz.classes.questions.Question;
 import com.mrwojack.quiz.database.DbHelper;
+import com.mrwojack.quiz.fragments.questions.MultipleChoiceFragment;
+import com.mrwojack.quiz.fragments.questions.NormalQuestionFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameActivity extends AppCompatActivity {
@@ -97,6 +101,10 @@ public class GameActivity extends AppCompatActivity {
      * Lista de todas las preguntas
      */
     private List<Question> questionsList;
+    /**
+     * Lista aleatorizada y limitada a la dificultad
+     */
+    private List<Question> randomizedQuestionsList;
 
     //endregion
 
@@ -184,9 +192,16 @@ public class GameActivity extends AppCompatActivity {
 
     //region Métodos - Navegación
 
+    /**
+     * Método para finalizar la partida
+     */
+    private void finishGame() {
+
+    }
+
     //endregion
 
-    //region Métodos - Otros
+    //region Métodos - Inicialización
 
     /**
      * Método para inicializar las variables de la partida
@@ -225,8 +240,9 @@ public class GameActivity extends AppCompatActivity {
      */
     private void getQuestionsFromDB(){
         DbHelper _dbHelper = new DbHelper(this);
+        questionsList = _dbHelper.getAllQuestions();
 
-        switch (category) {
+         /*switch (category) {
             case "Historia de los videojuegos":
                 questionsList = _dbHelper.getQuestions("historia");
                 break;
@@ -238,6 +254,144 @@ public class GameActivity extends AppCompatActivity {
                 break;
             case "Sagas de videojuegos":
                 questionsList = _dbHelper.getQuestions("sagas");
+                break;
+        }
+
+
+
+        Toast.makeText(this, questionsList.get(0).getQuestion(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, questionsList.get(1).getQuestion(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, questionsList.get(2).getQuestion(), Toast.LENGTH_SHORT).show();
+
+        randomizedQuestionsList = new ArrayList<>();
+        int[] pickedIndexes = new int[maxQuestions];
+        int index;
+        boolean isAssigned;
+        boolean indexFound;
+
+        for (int i = 0; i < maxQuestions; i++) {
+
+            isAssigned = false;
+
+            do {
+                index = (int) (Math.random() * maxQuestions);
+                indexFound = false;
+
+                for (int j = 0; j < pickedIndexes.length; j++) {
+                    if(pickedIndexes[j] == index) {
+                        indexFound = true;
+                        break;
+                    }
+                }
+
+                if(!indexFound) {
+                    isAssigned = true;
+                }
+
+            } while(!isAssigned);
+
+            //Toast.makeText(this, questionsList.get(index).getQuestion(), Toast.LENGTH_SHORT).show();
+
+            //randomizedQuestionsList.add(questionsList.get(index));
+        }
+
+         */
+    }
+
+    //endregion
+
+    //region Métodos - Actualización
+
+    /**
+     * Método para la actualización de puntos
+     * @param result -> Resultado de la comprobación de respuesta
+     */
+    public void updatePoints(boolean result) {
+        if(!result) {
+            points -= 50;
+            mistakes++;
+        } else {
+            points += 100;
+            hits++;
+        }
+
+        questionNumber++;
+    }
+
+    /**
+     * Método para actualizar el HUD de la partida
+     */
+    public void updateHUD() {
+        questionsText.setText(questionNumber + " / " + maxQuestions);
+        hitsText.setText("Acertadas: " + hits);
+        missText.setText("Fallidas: " + mistakes);
+        pointsText.setText("" + points);
+    }
+
+    //endregion
+
+    //region Métodos - Otros
+
+    /**
+     * Método para la generación del primer fragmento con contenido
+     */
+    public void generateFragment(){
+
+        if(questionNumber == maxQuestions + 1)
+            finishGame();
+
+        // Creación Bundle
+        Bundle args = new Bundle();
+
+        switch (randomizedQuestionsList.get(questionNumber).getType()) {
+            case "normal":
+                // Inserción de datos
+                args.putString("question", randomizedQuestionsList.get(questionNumber).getQuestion());
+                args.putString("option1", randomizedQuestionsList.get(questionNumber).getOption1());
+                args.putString("option2", randomizedQuestionsList.get(questionNumber).getOption2());
+                args.putString("option3", randomizedQuestionsList.get(questionNumber).getOption3());
+                args.putString("option4", randomizedQuestionsList.get(questionNumber).getOption4());
+                args.putString("answer", randomizedQuestionsList.get(questionNumber).getAnswer());
+
+                // Generación de fragmento y asignación de bundle
+                NormalQuestionFragment fragmentN = new NormalQuestionFragment();
+                fragmentN.setArguments(args);
+
+                // Reemplazo de fragmento a mostrar
+                getSupportFragmentManager().beginTransaction().replace(R.id.frgCont_game, fragmentN).commit();
+
+                break;
+            case "multiple":
+                // Inserción de datos
+                args.putString("question", randomizedQuestionsList.get(questionNumber).getQuestion());
+                args.putString("option1", randomizedQuestionsList.get(questionNumber).getOption1());
+                args.putString("option2", randomizedQuestionsList.get(questionNumber).getOption2());
+                args.putString("option3", randomizedQuestionsList.get(questionNumber).getOption3());
+                args.putString("option4", randomizedQuestionsList.get(questionNumber).getOption4());
+                args.putString("option5", randomizedQuestionsList.get(questionNumber).getOption5());
+                args.putString("option6", randomizedQuestionsList.get(questionNumber).getOption6());
+                args.putString("answer", randomizedQuestionsList.get(questionNumber).getAnswer());
+
+                // Generación de fragmento y asignación de bundle
+                MultipleChoiceFragment fragmentM = new MultipleChoiceFragment();
+                fragmentM.setArguments(args);
+
+                // Reemplazo de fragmento a mostrar
+                getSupportFragmentManager().beginTransaction().replace(R.id.frgCont_game, fragmentM).commit();
+
+                break;
+            case "binario":
+                // Inserción de datos
+                args.putString("question", randomizedQuestionsList.get(questionNumber).getQuestion());
+                args.putString("answer", randomizedQuestionsList.get(questionNumber).getAnswer());
+
+                // Generación de fragmento y asignación de bundle
+                MultipleChoiceFragment fragmentB = new MultipleChoiceFragment();
+                fragmentB.setArguments(args);
+
+                // Reemplazo de fragmento a mostrar
+                getSupportFragmentManager().beginTransaction().replace(R.id.frgCont_game, fragmentB).commit();
+
                 break;
         }
     }
