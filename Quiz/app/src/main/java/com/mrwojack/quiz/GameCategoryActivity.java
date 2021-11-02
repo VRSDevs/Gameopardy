@@ -92,7 +92,6 @@ public class GameCategoryActivity extends AppCompatActivity {
         RadioButton buttonPressed = view.findViewById(view.getId());
 
         category = buttonPressed.getText().toString();
-        Toast.makeText(this, category, Toast.LENGTH_SHORT).show();
     }
 
     //endregion
