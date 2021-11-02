@@ -192,6 +192,13 @@ public class GameActivity extends AppCompatActivity {
 
     //region Métodos - Navegación
 
+    /**
+     * Método para finalizar la partida
+     */
+    private void finishGame() {
+
+    }
+
     //endregion
 
     //region Métodos - Inicialización
@@ -293,12 +300,45 @@ public class GameActivity extends AppCompatActivity {
 
     //endregion
 
+    //region Métodos - Actualización
+
+    /**
+     * Método para la actualización de puntos
+     * @param result -> Resultado de la comprobación de respuesta
+     */
+    public void updatePoints(boolean result) {
+        if(!result) {
+            points -= 50;
+            mistakes++;
+        } else {
+            points += 100;
+            hits++;
+        }
+
+        questionNumber++;
+    }
+
+    /**
+     * Método para actualizar el HUD de la partida
+     */
+    public void updateHUD() {
+        questionsText.setText(questionNumber + " / " + maxQuestions);
+        hitsText.setText("Acertadas: " + hits);
+        missText.setText("Fallidas: " + mistakes);
+        pointsText.setText("" + points);
+    }
+
+    //endregion
+
     //region Métodos - Otros
 
     /**
-     * Método para la generación del fragmento con contenido
+     * Método para la generación del primer fragmento con contenido
      */
-    private void generateFragment(){
+    public void generateFragment(){
+
+        if(questionNumber == maxQuestions + 1)
+            finishGame();
 
         // Creación Bundle
         Bundle args = new Bundle();
