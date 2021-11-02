@@ -50,10 +50,9 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.418" />
 
     <Button
         android:id="@+id/btt_profile"
@@ -70,11 +69,25 @@
         app:layout_constraintTop_toBottomOf="@+id/btt_play"
         app:layout_constraintVertical_bias="0.085" />
 
+    <Button
+        android:id="@+id/btt_profile2"
+        android:layout_width="177dp"
+        android:layout_height="66dp"
+        android:fontFamily="@font/asdonauts_font_family"
+        android:onClick="openLeaderboardMenu"
+        android:text="@string/ranking"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btt_profile"
+        app:layout_constraintVertical_bias="0.072" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="358dp"
         android:layout_height="80dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="152dp"
         android:fontFamily="@font/asdonauts_font_family"
         android:text="Gameopardy"
         android:textAlignment="center"
