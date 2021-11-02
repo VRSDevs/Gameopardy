@@ -19,9 +19,7 @@ import java.util.List;
 
 public class GameActivity extends AppCompatActivity {
 
-
     private List<NormalQuestion> questionList;
-
     private List<MultipleChoiceQuestions> questionsList3;
     
     //region Variables
@@ -101,9 +99,11 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        
+
+        /*
         DbHelper DBhelper3 = new DbHelper( (this));
         questionsList3 = DBhelper3.getAllMultipleQuestions();
+        */
 
         InitGameVars();
 
