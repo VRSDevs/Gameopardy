@@ -2,6 +2,7 @@ package com.mrwojack.quiz;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.mrwojack.quiz.classes.questions.Question;
 import com.mrwojack.quiz.database.DbHelper;
+import com.mrwojack.quiz.fragments.EmptyFragment;
 import com.mrwojack.quiz.fragments.questions.MultipleChoiceFragment;
 import com.mrwojack.quiz.fragments.questions.NormalQuestionFragment;
 
@@ -186,6 +188,9 @@ public class GameActivity extends AppCompatActivity {
         
         // Comienzo de la ejecución del hilo
         timerThr.start();
+
+        // Llamada al primer fragmento
+        generateFragment();
     }
 
     //endregion
@@ -196,7 +201,7 @@ public class GameActivity extends AppCompatActivity {
      * Método para finalizar la partida
      */
     private void finishGame() {
-
+        Toast.makeText(this, "nigga", Toast.LENGTH_SHORT).show();
     }
 
     //endregion
@@ -241,6 +246,7 @@ public class GameActivity extends AppCompatActivity {
     private void getQuestionsFromDB(){
         DbHelper _dbHelper = new DbHelper(this);
         questionsList = _dbHelper.getAllQuestions();
+        randomizedQuestionsList = questionsList;
 
          /*switch (category) {
             case "Historia de los videojuegos":
@@ -343,15 +349,15 @@ public class GameActivity extends AppCompatActivity {
         // Creación Bundle
         Bundle args = new Bundle();
 
-        switch (randomizedQuestionsList.get(questionNumber).getType()) {
+        switch (questionsList.get(questionNumber).getType()) {
             case "normal":
                 // Inserción de datos
-                args.putString("question", randomizedQuestionsList.get(questionNumber).getQuestion());
-                args.putString("option1", randomizedQuestionsList.get(questionNumber).getOption1());
-                args.putString("option2", randomizedQuestionsList.get(questionNumber).getOption2());
-                args.putString("option3", randomizedQuestionsList.get(questionNumber).getOption3());
-                args.putString("option4", randomizedQuestionsList.get(questionNumber).getOption4());
-                args.putString("answer", randomizedQuestionsList.get(questionNumber).getAnswer());
+                args.putString("question", questionsList.get(questionNumber).getQuestion());
+                args.putString("option1", questionsList.get(questionNumber).getOption1());
+                args.putString("option2", questionsList.get(questionNumber).getOption2());
+                args.putString("option3", questionsList.get(questionNumber).getOption3());
+                args.putString("option4", questionsList.get(questionNumber).getOption4());
+                args.putString("answer", questionsList.get(questionNumber).getAnswer());
 
                 // Generación de fragmento y asignación de bundle
                 NormalQuestionFragment fragmentN = new NormalQuestionFragment();
@@ -363,14 +369,14 @@ public class GameActivity extends AppCompatActivity {
                 break;
             case "multiple":
                 // Inserción de datos
-                args.putString("question", randomizedQuestionsList.get(questionNumber).getQuestion());
-                args.putString("option1", randomizedQuestionsList.get(questionNumber).getOption1());
-                args.putString("option2", randomizedQuestionsList.get(questionNumber).getOption2());
-                args.putString("option3", randomizedQuestionsList.get(questionNumber).getOption3());
-                args.putString("option4", randomizedQuestionsList.get(questionNumber).getOption4());
-                args.putString("option5", randomizedQuestionsList.get(questionNumber).getOption5());
-                args.putString("option6", randomizedQuestionsList.get(questionNumber).getOption6());
-                args.putString("answer", randomizedQuestionsList.get(questionNumber).getAnswer());
+                args.putString("question", questionsList.get(questionNumber).getQuestion());
+                args.putString("option1", questionsList.get(questionNumber).getOption1());
+                args.putString("option2", questionsList.get(questionNumber).getOption2());
+                args.putString("option3", questionsList.get(questionNumber).getOption3());
+                args.putString("option4", questionsList.get(questionNumber).getOption4());
+                args.putString("option5", questionsList.get(questionNumber).getOption5());
+                args.putString("option6", questionsList.get(questionNumber).getOption6());
+                args.putString("answer", questionsList.get(questionNumber).getAnswer());
 
                 // Generación de fragmento y asignación de bundle
                 MultipleChoiceFragment fragmentM = new MultipleChoiceFragment();
@@ -382,8 +388,8 @@ public class GameActivity extends AppCompatActivity {
                 break;
             case "binario":
                 // Inserción de datos
-                args.putString("question", randomizedQuestionsList.get(questionNumber).getQuestion());
-                args.putString("answer", randomizedQuestionsList.get(questionNumber).getAnswer());
+                args.putString("question", questionsList.get(questionNumber).getQuestion());
+                args.putString("answer", questionsList.get(questionNumber).getAnswer());
 
                 // Generación de fragmento y asignación de bundle
                 MultipleChoiceFragment fragmentB = new MultipleChoiceFragment();
