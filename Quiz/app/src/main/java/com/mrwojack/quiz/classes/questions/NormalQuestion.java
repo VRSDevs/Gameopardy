@@ -1,40 +1,26 @@
-package com.mrwojack.quiz;
+package com.mrwojack.quiz.classes.questions;
 
-public class MultipleChoiceQuestions {
+public class NormalQuestion {
     private String question;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
-    private String option5;
-    private String option6;
-    private String answer;
-    private String categoria;
+    private int answer;
+    private String category;
 
+    public NormalQuestion(){
 
-    public MultipleChoiceQuestions(String question, String option1, String option2, String option3, String option4, String option5, String option6, String answer,String categoria) {
+    }
+
+    public NormalQuestion(String question, String option1, String option2, String option3, String option4, int answer,String category) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
-        this.option5 = option5;
-        this.option6 = option6;
         this.answer = answer;
-        this.categoria = categoria;
-
-    }
-
-    public MultipleChoiceQuestions(){
-
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+        this.category = category;
     }
 
     public String getQuestion() {
@@ -77,27 +63,19 @@ public class MultipleChoiceQuestions {
         this.option4 = option4;
     }
 
-    public String getOption5() {
-        return option5;
-    }
-
-    public void setOption5(String option5) {
-        this.option5 = option5;
-    }
-
-    public String getOption6() {
-        return option6;
-    }
-
-    public void setOption6(String option6) {
-        this.option6 = option6;
-    }
-
-    public String getAnswer() {
+    public int getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
+    public void setAnswer(int answer) {
         this.answer = answer;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

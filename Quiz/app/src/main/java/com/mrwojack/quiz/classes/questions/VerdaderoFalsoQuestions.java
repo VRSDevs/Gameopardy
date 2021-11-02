@@ -1,32 +1,32 @@
-package com.mrwojack.quiz;
+package com.mrwojack.quiz.classes.questions;
 
 public class VerdaderoFalsoQuestions {
     private String question;
     private String option1;
     private String option2;
     private int answer;
-    private String categoria;
+    private String category;
 
 
     public VerdaderoFalsoQuestions(){
 
     }
 
-    public VerdaderoFalsoQuestions(String question, String option1, String option2, int answer, String categoria) {
+    public VerdaderoFalsoQuestions(String question, String option1, String option2, int answer, String category) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.answer = answer;
-        this.categoria = categoria;
+        this.category = category;
 
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getQuestion() {

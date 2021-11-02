@@ -1,38 +1,39 @@
-package com.mrwojack.quiz;
+package com.mrwojack.quiz.classes.questions;
 
-public class AudioQuestions {
-
+public class MultipleChoiceQuestions {
     private String question;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
-    private int answer;
-    private String categoria;
+    private String option5;
+    private String option6;
+    private String answer;
+    private String category;
 
-
-    public AudioQuestions(String question, String option1, String option2, String option3, String option4, int answer,String categoria) {
+    public MultipleChoiceQuestions(String question, String option1, String option2, String option3, String option4, String option5, String option6, String answer,String category) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
+        this.option5 = option5;
+        this.option6 = option6;
         this.answer = answer;
-        this.categoria = categoria;
+        this.category = category;
 
     }
 
-
-    public AudioQuestions(){
+    public MultipleChoiceQuestions(){
 
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getQuestion() {
@@ -75,11 +76,27 @@ public class AudioQuestions {
         this.option4 = option4;
     }
 
-    public int getAnswer() {
+    public String getOption5() {
+        return option5;
+    }
+
+    public void setOption5(String option5) {
+        this.option5 = option5;
+    }
+
+    public String getOption6() {
+        return option6;
+    }
+
+    public void setOption6(String option6) {
+        this.option6 = option6;
+    }
+
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(int answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 }

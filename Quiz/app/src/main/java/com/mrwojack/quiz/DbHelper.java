@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.mrwojack.quiz.QuizContract.*;
+import com.mrwojack.quiz.classes.questions.MultipleChoiceQuestions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -206,7 +207,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 Multiplequestion.setOption5(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION5)));
                 Multiplequestion.setOption6(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION6)));
                 Multiplequestion.setAnswer(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_ANSWER)));
-                Multiplequestion.setCategoria(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_CATEGORY)));
+                Multiplequestion.setCategory(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_CATEGORY)));
 
                 questionList4.add(Multiplequestion);
             }while(c.moveToNext());

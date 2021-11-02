@@ -13,7 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.util.Collections;
+
+import com.mrwojack.quiz.classes.questions.MultipleChoiceQuestions;
+import com.mrwojack.quiz.classes.questions.NormalQuestion;
+
 import java.util.List;
   
 
