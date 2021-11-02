@@ -15,7 +15,7 @@
         android:fontFamily="@font/asdonauts_font_family"
         android:text="@string/question"
         android:textAlignment="center"
-        android:textSize="26sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
             android:layout_height="72dp"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option1"
-            android:textSize="20sp"
+            android:textSize="24sp"
             tools:layout_editor_absoluteX="57dp"
             tools:layout_editor_absoluteY="219dp" />
 
@@ -58,7 +58,7 @@
             android:layout_height="72dp"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option3"
-            android:textSize="20sp"
+            android:textSize="20"
             tools:layout_editor_absoluteX="57dp"
             tools:layout_editor_absoluteY="363dp" />
 

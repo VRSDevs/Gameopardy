@@ -15,7 +15,7 @@
         android:fontFamily="@font/asdonauts_font_family"
         android:text="@string/question"
         android:textAlignment="center"
-        android:textSize="26sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

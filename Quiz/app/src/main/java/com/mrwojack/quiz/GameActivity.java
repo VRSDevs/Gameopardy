@@ -20,6 +20,7 @@ import com.mrwojack.quiz.database.DbHelper;
 import com.mrwojack.quiz.fragments.EmptyFragment;
 import com.mrwojack.quiz.fragments.questions.MultipleChoiceFragment;
 import com.mrwojack.quiz.fragments.questions.NormalQuestionFragment;
+import com.mrwojack.quiz.fragments.questions.TrueFalseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -399,7 +400,7 @@ public class GameActivity extends AppCompatActivity {
                 args.putString("answer", questionsList.get(questionNumber).getAnswer());
 
                 // Generación de fragmento y asignación de bundle
-                MultipleChoiceFragment fragmentB = new MultipleChoiceFragment();
+                TrueFalseFragment fragmentB = new TrueFalseFragment();
                 fragmentB.setArguments(args);
 
                 // Reemplazo de fragmento a mostrar
