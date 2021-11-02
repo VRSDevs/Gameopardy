@@ -11,4 +11,11 @@
     <string name="effects">Efectos</string>
     <string name="difficulty">Dificultad</string>
     <string name="save">Guardar</string>
+    <string name="back">Atrás</string>
+    <string name="play2">¡Jugar!</string>
+    <string name="playChooseCat">Selecciona una categoría para jugar:</string>
+    <string name="videogameHistory">Historia de los videojuegos</string>
+    <string name="videogamesCompany">Empresas de videojuegos</string>
+    <string name="generalCulture">Cultura general</string>
+    <string name="videogamesSaga">Sagas de videojuegos</string>
 </resources>
