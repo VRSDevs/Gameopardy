@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.mrwojack.quiz.GameActivity;
 import com.mrwojack.quiz.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NormalQuestionFragment extends Fragment {
@@ -66,6 +67,7 @@ public class NormalQuestionFragment extends Fragment {
 
         // Inicialización de variables
         options = new String[4];
+        optionsBtt = new ArrayList<>();
     }
 
     /**

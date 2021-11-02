@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.mrwojack.quiz.GameActivity;
 import com.mrwojack.quiz.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MultipleChoiceFragment extends Fragment {
@@ -71,6 +72,7 @@ public class MultipleChoiceFragment extends Fragment {
 
         // Inicialización de variables
         options = new String[6];
+        optionsBtt = new ArrayList<>();
     }
 
     /**
