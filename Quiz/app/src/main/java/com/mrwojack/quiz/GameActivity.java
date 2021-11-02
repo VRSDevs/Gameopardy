@@ -211,13 +211,13 @@ public class GameActivity extends AppCompatActivity {
     private void finishGame() {
 
         // Obtención de objeto Intent para el cambio de actividad
-        Intent int_Results = new Intent(this, GameActivity.class);
+        Intent int_Results = new Intent(this, ResultsActivity.class);
         // Inserción de dato en Intent para el envío a otra actividad
-        int_Results.putExtra("points", points);
-        int_Results.putExtra("hits", hits);
-        int_Results.putExtra("mistakes", mistakes);
-        int_Results.putExtra("category", category);
-        int_Results.putExtra("time", time);
+        int_Results.putExtra("points", String.valueOf(points));
+        int_Results.putExtra("hits", String.valueOf(hits));
+        int_Results.putExtra("mistakes", String.valueOf(mistakes));
+        int_Results.putExtra("category", String.valueOf(category));
+        int_Results.putExtra("time", String.valueOf(time));
         int_Results.putExtra("timer", timerText.getText().toString());
         // Inicio de la actividad
         startActivity(int_Results);
