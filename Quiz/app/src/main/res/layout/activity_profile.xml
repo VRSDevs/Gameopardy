@@ -68,6 +68,7 @@
             android:layout_marginRight="15dp"
             android:layout_weight="1"
             android:fontFamily="@font/asdonauts_font_family"
+            android:onClick="saveUsername"
             android:text="@string/save"
             android:textSize="20sp" />
 
@@ -79,6 +80,7 @@
             android:layout_marginRight="15dp"
             android:layout_weight="1"
             android:fontFamily="@font/asdonauts_font_family"
+            android:onClick="deleteUsername"
             android:text="@string/delete"
             android:textSize="20sp" />
     </LinearLayout>
