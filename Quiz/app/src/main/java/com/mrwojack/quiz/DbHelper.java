@@ -198,15 +198,15 @@ public class DbHelper extends SQLiteOpenHelper {
         if(c.moveToFirst()){
             do{
                 MultipleChoiceQuestions Multiplequestion = new MultipleChoiceQuestions();
-                Multiplequestion.setQuestion(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_QUESTION)+1));
-                Multiplequestion.setOption1(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION1)+1));
-                Multiplequestion.setOption2(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
-                Multiplequestion.setOption3(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
-                Multiplequestion.setOption4(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
-                Multiplequestion.setOption5(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
-                Multiplequestion.setOption6(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)+1));
-                Multiplequestion.setAnswer(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_ANSWER)+1));
-                Multiplequestion.setCategoria(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_CATEGORY)+1));
+                Multiplequestion.setQuestion(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_QUESTION)));
+                Multiplequestion.setOption1(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION1)));
+                Multiplequestion.setOption2(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION2)));
+                Multiplequestion.setOption3(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION3)));
+                Multiplequestion.setOption4(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION4)));
+                Multiplequestion.setOption5(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION5)));
+                Multiplequestion.setOption6(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_OPTION6)));
+                Multiplequestion.setAnswer(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_ANSWER)));
+                Multiplequestion.setCategoria(c.getString(c.getColumnIndex(QuestionsMultipleTable.COLUMN_CATEGORY)));
 
                 questionList4.add(Multiplequestion);
             }while(c.moveToNext());
