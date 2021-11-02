@@ -72,7 +72,7 @@
             android:textSize="16sp" />
 
         <CheckBox
-            android:id="@+id/chk_mc_o6"
+            android:id="@+id/chkBox_mc_o6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/asdonauts_font_family"
