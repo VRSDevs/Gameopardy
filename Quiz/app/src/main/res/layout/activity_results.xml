@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultsActivity">
+
+    <TextView
+        android:id="@+id/txtVw_endMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/asdonauts_font_family"
+        android:text="@string/endMatch"
+        android:textAlignment="center"
+        android:textSize="76sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVw_endMatch">
+
+        <TextView
+            android:id="@+id/txtVw_finalPointsTxt"
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/asdonauts_font_family"
+            android:text="@string/puntuation"
+            android:textAlignment="center"
+            android:textSize="48sp" />
+
+        <TextView
+            android:id="@+id/txtVw_finalPoints"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/asdonauts_font_family"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="72sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtVw_finalHitsTxt"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/asdonauts_font_family"
+                android:text="@string/hits"
+                android:textAlignment="center"
+                android:textColor="#43A047"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txtVw_finalHits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/asdonauts_font_family"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="#43A047"
+                android:textSize="46sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtVw_finalMissTxt"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/asdonauts_font_family"
+                android:text="@string/mistakes"
+                android:textAlignment="center"
+                android:textColor="#F44336"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txtVw_finalMiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/asdonauts_font_family"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="#F44336"
+                android:textSize="46sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtVw_empty"
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <TextView
+                android:id="@+id/txtVw_finalTimeTxt"
+                android:layout_width="136dp"
+                android:layout_height="41dp"
+                android:fontFamily="@font/asdonauts_font_family"
+                android:text="@string/time"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txtVw_finalTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/asdonauts_font_family"
+                android:text="00 : 00"
+                android:textAlignment="center"
+                android:textSize="46sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btt_playAgain"
+        android:layout_width="143dp"
+        android:layout_height="134dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/asdonauts_font_family"
+        android:onClick="playAgain"
+        android:text="@string/playAgain"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="143dp"
+        android:layout_height="134dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/asdonauts_font_family"
+        android:onClick="goMainMenu"
+        android:text="@string/mainMenu"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
