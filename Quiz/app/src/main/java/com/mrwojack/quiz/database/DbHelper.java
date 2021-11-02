@@ -237,23 +237,23 @@ public class DbHelper extends SQLiteOpenHelper {
         addQuestionToTable(M50);
         Question M51 = new Question("¿Cuales de estas consolas fueron lanzadas al mercado entre los años 2000 y 2010?","Sega Dreamcast","Nintendo Wii U ","PlayStation 2","PlayStation 3","Xbox","Xbox 360","PlayStation 2, PlayStation 3, Xbox, Xbox 360,","multiple","historia");
         addQuestionToTable(M51);
-        Question M52 = new Question("","","","","","","","","","curiosidades");
+        Question M52 = new Question("¿En qué juego situarías al personaje de Broxigar?","WoW","Diablo","Lol","Deus Ex","","","WoW","normal","curiosidades");
         addQuestionToTable(M52);
-        Question M53 = new Question("","","","","","","","","","curiosidades");
+        Question M53 = new Question("¿Hay algún juego en el que el mítico personaje de Mario sea el villano en vez del héroe?","","","","","","","Verdadero","binario","curiosidades");
         addQuestionToTable(M53);
-        Question M54 = new Question("","","","","","","","","","curiosidades");
+        Question M54 = new Question("¿En qué videojuego puedes escuchar la frase:“Nulla è reale, tutto è lecito. Requiescat in pace”?","Assassin's Creed I","Assassin's Creed II","Assassin's Creed III","The Elder Scrolls V: Skyrim","","","Assassin's Creed II","normal","curiosidades");
         addQuestionToTable(M54);
-        Question M55 = new Question("","","","","","","","","","curiosidades");
+        Question M55 = new Question("¿El personaje de Lara Croft originalmente iba a ser hombre?","","","","","","","verdadero","binario","curiosidades");
         addQuestionToTable(M55);
-        Question M56 = new Question("","","","","","","","","","historia");
+        Question M56 = new Question("¿Cuál de estos juegos no se ha estrenado en 2018?","Darksiders III","Biomutant","Dead or Alive 6","Pillars of Eternity II: Deadfire","","","Dead or Alive 6","normal","historia");
         addQuestionToTable(M56);
-        Question M57 = new Question("","","","","","","","","","empresa");
+        Question M57 = new Question("¿Cual de estas empresas no española?","Ratalaika Games","Ubisoft","Valhalla Cats","Tequila Works","","","","normal","empresa");
         addQuestionToTable(M57);
-        Question M58 = new Question("","","","","","","","","","empresa");
+        Question M58 = new Question("¿?","","","","","","","","","empresa");
         addQuestionToTable(M58);
-        Question M59 = new Question("","","","","","","","","","empresa");
+        Question M59 = new Question("¿?","","","","","","","","","empresa");
         addQuestionToTable(M59);
-        Question M60 = new Question("","","","","","","","","","empresa");
+        Question M60 = new Question("¿?","","","","","","","","","empresa");
         addQuestionToTable(M60);
 
     }
