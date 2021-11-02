@@ -256,6 +256,19 @@ public class DbHelper extends SQLiteOpenHelper {
         Question M60 = new Question("Tequila Works es una empresa norteamericana","","","","","","","Falso","binario","empresa");
         addQuestionToTable(M60);
 
+        Question M61 = new Question("¿En qué año salió la PlayStation 2?","1999","2002","2000","2003","","","2000","normal","historia");
+        addQuestionToTable(M61);
+
+        Question M62 = new Question("¿A qué empresa pertenece el videojuego Dark Souls?","Nintendo","Riot","FromSoftware","Ubisoft","","","FromSoftware","normal","empresa");
+        addQuestionToTable(M62);
+
+        Question M63 = new Question("¿Cuál es la tercera entrega de la saga Uncharted?","El desenlace de un ladrón","El tesoro de Drake","La traición de Drake","El reino de los ladrones","","","La traición de Drake","normal","sagas");
+        addQuestionToTable(M63);
+
+        Question M64 = new Question("¿Cuál fue el Game of the year en 2019?","Death Stranding","Sekiro","Devil May Cry 5","Borderlands 3","","","Sekiro","normal","curiosidades");
+        addQuestionToTable(M64);
+
+
     }
 
     /**
