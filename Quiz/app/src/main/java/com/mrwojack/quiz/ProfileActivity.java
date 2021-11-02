@@ -5,10 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class ProfileActivity extends AppCompatActivity {
 
     //region Variables
+    EditText username;
+    Button saveButton;
+    Button deleteButton;
+
     //endregion
 
     //region Métodos - Ciclo de vida
@@ -21,6 +27,11 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        // Búsqueda de referencias
+        username = findViewById(R.id.edtTxt_name);
+        saveButton = findViewById(R.id.btt_save2);
+        deleteButton = findViewById(R.id.btt_del);
     }
 
     //endregion

@@ -51,6 +51,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Método para acceder al menú del perfil
+     * @param view
+     */
+    public void openProfileMenu(View view) {
+        // Obtención de objeto Intent para el cambio de actividad
+        Intent int_ProfileMenu = new Intent(this, ProfileActivity.class);
+        // Inicio de la actividad
+        startActivity(int_ProfileMenu);
+        // Finalización de la actividad
+        finish();
+    }
+
+    /**
      * Método para abrir el menú de ajustes
      * @param view -> Referencia a la vista
      */
