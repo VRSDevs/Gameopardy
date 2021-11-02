@@ -14,8 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mrwojack.quiz.classes.questions.MultipleChoiceQuestions;
-import com.mrwojack.quiz.classes.questions.NormalQuestion;
+import com.mrwojack.quiz.classes.questions.Question;
 
 import java.util.List;
   
@@ -23,7 +22,7 @@ import java.util.List;
 public class GameActivity extends AppCompatActivity {
 
     private List<NormalQuestion> questionList;
-    private List<MultipleChoiceQuestions> questionsList3;
+    private List<Question> questionsList3;
     
     //region Variables
 

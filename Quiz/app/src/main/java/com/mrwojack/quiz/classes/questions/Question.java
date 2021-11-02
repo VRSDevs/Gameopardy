@@ -1,39 +1,39 @@
 package com.mrwojack.quiz.classes.questions;
 
-public class AudioQuestions {
-
+public class Question {
     private String question;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
-    private int answer;
+    private String option5;
+    private String option6;
+    private String answer;
+    private String type;
     private String category;
 
+    //region Constructores
 
-    public AudioQuestions(String question, String option1, String option2, String option3, String option4, int answer,String category) {
+    public Question(){
+
+    }
+
+    public Question(String question, String option1, String option2, String option3, String option4, String option5, String option6, String answer, String type, String category) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
+        this.option5 = option5;
+        this.option6 = option6;
         this.answer = answer;
-        this.category = category;
-
-    }
-
-
-    public AudioQuestions(){
-
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
+        this.type = type;
         this.category = category;
     }
+
+    //endregion
+
+    //region Getters y Setters
 
     public String getQuestion() {
         return question;
@@ -75,11 +75,46 @@ public class AudioQuestions {
         this.option4 = option4;
     }
 
-    public int getAnswer() {
+    public String getOption5() {
+        return option5;
+    }
+
+    public void setOption5(String option5) {
+        this.option5 = option5;
+    }
+
+    public String getOption6() {
+        return option6;
+    }
+
+    public void setOption6(String option6) {
+        this.option6 = option6;
+    }
+
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(int answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+
+    //endregion
 }

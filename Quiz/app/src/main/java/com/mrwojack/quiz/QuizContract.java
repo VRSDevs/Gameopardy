@@ -5,9 +5,7 @@ import android.provider.BaseColumns;
 
 public final class QuizContract{
 
-    private QuizContract(){
-
-    }
+    private QuizContract(){}
 
     public static class QuestionsMultipleTable implements BaseColumns {
         public static final String TABLE_NAME = "quiz_multiple_questions";
@@ -20,7 +18,6 @@ public final class QuizContract{
         public static final String COLUMN_OPTION6 = "option6";
         public static final String COLUMN_ANSWER = "answer";
         public static final String COLUMN_CATEGORY = "category";
-
     }
 }
 
