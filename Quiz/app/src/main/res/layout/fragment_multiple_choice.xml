@@ -11,12 +11,13 @@
         android:id="@+id/txtVw_mc_q"
         android:layout_width="295dp"
         android:layout_height="175dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/asdonauts_font_family"
         android:text="@string/question"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,10 +27,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtVw_mc_q"
-        app:layout_constraintVertical_bias="0.168">
+        app:layout_constraintVertical_bias="0.08">
 
         <CheckBox
             android:id="@+id/chkBox_mc_o1"
@@ -37,7 +38,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option1"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="218dp" />
 
         <CheckBox
             android:id="@+id/chkBox_mc_o2"
@@ -45,7 +48,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option2"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="266dp" />
 
         <CheckBox
             android:id="@+id/chkBox_mc_o3"
@@ -53,7 +58,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option3"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="314dp" />
 
         <CheckBox
             android:id="@+id/chkBox_mc_o4"
@@ -61,7 +68,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option4"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="362dp" />
 
         <CheckBox
             android:id="@+id/chkBox_mc_o5"
@@ -69,7 +78,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option5"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="410dp" />
 
         <CheckBox
             android:id="@+id/chkBox_mc_o6"
@@ -77,7 +88,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/option6"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="458dp" />
 
         <Button
             android:id="@+id/btt_mc_conf"
@@ -85,6 +98,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/asdonauts_font_family"
             android:text="@string/confirm"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="506dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
