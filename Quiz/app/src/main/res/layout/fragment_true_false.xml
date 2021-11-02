@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
+    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.questions.NormalQuestionFragment">
+    tools:context=".fragments.questions.TrueFalseFragment" >
 
     <TextView
-        android:id="@+id/txtVw_nq_q"
+        android:id="@+id/txtVw_tf_q"
         android:layout_width="295dp"
         android:layout_height="175dp"
         android:layout_marginTop="124dp"
@@ -23,45 +23,32 @@
     <LinearLayout
         android:layout_width="295dp"
         android:layout_height="342dp"
-        android:layout_marginTop="1dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtVw_nq_q"
-        app:layout_constraintVertical_bias="0.168">
+        app:layout_constraintTop_toBottomOf="@+id/txtVw_tf_q"
+        app:layout_constraintVertical_bias="0.168" >
 
-        <Button
-            android:id="@+id/btt_nq_o1"
+        <ToggleButton
+            android:id="@+id/togBtt_tf"
             android:layout_width="match_parent"
             android:layout_height="72dp"
             android:fontFamily="@font/asdonauts_font_family"
-            android:text="@string/option1"
+            android:text="@string/answer"
+            android:textOff="@string/falseW"
+            android:textOn="@string/trueW"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btt_nq_o2"
+            android:id="@+id/btt_tf_conf"
             android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/asdonauts_font_family"
-            android:text="@string/option2"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btt_nq_o3"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:fontFamily="@font/asdonauts_font_family"
-            android:text="@string/option3"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btt_nq_o4"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:fontFamily="@font/asdonauts_font_family"
-            android:text="@string/option4"
+            android:text="@string/confirm"
             android:textSize="20sp" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

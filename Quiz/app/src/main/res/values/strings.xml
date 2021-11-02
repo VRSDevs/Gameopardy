@@ -30,4 +30,10 @@
     <string name="option2">Opción 2</string>
     <string name="option3">Opción 3</string>
     <string name="option4">Opción 4</string>
+    <string name="answer">Respuesta</string>
+    <string name="falseW">Falso</string>
+    <string name="trueW">Verdadero</string>
+    <string name="confirm">Confirmar</string>
+    <string name="option5">Opción 5</string>
+    <string name="option6">Opción 6</string>
 </resources>
