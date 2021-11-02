@@ -120,6 +120,8 @@ public class GameActivity extends AppCompatActivity {
         InitGameVars();
         getQuestionsFromDB();
 
+        Toast.makeText(this, questionsList.get(0).getQuestion(), Toast.LENGTH_SHORT).show();
+
         // Referencias a objetos
         questionsText = findViewById(R.id.txtVw_questions);
         hitsText = findViewById(R.id.txtVw_hits);
@@ -188,6 +190,11 @@ public class GameActivity extends AppCompatActivity {
         
         // Comienzo de la ejecución del hilo
         timerThr.start();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         // Llamada al primer fragmento
         generateFragment();
