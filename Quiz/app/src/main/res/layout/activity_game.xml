@@ -73,13 +73,26 @@
 
     <Button
         android:id="@+id/btt_exitMatch"
-        android:layout_width="107dp"
-        android:layout_height="61dp"
+        android:layout_width="91dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/asdonauts_font_family"
         android:text="@string/back"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.mrwojack.quiz.fragments.EmptyFragment"
+        android:layout_width="411dp"
+        android:layout_height="474dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447"
+        tools:layout="@layout/fragment_empty" />
 </androidx.constraintlayout.widget.ConstraintLayout>
