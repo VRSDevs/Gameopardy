@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void openLeaderboardMenu(View view) {
         // Obtención de objeto Intent para el cambio de actividad
-        Intent int_LeaderboardMenu = new Intent(this, ProfileActivity.class);
+        Intent int_LeaderboardMenu = new Intent(this, LeaderboardActivity.class);
         // Inicio de la actividad
         startActivity(int_LeaderboardMenu);
         // Finalización de la actividad
