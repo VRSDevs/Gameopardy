@@ -65,6 +65,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Método para ir al menú de ranking
+     * @param view
+     */
+    public void openLeaderboardMenu(View view) {
+        // Obtención de objeto Intent para el cambio de actividad
+        Intent int_LeaderboardMenu = new Intent(this, LeaderboardActivity.class);
+        // Inicio de la actividad
+        startActivity(int_LeaderboardMenu);
+        // Finalización de la actividad
+        finish();
+    }
+
+    /**
      * Método para abrir el menú de ajustes
      * @param view -> Referencia a la vista
      */
