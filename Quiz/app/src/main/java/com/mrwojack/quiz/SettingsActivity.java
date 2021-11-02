@@ -7,10 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+
 
 import com.mrwojack.quiz.fragments.settings.MatchSettingsFragment;
 import com.mrwojack.quiz.fragments.settings.MusicSettingsFragment;
