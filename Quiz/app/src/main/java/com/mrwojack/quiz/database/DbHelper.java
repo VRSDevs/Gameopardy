@@ -96,6 +96,35 @@ public class DbHelper extends SQLiteOpenHelper {
         return questionsList;
     }
 
+    public List<Question> getAllQuestions(){
+        // Creación de la lista de preguntas
+        List<Question> questionsList = new ArrayList<>();
+
+        // Obtención de tabla y de cursor para operar en la tabla
+        db = getReadableDatabase();
+        Cursor _cursor = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_NAME, null);
+
+        if(_cursor.moveToFirst()){
+            do {
+                Question q = new Question();
+
+                q.setQuestion(_cursor.getString(1));
+                q.setOption1(_cursor.getString(2));
+                q.setOption2(_cursor.getString(3));
+                q.setOption3(_cursor.getString(4));
+                q.setOption4(_cursor.getString(5));
+                q.setOption5(_cursor.getString(6));
+                q.setOption6(_cursor.getString(7));
+                q.setAnswer(_cursor.getString(8));
+                q.setType(_cursor.getString(9));
+                q.setCategory(_cursor.getString(10));
+
+                questionsList.add(q);
+            } while(_cursor.moveToNext());
+        }
+        _cursor.close();
+        return questionsList;
+    }
 
     //endregion
 

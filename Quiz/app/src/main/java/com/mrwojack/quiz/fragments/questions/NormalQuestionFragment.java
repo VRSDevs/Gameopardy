@@ -20,6 +20,7 @@ public class NormalQuestionFragment extends Fragment {
 
     TextView question;
     List<Button> options;
+    String answer;
 
     public NormalQuestionFragment() {
         // Required empty public constructor
