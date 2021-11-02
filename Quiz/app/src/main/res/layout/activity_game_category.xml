@@ -17,7 +17,7 @@
         android:text="@string/playChooseCat"
         android:textAlignment="center"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/btt_play"
+        app:layout_constraintBottom_toTopOf="@id/btt_PlayGame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,5 +47,51 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btt_PlayGame" />
+
+    <RadioGroup
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btt_PlayGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVw_SelCat">
+
+        <RadioButton
+            android:id="@+id/rb_vidHis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/asdonauts_font_family"
+            android:text="@string/videogameHistory"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/rb_vidComp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/asdonauts_font_family"
+            android:text="@string/videogamesCompany"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/rb_genCul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/asdonauts_font_family"
+            android:text="@string/generalCulture"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/rb_vidSag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/asdonauts_font_family"
+            android:text="@string/videogamesSaga"
+            android:textSize="24sp" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
