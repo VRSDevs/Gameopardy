@@ -243,17 +243,17 @@ public class DbHelper extends SQLiteOpenHelper {
         addQuestionToTable(M53);
         Question M54 = new Question("¿En qué videojuego puedes escuchar la frase:“Nulla è reale, tutto è lecito. Requiescat in pace”?","Assassin's Creed I","Assassin's Creed II","Assassin's Creed III","The Elder Scrolls V: Skyrim","","","Assassin's Creed II","normal","curiosidades");
         addQuestionToTable(M54);
-        Question M55 = new Question("¿El personaje de Lara Croft originalmente iba a ser hombre?","","","","","","","verdadero","binario","curiosidades");
+        Question M55 = new Question("¿El personaje de Lara Croft originalmente iba a ser hombre?","","","","","","","Verdadero","binario","curiosidades");
         addQuestionToTable(M55);
         Question M56 = new Question("¿Cuál de estos juegos no se ha estrenado en 2018?","Darksiders III","Biomutant","Dead or Alive 6","Pillars of Eternity II: Deadfire","","","Dead or Alive 6","normal","historia");
         addQuestionToTable(M56);
-        Question M57 = new Question("¿Cual de estas empresas no española?","Ratalaika Games","Ubisoft","Valhalla Cats","Tequila Works","","","","normal","empresa");
+        Question M57 = new Question("¿Cual de estas empresas no española?","Ratalaika Games","Ubisoft","Valhalla Cats","Tequila Works","","","Ubisoft","normal","empresa");
         addQuestionToTable(M57);
-        Question M58 = new Question("¿?","","","","","","","","","empresa");
+        Question M58 = new Question("¿A qué empresa pertenece el videojuego League of Legends?","Riot","Electronic Arts","Nintendo","Tequila Works","","","Riot","normal","empresa");
         addQuestionToTable(M58);
-        Question M59 = new Question("¿?","","","","","","","","","empresa");
+        Question M59 = new Question("¿Cuales de estos videojuegos pertenecen al estudio Naughty Dog? ","Uncharted 2: El reino de los ladrones","Gran Turismo 4","Tomb Raider","Crash Bandicoot","The Last of Us","Spec Ops: The Line","Uncharted 2: El reino de los ladrones, The Last of Us, Crash Bandicoot,","multiple","empresa");
         addQuestionToTable(M59);
-        Question M60 = new Question("¿?","","","","","","","","","empresa");
+        Question M60 = new Question("Tequila Works es una empresa norteamericana","","","","","","","Falso","binario","empresa");
         addQuestionToTable(M60);
 
     }
