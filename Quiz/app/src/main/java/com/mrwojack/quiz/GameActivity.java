@@ -276,8 +276,6 @@ public class GameActivity extends AppCompatActivity {
                 questionsList = _dbHelper.getQuestions("sagas");
                 break;
         }
-
-        Toast.makeText(this, questionsList.get(0).getQuestion(), Toast.LENGTH_SHORT).show();
     }
 
     //endregion

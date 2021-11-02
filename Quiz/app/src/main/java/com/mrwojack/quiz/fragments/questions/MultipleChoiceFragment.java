@@ -1,5 +1,6 @@
 package com.mrwojack.quiz.fragments.questions;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -151,18 +152,18 @@ public class MultipleChoiceFragment extends Fragment {
                         // Siguiente respuesta marcada
                         continue;
 
-                    userAnswer += ckbox.getText().toString() + ",";
+                    userAnswer += ckbox.getText().toString() + ", ";
                 }
 
                 // Si no son iguales
                 if(!userAnswer.equals(answer)) {
                     // Advertencia de respuesta incorrecta
-                    Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
+                    confirmButton.setBackgroundColor(Color.rgb(244, 67, 54));
                     return false;
                 }
 
                 // Advertencia de respuesta correcta
-                Toast.makeText(view.getContext(), "Correcto", Toast.LENGTH_SHORT).show();
+                confirmButton.setBackgroundColor(Color.rgb(76, 175, 80));
                 return true;
             }
         });

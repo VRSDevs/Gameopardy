@@ -160,7 +160,6 @@ public class ResultsActivity extends AppCompatActivity {
         int positions [] = {1,2,3,4,5};
         String puntuations[] = {"", "", "", "", ""};
 
-        
         // Comprobación de huecos libres
         for(int i = 0; i < MAX_USERS_IN_RANK; i++) {
             if(rankingFile.getString("player" + i, "-").equals("-")) {
@@ -184,7 +183,6 @@ public class ResultsActivity extends AppCompatActivity {
                 break;
             }
         }
-
     }
 
     //endregion

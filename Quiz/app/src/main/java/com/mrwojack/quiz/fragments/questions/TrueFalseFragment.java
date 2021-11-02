@@ -1,5 +1,6 @@
 package com.mrwojack.quiz.fragments.questions;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -124,14 +125,24 @@ public class TrueFalseFragment extends Fragment {
             private boolean checkAnswer(View view) {
                 // Si está pulsado el botón (verdadero)
                 if(optionBtt.isChecked()) {
-                    // Advertencia de respuesta incorrecta
-                    Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
-                    return false;
+                    if(!optionBtt.getTextOn().equals(answer)){
+                        // Advertencia de respuesta incorrecta
+                        confirmButton.setBackgroundColor(Color.rgb(244, 67, 54));
+                        return false;
+                    }
+                    // Advertencia de respuesta correcta
+                    confirmButton.setBackgroundColor(Color.rgb(76, 175, 80));
+                    return true;
+                } else {
+                    if(!optionBtt.getTextOff().equals(answer)){
+                        // Advertencia de respuesta incorrecta
+                        confirmButton.setBackgroundColor(Color.rgb(244, 67, 54));
+                        return false;
+                    }
+                    // Advertencia de respuesta correcta
+                    confirmButton.setBackgroundColor(Color.rgb(76, 175, 80));
+                    return true;
                 }
-
-                // Advertencia de respuesta correcta
-                Toast.makeText(view.getContext(), "Correcto", Toast.LENGTH_SHORT).show();
-                return true;
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.mrwojack.quiz.fragments.questions;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -142,12 +143,12 @@ public class NormalQuestionFragment extends Fragment {
                     // Si no son iguales
                     if(!optionText.equals(answer)) {
                         // Advertencia de respuesta incorrecta
-                        Toast.makeText(view.getContext(), "Incorrecto", Toast.LENGTH_SHORT).show();
+                        btn.setBackgroundColor(Color.rgb(244, 67, 54));
                         return false;
                     }
 
                     // Advertencia de respuesta correcta
-                    Toast.makeText(view.getContext(), "Correcto", Toast.LENGTH_SHORT).show();
+                    btn.setBackgroundColor(Color.rgb(76, 175, 80));
                     return true;
                 }
             });
