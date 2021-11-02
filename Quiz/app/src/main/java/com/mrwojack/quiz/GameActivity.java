@@ -103,10 +103,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        /*
         DbHelper DBhelper3 = new DbHelper( (this));
         questionsList3 = DBhelper3.getAllMultipleQuestions();
-        */
 
         InitGameVars();
 
