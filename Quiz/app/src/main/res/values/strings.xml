@@ -25,4 +25,9 @@
     <string name="mistakes">Respuestas incorrectas</string>
     <string name="puntuation">Puntuación</string>
     <string name="hits">Respuestas correctas</string>
+    <string name="question">Pregunta</string>
+    <string name="option1">Opción 1</string>
+    <string name="option2">Opción 2</string>
+    <string name="option3">Opción 3</string>
+    <string name="option4">Opción 4</string>
 </resources>
