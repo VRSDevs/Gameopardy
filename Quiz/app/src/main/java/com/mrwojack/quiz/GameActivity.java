@@ -121,8 +121,6 @@ public class GameActivity extends AppCompatActivity {
         InitGameVars();
         getQuestionsFromDB();
 
-        Toast.makeText(this, questionsList.get(0).getQuestion(), Toast.LENGTH_SHORT).show();
-
         // Referencias a objetos
         questionsText = findViewById(R.id.txtVw_questions);
         hitsText = findViewById(R.id.txtVw_hits);
@@ -255,21 +253,16 @@ public class GameActivity extends AppCompatActivity {
             case "Difícil":
                 maxQuestions = 15;
                 break;
-            default:
-                Toast.makeText(this, "No se encontró dificultad", Toast.LENGTH_SHORT).show();
-                break;
         }
     }
 
     /**
      * Método para obtener las preguntas de la base de datos
      */
-    private void getQuestionsFromDB(){
+    private void getQuestionsFromDB() {
         DbHelper _dbHelper = new DbHelper(this);
-        questionsList = _dbHelper.getAllQuestions();
-        randomizedQuestionsList = questionsList;
 
-         /*switch (category) {
+         switch (category) {
             case "Historia de los videojuegos":
                 questionsList = _dbHelper.getQuestions("historia");
                 break;
@@ -284,45 +277,7 @@ public class GameActivity extends AppCompatActivity {
                 break;
         }
 
-
-
         Toast.makeText(this, questionsList.get(0).getQuestion(), Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, questionsList.get(1).getQuestion(), Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, questionsList.get(2).getQuestion(), Toast.LENGTH_SHORT).show();
-
-        randomizedQuestionsList = new ArrayList<>();
-        int[] pickedIndexes = new int[maxQuestions];
-        int index;
-        boolean isAssigned;
-        boolean indexFound;
-
-        for (int i = 0; i < maxQuestions; i++) {
-
-            isAssigned = false;
-
-            do {
-                index = (int) (Math.random() * maxQuestions);
-                indexFound = false;
-
-                for (int j = 0; j < pickedIndexes.length; j++) {
-                    if(pickedIndexes[j] == index) {
-                        indexFound = true;
-                        break;
-                    }
-                }
-
-                if(!indexFound) {
-                    isAssigned = true;
-                }
-
-            } while(!isAssigned);
-
-            //Toast.makeText(this, questionsList.get(index).getQuestion(), Toast.LENGTH_SHORT).show();
-
-            //randomizedQuestionsList.add(questionsList.get(index));
-        }
-
-         */
     }
 
     //endregion
@@ -364,6 +319,7 @@ public class GameActivity extends AppCompatActivity {
      */
     public void generateFragment(){
 
+        // Condición de finalización
         if(questionNumber == maxQuestions + 1) {
             finishGame();
         }

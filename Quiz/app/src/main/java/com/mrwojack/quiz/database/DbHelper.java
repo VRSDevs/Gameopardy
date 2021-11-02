@@ -17,7 +17,7 @@ public class DbHelper extends SQLiteOpenHelper {
     //region Variables
 
     private static final String DATABASE_NAME = "GameopardyDB2.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private SQLiteDatabase db;
 
     //endregion
@@ -64,39 +64,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     //region Métodos - Obtención de datos
 
-    public List<Question> getQuestions(String category){
-        // Creación de la lista de preguntas
-        List<Question> questionsList = new ArrayList<>();
-
-        // Obtención de tabla y de cursor para operar en la tabla
-        db = getReadableDatabase();
-        Cursor _cursor = db.rawQuery(
-                "SELECT * FROM " + QuestionsTable.TABLE_NAME + " WHERE category = " + "'" + category + "'",
-                null);
-
-        if(_cursor.moveToFirst()){
-            do {
-                Question q = new Question();
-
-                q.setQuestion(_cursor.getString(1));
-                q.setOption1(_cursor.getString(2));
-                q.setOption2(_cursor.getString(3));
-                q.setOption3(_cursor.getString(4));
-                q.setOption4(_cursor.getString(5));
-                q.setOption5(_cursor.getString(6));
-                q.setOption6(_cursor.getString(7));
-                q.setAnswer(_cursor.getString(8));
-                q.setType(_cursor.getString(9));
-                q.setCategory(_cursor.getString(10));
-
-                questionsList.add(q);
-            } while(_cursor.moveToNext());
-        }
-        _cursor.close();
-        return questionsList;
-    }
-
-    public List<Question> getAllQuestions(){
+    public List<Question> getQuestions(String cat){
         // Creación de la lista de preguntas
         List<Question> questionsList = new ArrayList<>();
 
@@ -104,6 +72,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db = getReadableDatabase();
         Cursor _cursor = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_NAME, null);
 
+        // Movimiento del cursor para recorrer la tabla
         if(_cursor.moveToFirst()){
             do {
                 Question q = new Question();
@@ -123,7 +92,8 @@ public class DbHelper extends SQLiteOpenHelper {
             } while(_cursor.moveToNext());
         }
         _cursor.close();
-        return questionsList;
+
+        return getQuestionsOfCategory(questionsList, cat);
     }
 
     //endregion
@@ -273,9 +243,29 @@ public class DbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_OPTION6, q.getOption6());
         cv.put(QuestionsTable.COLUMN_ANSWER, q.getAnswer());
         cv.put(QuestionsTable.COLUMN_TYPE, q.getType());
-        cv.put(QuestionsTable.COLUMN_CATEGORY, q.getAnswer());
+        cv.put(QuestionsTable.COLUMN_CATEGORY, q.getCategory());
 
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
+    }
+
+    /**
+     * Método
+     * @param list
+     * @param cat
+     * @return
+     */
+    private List<Question> getQuestionsOfCategory(List<Question> list, String cat) {
+        List<Question> specificList = new ArrayList<>();
+
+        for (Question q:
+             list) {
+
+            if(q.getCategory().equals(cat)){
+                specificList.add(q);
+            }
+        }
+
+        return specificList;
     }
 
     //endregion
