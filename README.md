@@ -21,4 +21,4 @@ Usuario GitHub | Nombre y Apellidos
 [FelipeBermejo](https://github.com/FelipeBermejo) | Felipe Bermejo Montejo
 
 ## Licencia
--
+- Este juego se encuentra bajo la licencia [Apache License 2.0](https://github.com/VRSDevs/Gameopardy/blob/main/LICENSE).
